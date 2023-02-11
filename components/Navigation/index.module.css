@@ -1,0 +1,8 @@
+.navigation {
+  @apply fixed text-white w-full bg-black;
+}
+
+.item {
+  @apply flex justify-between px-12 py-4;
+  border-bottom: 1px solid white;
+}

@@ -7,6 +7,7 @@ import photographie from '@/public/images/home/Photographie.png'
 import tampon from '@/public/images/home/Tampon.png'
 import vetement from '@/public/images/home/Vetement.png'
 import noscontacter from '@/public/images/home/Noscontacter.png'
+import Navigation from '@/components/Navigation';
 import copyright from '@/public/images/home/copyright.png'
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
 import iconarrowdown from '@/public/images/home/Iconarrowdown.png'
@@ -21,6 +22,7 @@ import styles from './index.module.css';
 function Home() {
   const [visible, setVisible] = useState<boolean>(false);
   const contentRef = useRef<HTMLElement | null>(null)
+  const [navigationVisible, setNavigationVisible] =  useState<boolean>(false);
 
   const handleScroll = useCallback(() => {
     const content = contentRef.current;
@@ -35,6 +37,16 @@ function Home() {
     window.scrollTo({ top: 9999, behavior: 'smooth' });
   }, [])
 
+  const toogleNavigation = () => {
+    setNavigationVisible(pre => (
+      !pre
+    ))
+  }
+
+  const closeNavigation = () => {
+    setNavigationVisible(false)
+  }
+
   useEffect(() => {
     window.document.addEventListener('scroll', handleScroll)
 
@@ -47,13 +59,14 @@ function Home() {
 
   return (
        <div className='w-full h-full min-h-screen bg-neutral-200'> 
+        {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
         {/* nav */}
         <nav className={cs(
-          'w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-neutral-200 backdrop-opacity-100 transition-all duration-300 ease-linear',
-          visible ? {
+          'w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-neutral-200',
+          visible && !navigationVisible ? {
             fixed: true,
             zIndex: 1000,
-          } : { hidden: true }
+          } : { hidden: true },
           )}>
           <div className="flex flex-row items-center justify-between">
             <div className='flex flex-col'>
@@ -62,11 +75,11 @@ function Home() {
             </div>
             <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
           </div>
-          <div>
+          <div className='cursor-pointer' onClick={toogleNavigation}>
             <Image src={navigationlogo} alt="navlogo" />
           </div>
         </nav>
-
+          
         {/* 图片 */}
           <Image className='w-full' src={homeImg} alt="home_image" />
           {/* 内容区域 */}
