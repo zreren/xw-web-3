@@ -109,3 +109,8 @@ a {
     color-scheme: dark;
   }
 }
+
+
+.text-title {
+  @apply md:text-5xl text-4xl font-bold;
+}

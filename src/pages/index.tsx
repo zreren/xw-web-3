@@ -17,15 +17,13 @@ import cs from 'classnames'
 
 
 // Home
-// Home 因为Navigation是滑动到一定位置才出现， 因此采用自定义的Navigation
-export default function Home() {
+function Home() {
   const [visible, setVisible] = useState<boolean>(false);
   const contentRef = useRef<HTMLElement | null>(null)
 
   const handleScroll = useCallback(() => {
     const content = contentRef.current;
-    const { height } = content?.getBoundingClientRect() as DOMRect;
-    if(window.document.documentElement.scrollTop  > height - 200) {
+    if(window.document.documentElement.scrollTop  > 200) {
       setVisible(true)
     } else {
       setVisible(false)
@@ -44,11 +42,12 @@ export default function Home() {
     }
   }, [])
 
+
   return (
        <div className='w-full h-full min-h-screen bg-neutral-200'>
         {/* nav */}
         <nav className={cs(
-          'w-full flex flex-row items-center justify-between px-12 py-4 bg-neutral-200 backdrop-opacity-100',
+          'w-full flex flex-row items-center justify-between px-12 py-4 bg-neutral-200 backdrop-opacity-100 transition-all duration-300 ease-linear',
           visible ? {
             fixed: true,
             zIndex: 1000,
@@ -59,7 +58,7 @@ export default function Home() {
               <div><span className='md:text-5xl text-4xl font-bold'>E.</span><span className='text-3xl font-semibold'>design</span></div>
               <div className='md:text-2xl text-1xl font-semibold'>小雯工作室</div>
             </div>
-            <div className='md:text-3xl text-2xl ml-10 font-bold'>Infos</div>
+            <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div>
             <Image src={navigationlogo} alt="navlogo" />
@@ -160,8 +159,9 @@ export default function Home() {
   )
 }
 
+// Home 因为Navigation是滑动到一定位置才出现， 因此采用自定义的Navigation
+Home.layout = null
 
-
-
+export default Home;
 
 

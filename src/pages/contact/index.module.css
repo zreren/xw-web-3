@@ -1,0 +1,14 @@
+/* .imgBox {
+  background: url(../../../public/images/contact/maisonedesign-2.png);
+  background-size: cover;
+} */
+
+.contact {
+  @apply min-h-screen bg-neutral-200 px-12 flex flex-col justify-between;
+}
+
+.tipsText {
+  position: absolute;
+  bottom: 5rem;
+  left: 50px;
+}
