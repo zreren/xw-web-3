@@ -1,4 +1,4 @@
-import { FC, ReactNode, useRef } from 'react';
+import { FC, ReactNode } from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 export interface ILayoutProps {

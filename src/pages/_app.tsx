@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Layout from '@/components/Layout'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import Head from 'next/head';
 

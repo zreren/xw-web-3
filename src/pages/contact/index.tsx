@@ -47,22 +47,8 @@ const Contact: React.FC<{}> = () => {
         </div>
       </div>
       <Footer />
-      {/* <Image src={maisonedesign} alt="" /> */}
     </div>
   )
 }
-
-/*
-<div className="flex md:items-end items-center mb-12 md:text-5xl text-4xl font-bold text-blue-600">
-  <div>
-    <p>
-    PARIS11.
-    </p>
-    <p>
-    61 Bld.Voltaire
-    </p>
-  </div>
-</div>
-*/
 
 export default Contact;
