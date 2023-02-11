@@ -13,7 +13,8 @@ import iconarrowdown from '@/public/images/home/Iconarrowdown.png'
 import Link from 'next/link'
 import { useEffect, useState, useCallback, useRef } from 'react'
 import cs from 'classnames'
-
+import { AiOutlineRight } from 'react-icons/ai'
+import styles from './index.module.css';
 
 
 // Home
@@ -42,12 +43,13 @@ function Home() {
     }
   }, [])
 
+  const str = '>'
 
   return (
-       <div className='w-full h-full min-h-screen bg-neutral-200'>
+       <div className='w-full h-full min-h-screen bg-neutral-200'> 
         {/* nav */}
         <nav className={cs(
-          'w-full flex flex-row items-center justify-between px-12 py-4 bg-neutral-200 backdrop-opacity-100 transition-all duration-300 ease-linear',
+          'w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-neutral-200 backdrop-opacity-100 transition-all duration-300 ease-linear',
           visible ? {
             fixed: true,
             zIndex: 1000,
@@ -95,7 +97,7 @@ function Home() {
                 SUR MESURE</div>
               <Link className='flex flex-row items-center hover:text-blue-600 md:text-[20px] text-[16px]' href={''}>
                 <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[20px] w-[16px]' src={branding} alt="" />
+                  <Image className='md:w-[20px] w-[16px] bg-blend-lighten' src={branding} alt="" />
                 </span>
                 <span>
                   EBRANDING 品牌形象规划
@@ -146,7 +148,12 @@ function Home() {
                  {/* footer 区域 */}
                 <div className='flex justify-center w-screen flex-row flex-wrap items-center mt-1 cursor-pointer'>
                   <div className='flex-1'>
-                    <Image width={250} src={noscontacter} alt="" />
+                    {/* <Image width={250} src={noscontacter} alt="" /> */}
+                    <Link href="/" className={styles.noscontacter}>
+                      <span className='absolute'>{str}</span>
+                      <span className='absolute'>NOUS CONTACTER</span>
+                      <span className='opacity-0'>11</span>
+                    </Link>
                   </div>
                   <div className='flex justify-center flex-1'>
                   <Image height={15} width={120} src={copyright} alt="" />

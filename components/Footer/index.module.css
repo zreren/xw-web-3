@@ -24,13 +24,11 @@
 }
 
 .retour:hover span:nth-child(1) {
-  /* color: red; */
   animation: moveLeft1Origin .5s;
   left: 2rem;
 }
 
 .retour:hover span:nth-child(2) {
-  /* color: red; */
   animation: moveLeft2Origin .5s;
   left: 0;
 }
@@ -57,7 +55,7 @@
 {
   0%
   {
-    left: 8rem;
+    left: 2rem;
   }
   100%
   {

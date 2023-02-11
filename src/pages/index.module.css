@@ -1,0 +1,60 @@
+.noscontacter {
+  @apply flex relative items-center text-[18px] md:text-[26px] flex flex-1 mb-[5px];
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  font-weight: 700;
+
+}
+
+.noscontacter:hover {
+  color: rgb(37 99 235);
+  -webkit-text-fill-color: rgb(37 99 235);
+}
+
+ .noscontacter span:nth-child(1) {
+  margin-right: 2px;
+  position: absolute;
+  left: 0px;
+  transition: all .2s;
+}
+
+
+.noscontacter span:nth-child(2) {
+  position: absolute;
+  left: 1.2rem;
+  transition: all .2s;
+}
+
+.noscontacter:hover span:nth-child(1) {
+  animation: moveLeft1Origin .2s;
+  left: 15rem;
+}
+
+.noscontacter:hover span:nth-child(2) {
+  animation: moveLeft2Origin .2s;
+  left: 0;
+}
+
+@keyframes moveLeft1Origin
+{
+  0%
+  {
+    left: 0;
+  }
+  100%
+  {
+    left: 15rem;
+  }
+}
+
+@keyframes moveLeft2Origin
+{
+  0%
+  {
+    left: 1rem;
+  }
+  100%
+  {
+    left: 0px;
+  }
+}
