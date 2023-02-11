@@ -24,8 +24,8 @@ export default function Home() {
 
   const handleScroll = useCallback(() => {
     const content = contentRef.current;
-    const { top } = content?.getBoundingClientRect() as DOMRect;
-    if(window.document.documentElement.scrollTop  > top - 50) {
+    const { height } = content?.getBoundingClientRect() as DOMRect;
+    if(window.document.documentElement.scrollTop  > height - 200) {
       setVisible(true)
     } else {
       setVisible(false)
