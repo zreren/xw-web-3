@@ -1,5 +1,5 @@
 .navigation {
-  @apply fixed text-white w-full bg-black;
+  @apply fixed text-white w-full bg-black z-50;
 }
 
 .item {

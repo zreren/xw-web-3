@@ -14,7 +14,6 @@ import iconarrowdown from '@/public/images/home/Iconarrowdown.png'
 import Link from 'next/link'
 import { useEffect, useState, useCallback, useRef } from 'react'
 import cs from 'classnames'
-import { AiOutlineRight } from 'react-icons/ai'
 import styles from './index.module.css';
 
 

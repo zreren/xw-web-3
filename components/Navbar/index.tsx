@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from 'next/image'
 import Link from 'next/link'
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
+import Navigation from "../Navigation";
+import cs from 'classnames'
 
+interface NavBarProps {
+  classname: any
+}
 
-const Navbar: React.FC<{}> = () => {
+const Navbar: React.FC<NavBarProps> = (props) => {
+  const { classname } = props;
+  const [navigationVisible, setNavigationVisible] = useState<boolean>(false);
+
+  const closeNavigation = () => {
+    setNavigationVisible(false)
+  }
+
+  const toogleNavigation = () => {
+    setNavigationVisible(pre => (
+      !pre
+    ))
+  }
 
   return (
-    <nav className="w-full flex flex-row items-center justify-between md:px-12 py-4 px-4 bg-neutral-200">
+    <>
+    {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
+    <nav className={cs(
+      "w-full flex flex-row items-center justify-between md:px-12 py-4 px-4 bg-neutral-200",
+      classname,
+    )}>
        <div className="flex flex-row items-center justify-between">
       <div className='flex flex-col'>
         <div><span className='md:text-5xl text-4xl font-bold'>E.</span><span className='text-3xl font-semibold'>design</span></div>
@@ -15,10 +37,11 @@ const Navbar: React.FC<{}> = () => {
       </div>
       <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
     </div>
-    <div>
+    <div onClick={toogleNavigation}>
       <Image src={navigationlogo} alt="navlogo" />
     </div>
     </nav>
+    </>
   )
 }
 

@@ -9,8 +9,10 @@ import Footer from "@/components/Footer";
 const Contact: React.FC<{}> = () => {
 
   return (
+    <>
+    <Navbar classname="px-12" />
     <div className={styles.contact}>
-      <Navbar />
+      
       <div className="flex md:flex-row flex-col-reverse">
         <div className="flex flex-col justify-between">
           <div className="mb-16">
@@ -48,6 +50,7 @@ const Contact: React.FC<{}> = () => {
       </div>
       <Footer />
     </div>
+    </>
   )
 }
 
