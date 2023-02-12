@@ -4,9 +4,19 @@ import wechatqrcode from '@/public/images/contact/wechatqrcode.png'
 import maisonedesign from '@/public/images/contact/maisonedesign-2.png'
 import styles from './index.module.css';
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Link from 'next/link'
 
 const Contact: React.FC<{}> = () => {
+
+  const renderLeft = (leftIcon: string) => {
+
+    return (
+        <Link href="/" className={styles.left}>
+          <span>RETOUR</span>
+          <span>{leftIcon}</span>
+        </Link>
+    )
+  }
 
   return (
     <>
@@ -48,7 +58,12 @@ const Contact: React.FC<{}> = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* footer 区域 */}
+      <div className={styles.footer}>
+        {renderLeft('<')}
+        <div className={styles.copyrightone}>© 2022-2023 E.des/gn</div>
+      </div>
+      <div className={styles.copyrighttwo}>© 2022-2023 E.des/gn</div>
     </div>
     </>
   )

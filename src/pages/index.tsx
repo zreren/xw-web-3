@@ -160,8 +160,7 @@ function Home() {
                  {/* footer 区域 */}
                 <div className='flex justify-center w-screen flex-row flex-wrap items-center mt-1 cursor-pointer'>
                   <div className='flex-1'>
-                    {/* <Image width={250} src={noscontacter} alt="" /> */}
-                    <Link href="/" className={styles.noscontacter}>
+                    <Link href="/contact" className={styles.noscontacter}>
                       <span className='absolute'>{str}</span>
                       <span className='absolute'>NOUS CONTACTER</span>
                       <span className='opacity-0'>11</span>

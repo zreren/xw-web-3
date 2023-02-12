@@ -34,8 +34,8 @@ const Navigation: React.FC<NavigationProps> = (props) => {
         <div className={cs(
           styles.item
         )}>
-          <span>PROJET</span>
-          <span>作品</span>
+          <Link href="/project">PROJET</Link>
+          <Link href="/project">作品</Link>
         </div>
         <div className={styles.item}>
           <span>VÈTEMENTS PERSONNALISÉS</span>
@@ -46,8 +46,8 @@ const Navigation: React.FC<NavigationProps> = (props) => {
           <span>合作流程</span>
         </div>
         <div className={styles.item}>
-          <span>CONTACT</span>
-          <span>联系我们</span>
+          <Link href="/contact">CONTACT</Link>
+          <Link href="/contact">联系我们</Link>
         </div>
      </div>
      <div className="flex justify-center items-center py-4">

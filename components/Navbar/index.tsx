@@ -6,7 +6,7 @@ import Navigation from "../Navigation";
 import cs from 'classnames'
 
 interface NavBarProps {
-  classname: any
+  classname?: string;
 }
 
 const Navbar: React.FC<NavBarProps> = (props) => {

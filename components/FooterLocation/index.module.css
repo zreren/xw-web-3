@@ -1,32 +1,24 @@
-.contact {
-  @apply min-h-screen bg-neutral-200 px-12 flex flex-col justify-between;
-}
 
-.tipsText {
-  position: absolute;
-  bottom: 5rem;
-  left: 50px;
-}
 
 .footer {
   @apply flex justify-between h-8 md:h-14 items-center font-semibold relative;
 }
-
-.left {
+.left, .right {
   @apply md:text-[40px] text-[24px] relative h-full;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
 }
 
-.left:hover {
+.left:hover, .right:hover {
   color: rgb(37 99 235);
   -webkit-text-fill-color: rgb(37 99 235);
 }
 
 .left span:nth-child(1) {
-  @apply left-0 align-middle;
+  @apply mr-2 align-middle;
   position: absolute;
   top: 0;
+  left: 0px;
   transition: all .3s;
 }
 
@@ -34,6 +26,7 @@
   @apply md:left-40 left-24;
   transition: all .3s;
   position: absolute;
+  
 }
 
 .left:hover span:nth-child(1) {
@@ -44,10 +37,38 @@
   @apply left-0;
 }
 
+
+/* 右侧部分 */
+
+.right span:nth-child(1) {
+  @apply md:right-96 right-56 align-middle;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+}
+
+.right span:nth-child(2) {
+  @apply md:right-4 right-0 align-middle;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+}
+
+.right:hover span:nth-child(1) {
+  @apply right-4;
+}
+
+.right:hover span:nth-child(2) {
+  @apply right-12;
+}
+
+
+/* 中间部分 - 版权 */
+
 .copyrightone {
   @apply absolute hidden md:block md:text-[14px] text-[8px];
   top: 38%;
-  right: 38%;
+  left: 38%;
 }
 
 .copyrighttwo {

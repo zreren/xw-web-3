@@ -1,46 +1,36 @@
-.contact {
-  @apply min-h-screen bg-neutral-200 px-12 flex flex-col justify-between;
-}
-
-.tipsText {
-  position: absolute;
-  bottom: 5rem;
-  left: 50px;
-}
-
 .footer {
   @apply flex justify-between h-8 md:h-14 items-center font-semibold relative;
 }
 
-.left {
+.right {
   @apply md:text-[40px] text-[24px] relative h-full;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
 }
 
-.left:hover {
+.right:hover {
   color: rgb(37 99 235);
   -webkit-text-fill-color: rgb(37 99 235);
 }
 
-.left span:nth-child(1) {
+.right span:nth-child(1) {
   @apply left-0 align-middle;
   position: absolute;
   top: 0;
   transition: all .3s;
 }
 
-.left span:nth-child(2) {
-  @apply md:left-40 left-24;
+.right span:nth-child(2) {
+  @apply md:left-8 left-6;
   transition: all .3s;
   position: absolute;
 }
 
-.left:hover span:nth-child(1) {
-  @apply md:left-10 left-6;
+.right:hover span:nth-child(1) {
+  @apply md:left-96 left-56;
 }
 
-.left:hover span:nth-child(2) {
+.right:hover span:nth-child(2) {
   @apply left-0;
 }
 
