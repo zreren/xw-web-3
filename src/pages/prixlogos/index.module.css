@@ -1,0 +1,36 @@
+.title {
+  @apply flex flex-col relative z-10;
+  color: white;
+  background-color: rgb(0, 88, 248);
+  margin-left: -3rem;
+  padding-left: 3rem;
+  width: 90%;
+}
+
+.item {
+  @apply relative;
+}
+
+.item > span {
+  /* @apply absolute; */
+  transition: all 1s;
+}
+
+.item > span:nth-child(2) {
+  left: 0;
+  bottom: 0;
+}
+
+.item:hover span:nth-child(1) {
+  @apply text-base md:translate-y-16 translate-y-10;
+  transition: all 1s;
+}
+
+.item:hover span:nth-child(2) {
+  @apply md:text-7xl text-3xl md:-translate-y-8 -translate-y-6;
+  transition: all 1s;
+}
+
+.imgBox {
+  width: 800px;
+}

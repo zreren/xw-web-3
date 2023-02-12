@@ -20,7 +20,7 @@ const Contact: React.FC<{}> = () => {
 
   return (
     <>
-    <Navbar classname="px-12" />
+    <Navbar classname="px-12 bg-neutral-200" />
     <div className={styles.contact}>
       
       <div className="flex md:flex-row flex-col-reverse">

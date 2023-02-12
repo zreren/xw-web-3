@@ -7,8 +7,15 @@ import Image from 'next/image'
 import FooterLocation from "@/components/FooterLocation";
 import personnalise from '@/public/images/personalise.png';
 import cs from 'classnames';
+import router from 'next/router';
 
 const Personnalise: NextPage<{}> = () => {
+
+  const gotoPrixlogos = () => {
+    router.push({
+      pathname: '/prixlogos'
+    })
+  }
 
   return (
     <div className={styles.personnalise}>
@@ -37,7 +44,7 @@ const Personnalise: NextPage<{}> = () => {
                 <p>Accessoires</p>
                 <p className="mb-4">配饰</p>
               </div>
-              <div>
+              <div onClick={gotoPrixlogos}>
                 <p>Prix pour 'impression de logos</p>
                 <p className="mb-4">印制 go价目装</p>
               </div>

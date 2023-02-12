@@ -27,7 +27,7 @@ const Navbar: React.FC<NavBarProps> = (props) => {
     <>
     {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
     <nav className={cs(
-      "w-full flex flex-row items-center justify-between md:px-12 py-4 px-4 bg-neutral-200",
+      "w-full flex flex-row items-center justify-between md:px-12 py-4 px-4",
       classname,
     )}>
        <div className="flex flex-row items-center justify-between">
