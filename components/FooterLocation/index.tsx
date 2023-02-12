@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './index.module.css';
 import Link from 'next/link';
+import cs from 'classnames';
 
 interface FooterLocationProps {
   left?: boolean;
   right?: boolean;
+  classname?: string;
 }
 
 const FooterLocation:React.FC<FooterLocationProps> = (props) => {
-
+  const { classname } = props;
   const renderLeft = (leftIcon: string) => {
 
     return (
@@ -22,7 +24,7 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
   const renderRight = (rightIcon: string) => {
 
     return (
-        <Link href="/" className={styles.right}>
+        <Link href="/contact" className={styles.right}>
           <span>{rightIcon}</span>
           <span>NOUS&nbsp;&nbsp;CONTACTER</span>
         </Link>
@@ -31,7 +33,9 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
 
   return (
     <>
-    <div className={styles.footer}>
+    <div className={cs(
+      classname,
+      styles.footer)}>
       {renderLeft('<')}
       <div className={styles.copyrightone}>© 2022-2023 E.des/gn</div>
       {renderRight('>')}

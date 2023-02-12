@@ -38,8 +38,8 @@ const Navigation: React.FC<NavigationProps> = (props) => {
           <Link href="/project">作品</Link>
         </div>
         <div className={styles.item}>
-          <span>VÈTEMENTS PERSONNALISÉS</span>
-          <span>工作服订制</span>
+          <Link href="/personnalise">VÈTEMENTS PERSONNALISÉS</Link>
+          <Link href="/personnalise">工作服订制</Link>
         </div>
         <div className={styles.item}>
           <span>PROCESSUS</span>

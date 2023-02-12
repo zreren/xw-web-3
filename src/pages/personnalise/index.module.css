@@ -1,0 +1,47 @@
+.personnalise {
+  @apply h-screen bg-transparent flex flex-col justify-between relative;
+  /* background: url(../../../public/images/personalise.png); */
+  /* background-repeat: no-repeat; */
+  
+}
+
+.content {
+  @apply px-12 flex flex-col md:flex-row justify-between z-10;
+  height: 70vh;
+}
+
+.linkContent {
+  @apply md:text-2xl text-[12px] text-blue-500;
+}
+
+.linkContent > div {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+
+.linkContent > div:hover {
+  color: white;;
+}
+
+.linkContent div:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -4rem;
+  width: 125%;
+  height: 90%;
+  z-index: -1;
+  background-color: rgb(0, 88, 248);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.linkContent div:hover:before {
+  transform: scaleX(1);
+}
+
+.copyrighttwo {
+  @apply md:hidden flex justify-center items-center text-[8px] font-semibold;
+}

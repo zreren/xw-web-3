@@ -1,7 +1,7 @@
 
 
 .footer {
-  @apply flex justify-between h-8 md:h-14 items-center font-semibold relative;
+  @apply flex justify-between h-8 md:h-14 items-center font-semibold relative z-20;
 }
 .left, .right {
   @apply md:text-[40px] text-[24px] relative h-full;
