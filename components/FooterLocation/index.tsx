@@ -2,22 +2,32 @@ import React from 'react';
 import styles from './index.module.css';
 import Link from 'next/link';
 import cs from 'classnames';
+import router from 'next/router';
 
 interface FooterLocationProps {
   left?: boolean;
   right?: boolean;
   classname?: string;
+  leftLocation?: string;
+  handleLeftCallback?: () => void;
 }
 
 const FooterLocation:React.FC<FooterLocationProps> = (props) => {
-  const { classname } = props;
+  const { classname, handleLeftCallback, leftLocation = '/' } = props;
   const renderLeft = (leftIcon: string) => {
 
+  const goLeft = () => {
+    if(handleLeftCallback) handleLeftCallback();
+    router.push({
+      pathname: leftLocation
+    })
+  }
+
     return (
-        <Link href="/" className={styles.left}>
+        <div onClick={goLeft} className={styles.left}>
           <span>RETOUR</span>
           <span>{leftIcon}</span>
-        </Link>
+        </div>
     )
   }
 
