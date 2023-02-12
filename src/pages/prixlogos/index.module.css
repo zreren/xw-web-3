@@ -13,7 +13,7 @@
 
 .item > span {
   /* @apply absolute; */
-  transition: all 1s;
+  /* transition: all 1s; */
 }
 
 .item > span:nth-child(2) {
