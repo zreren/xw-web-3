@@ -23,12 +23,12 @@
 
 .item:hover span:nth-child(1) {
   @apply text-base md:translate-y-16 translate-y-10;
-  transition: all 1s;
+  transition: all .7s;
 }
 
 .item:hover span:nth-child(2) {
   @apply md:text-7xl text-3xl md:-translate-y-8 -translate-y-6;
-  transition: all 1s;
+  transition: all .7s;
 }
 
 .imgBox {
