@@ -5,19 +5,26 @@ import Navbar from "@/components/Navbar";
 import styles from './index.module.css'
 import Image from 'next/image'
 import FooterLocation from "@/components/FooterLocation";
+import TshirtComponent from "@/components/TshirtComponent";
 import personnalise from '@/public/images/personalise.png';
 import workClothImg from '@/public/images/personnalise/workCloth.png';
 import cs from 'classnames';
+import { isBoolean } from 'lodash-es';
 import router from 'next/router';
 
 const Personnalise: NextPage<{}> = () => {
   // const [imageVisible, setImageVisible] = useState<boolean>(true);
-  const [menuVisibleObject, setMenuVisibleObject] = useState<Record<string, boolean>>({
+  const [menuVisibleObject, setMenuVisibleObject] = useState<Record<string, any>>({
     initVisible: true,
     workCloth: false,
     tablier: false,
     kitchenCloth: false,
   });
+  // const [subMenuContentVisible, setSubMenuContentVisible] = useState<Record<string, boolean>>({
+  //   tshirtContent: false,
+  //   poloContent: false,
+  //   sweatshirtContent: false,
+  // })
 
   const gotoPrixlogos = () => {
     router.push({
@@ -25,15 +32,28 @@ const Personnalise: NextPage<{}> = () => {
     })
   }
 
-  const handleClickMenu = (menu: string) => {
-    setMenuVisibleObject({
-      workCloth: false,
-      tablier: false,
-      kitchenCloth: false,
-      [menu]: true
-    })
+  const handleClickMenu = (menu: string, submenu:string) => {
+    if (!submenu) {
+      setMenuVisibleObject({
+        initVisible: false,
+        workCloth: false,
+        tablier: false,
+        kitchenCloth: false,
+        [menu]: true
+      })
+    } else {
+      setMenuVisibleObject({
+        initVisible: false,
+        workCloth: false,
+        tablier: false,
+        kitchenCloth: false,
+        [menu]: {
+          [submenu]: true
+        }
+      })
+    }
   }
-  console.log('xxx', menuVisibleObject.kitchenCloth)
+
   return (
     <div className={cs(
       styles.personnalise,
@@ -48,16 +68,16 @@ const Personnalise: NextPage<{}> = () => {
               "md:text-2xl text-1xl text-blue-500",
               styles.linkContent
             )}>
-              <div onClick={() => handleClickMenu('workCloth')} className={cs(styles.item, menuVisibleObject.workCloth ? styles.active : '')}>
+              <div onClick={() => handleClickMenu('workCloth', '')} className={cs(styles.item, menuVisibleObject.workCloth ? styles.active : '')}>
                 <p>Vètements de travail</p>
                 <p>常规工作服</p>
               </div>
                 {menuVisibleObject.workCloth && <ul className="md:text-[18px] text-[8px] text-black italic">
-                  <li className="cursor-pointer"><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>T-shirt</span></li>
-                  <li className="cursor-pointer"><span className="md:text-2xl text-xl text-blue-600  font-semibold">•&nbsp;</span><span>Polo</span></li>
-                  <li className="cursor-pointer"><span className="md:text-2xl text-xl text-blue-600  font-semibold">•&nbsp;</span><span>Sweatshirt</span></li>
+                  <li className="cursor-pointer" onClick={() => handleClickMenu('workCloth', 'tshirtContent')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>T-shirt</span></li>
+                  <li className="cursor-pointer" onClick={() => handleClickMenu('workCloth', 'poloContent')}><span className="md:text-2xl text-xl text-blue-600  font-semibold">•&nbsp;</span><span>Polo</span></li>
+                  <li className="cursor-pointer" onClick={() => handleClickMenu('workCloth', 'sweatshirtContent')}><span className="md:text-2xl text-xl text-blue-600  font-semibold">•&nbsp;</span><span>Sweatshirt</span></li>
                 </ul>}
-              <div onClick={() => handleClickMenu('tablier')} className={cs(
+              <div onClick={() => handleClickMenu('tablier', '')} className={cs(
                 "my-2",
                 styles.item,
                 menuVisibleObject.tablier ? styles.active : ''
@@ -66,16 +86,16 @@ const Personnalise: NextPage<{}> = () => {
                 <p>围裙</p>
               </div>
               {menuVisibleObject.tablier && <ul className="md:text-[18px] text-[8px] text-black italic">
-                <li className="cursor-pointer"><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>全身围裙</span></li>
-                <li className="cursor-pointer"><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>半身围裙</span></li>
+                <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'half')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>全身围裙</span></li>
+                <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'complete')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>半身围裙</span></li>
               </ul>}
-              <div onClick={() => handleClickMenu('kitchenCloth')} className={
+              <div onClick={() => handleClickMenu('kitchenCloth', '')} className={
                 menuVisibleObject.kitchenCloth ? styles.active : ''
               }>
                 <p>vétements de travail de cuisine</p>
                 <p>厨房工作服</p>
               </div>
-              <div className="my-2">
+              <div onClick={() => handleClickMenu('accessories', '')} className="my-2">
                 <p>Accessoires</p>
                 <p>配饰</p>
               </div>
@@ -92,9 +112,14 @@ const Personnalise: NextPage<{}> = () => {
               <p>工作服订制</p>
             </div>
           </div>}
-            {menuVisibleObject.workCloth && <div>
+            {menuVisibleObject.workCloth && isBoolean(menuVisibleObject.workCloth) && <div>
               <Image className={styles.workCloth} src={workClothImg} alt="" />
             </div>}
+          {
+            menuVisibleObject.workCloth.tshirtContent && (
+              <TshirtComponent />
+            )
+          }
         </div>
         
       </div>
