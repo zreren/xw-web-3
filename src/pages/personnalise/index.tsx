@@ -6,6 +6,7 @@ import styles from './index.module.css'
 import Image from 'next/image'
 import FooterLocation from "@/components/FooterLocation";
 import personnalise from '@/public/images/personalise.png';
+import workClothImg from '@/public/images/personnalise/workCloth.png';
 import cs from 'classnames';
 import router from 'next/router';
 
@@ -15,6 +16,7 @@ const Personnalise: NextPage<{}> = () => {
     initVisible: true,
     workCloth: false,
     tablier: false,
+    kitchenCloth: false,
   });
 
   const gotoPrixlogos = () => {
@@ -27,10 +29,11 @@ const Personnalise: NextPage<{}> = () => {
     setMenuVisibleObject({
       workCloth: false,
       tablier: false,
+      kitchenCloth: false,
       [menu]: true
     })
   }
-
+  console.log('xxx', menuVisibleObject.kitchenCloth)
   return (
     <div className={cs(
       styles.personnalise,
@@ -66,7 +69,9 @@ const Personnalise: NextPage<{}> = () => {
                 <li className="cursor-pointer"><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>全身围裙</span></li>
                 <li className="cursor-pointer"><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>半身围裙</span></li>
               </ul>}
-              <div className="">
+              <div onClick={() => handleClickMenu('kitchenCloth')} className={
+                menuVisibleObject.kitchenCloth ? styles.active : ''
+              }>
                 <p>vétements de travail de cuisine</p>
                 <p>厨房工作服</p>
               </div>
@@ -80,17 +85,20 @@ const Personnalise: NextPage<{}> = () => {
               </div>
             </div>
           </div>
-          <div className="flex text-right flex-col md:mr-20 md:justify-center md:mt-48 md:text-5xl text-4xl font-bold">
-            {menuVisibleObject.initVisible &&  <div>
+          {menuVisibleObject.initVisible &&  <div className="flex text-right flex-col md:mr-20 md:justify-center md:mt-48 md:text-5xl text-4xl font-bold">
+            <div>
               <p>VÊTEMENTS</p>
               <p className="md:my-8 my-4">PERSONNALISES</p>
               <p>工作服订制</p>
+            </div>
+          </div>}
+            {menuVisibleObject.workCloth && <div>
+              <Image className={styles.workCloth} src={workClothImg} alt="" />
             </div>}
-          </div>
         </div>
         
       </div>
-      <div className="px-12 mb-4">
+      <div className="px-12 md:mb-4 mb-1">
         <FooterLocation classname="z-10" />
       </div>
     </div>

@@ -55,3 +55,12 @@
 .copyrighttwo {
   @apply md:hidden flex justify-center items-center text-[8px] font-semibold;
 }
+
+.workCloth {
+  width: 100%;
+  height: 100%;
+  /* background-size: cover; */
+  object-fit: cover;
+  object-position: left top;
+  overflow-x: scroll;
+}

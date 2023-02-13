@@ -23,7 +23,7 @@
 }
 
 .left span:nth-child(2) {
-  @apply md:left-40 left-24;
+  @apply md:left-40 left-28;
   transition: all .3s;
   position: absolute;
   
@@ -48,18 +48,18 @@
 }
 
 .right span:nth-child(2) {
-  @apply md:right-4 right-0 align-middle;
+  @apply md:right-4 -right-4 align-middle;
   position: absolute;
   top: 0;
   transition: all .3s;
 }
 
 .right:hover span:nth-child(1) {
-  @apply right-4;
+  @apply md:right-0 -right-4;
 }
 
 .right:hover span:nth-child(2) {
-  @apply right-12;
+  @apply md:right-12 right-2;
 }
 
 
