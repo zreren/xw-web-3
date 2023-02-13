@@ -37,7 +37,7 @@ const Navbar: React.FC<NavBarProps> = (props) => {
       </div>
       <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
     </div>
-    <div onClick={toogleNavigation}>
+    <div className="cursor-pointer" onClick={toogleNavigation}>
       <Image src={navigationlogo} alt="navlogo" />
     </div>
     </nav>
