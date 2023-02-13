@@ -11,20 +11,16 @@ import workClothImg from '@/public/images/personnalise/workCloth.png';
 import cs from 'classnames';
 import { isBoolean } from 'lodash-es';
 import router from 'next/router';
+import PoloComponent from "@/components/PoloComponent";
+import SweatshirtComponent from "@/components/SwearShirtComponent";
 
 const Personnalise: NextPage<{}> = () => {
-  // const [imageVisible, setImageVisible] = useState<boolean>(true);
   const [menuVisibleObject, setMenuVisibleObject] = useState<Record<string, any>>({
     initVisible: true,
     workCloth: false,
     tablier: false,
     kitchenCloth: false,
   });
-  // const [subMenuContentVisible, setSubMenuContentVisible] = useState<Record<string, boolean>>({
-  //   tshirtContent: false,
-  //   poloContent: false,
-  //   sweatshirtContent: false,
-  // })
 
   const gotoPrixlogos = () => {
     router.push({
@@ -120,8 +116,15 @@ const Personnalise: NextPage<{}> = () => {
               <TshirtComponent />
             )
           }
+          {
+            menuVisibleObject.workCloth.poloContent &&
+            <PoloComponent />
+          }
+          {
+            menuVisibleObject.workCloth.sweatshirtContent  && 
+            <SweatshirtComponent />
+          }
         </div>
-        
       </div>
       <div className="px-12 md:mb-4 mb-1">
         <FooterLocation classname="z-10" />

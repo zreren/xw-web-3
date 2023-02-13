@@ -1,9 +1,9 @@
-.shirt {
+.sweatshirt {
   @apply h-full  w-full flex items-center flex-col justify-between;
   overflow-y: scroll;
 }
 
-.shirt img {
+.sweatshirt img {
   pointer-events: none
 }
 

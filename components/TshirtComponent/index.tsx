@@ -55,6 +55,7 @@ const TshirtComponent:React.FC<{}> = (props) => {
           slidesPerView={3}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
+          navigation
         >
           {slides}
         </Swiper>
