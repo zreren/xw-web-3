@@ -14,6 +14,8 @@ import router from 'next/router';
 import PoloComponent from "@/components/PoloComponent";
 import SweatshirtComponent from "@/components/SwearShirtComponent";
 import Tablier from "@/components/Tablier";
+import HalfTablier from "@/components/Tablier/HalfTablier";
+import CompleteTablier from "@/components/Tablier/CompleteTablier";
 
 const Personnalise: NextPage<{}> = () => {
   const [menuVisibleObject, setMenuVisibleObject] = useState<Record<string, any>>({
@@ -85,8 +87,8 @@ const Personnalise: NextPage<{}> = () => {
                 <p>围裙</p>
               </div>
               {menuVisibleObject.tablier && <ul className="md:text-[18px] text-[8px] text-black italic">
-                <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'half')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>全身围裙</span></li>
-                <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'complete')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>半身围裙</span></li>
+                <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'half')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>半身围裙</span></li>
+                <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'complete')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>全身围裙</span></li>
               </ul>}
               <div onClick={() => handleClickMenu('kitchenCloth', '')} className={
                 menuVisibleObject.kitchenCloth ? styles.active : ''
@@ -132,6 +134,11 @@ const Personnalise: NextPage<{}> = () => {
           {menuVisibleObject.tablier && isBoolean(menuVisibleObject.tablier) && <div className={styles.tablier}>
             <Tablier />
           </div>}
+          {menuVisibleObject.tablier.half &&
+            <HalfTablier />}
+          {menuVisibleObject.tablier.complete && (
+            <CompleteTablier />
+          )}
         </div>
       </div>
       <div className="px-12 md:mb-4 mb-1">

@@ -1,0 +1,29 @@
+.shirt {
+  @apply h-full  w-full flex items-center flex-col justify-between md:mt-0 mt-8;
+  overflow-y: scroll;
+}
+
+.shirt img {
+  pointer-events: none
+}
+
+.short {
+  @apply md:w-4/5 w-full flex flex-col;
+}
+
+.title {
+  @apply flex flex-row justify-between items-center;
+  border-bottom: 1px solid black;
+}
+
+.swiper {
+  @apply w-full;
+}
+
+.swiper > div {
+  @apply flex justify-center;
+}
+
+.swiper li {
+  @apply flex items-center;
+}
