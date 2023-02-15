@@ -13,6 +13,7 @@ import { isBoolean } from 'lodash-es';
 import router from 'next/router';
 import PoloComponent from "@/components/PoloComponent";
 import SweatshirtComponent from "@/components/SwearShirtComponent";
+import Tablier from "@/components/Tablier";
 
 const Personnalise: NextPage<{}> = () => {
   const [menuVisibleObject, setMenuVisibleObject] = useState<Record<string, any>>({
@@ -49,6 +50,8 @@ const Personnalise: NextPage<{}> = () => {
       })
     }
   }
+
+  console.log('menuVisibleObject.tablier', menuVisibleObject.tablier)
 
   return (
     <div className={cs(
@@ -108,6 +111,7 @@ const Personnalise: NextPage<{}> = () => {
               <p>工作服订制</p>
             </div>
           </div>}
+              {/* 工作服部分 */}
             {menuVisibleObject.workCloth && isBoolean(menuVisibleObject.workCloth) && <div>
               <Image className={styles.workCloth} src={workClothImg} alt="" />
             </div>}
@@ -124,6 +128,10 @@ const Personnalise: NextPage<{}> = () => {
             menuVisibleObject.workCloth.sweatshirtContent  && 
             <SweatshirtComponent />
           }
+          {/* 围裙部分 */}
+          {menuVisibleObject.tablier && isBoolean(menuVisibleObject.tablier) && <div className={styles.tablier}>
+            <Tablier />
+          </div>}
         </div>
       </div>
       <div className="px-12 md:mb-4 mb-1">
