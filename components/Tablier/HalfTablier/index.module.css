@@ -8,7 +8,7 @@
 }
 
 .short {
-  @apply md:w-4/5 w-full flex flex-col;
+  @apply md:w-4/5 w-full flex flex-col my-20;
 }
 
 .title {
