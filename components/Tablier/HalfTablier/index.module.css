@@ -1,5 +1,5 @@
 .shirt {
-  @apply h-full  w-full flex items-center flex-col justify-between md:mt-0 mt-8;
+  @apply h-full  w-full flex items-center flex-col justify-between md:mt-0 mt-24;
   overflow-y: scroll;
 }
 

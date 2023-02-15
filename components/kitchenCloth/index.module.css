@@ -1,0 +1,8 @@
+.chef {
+  @apply h-full  w-full flex items-center flex-col justify-between md:mt-0 mt-8;
+  overflow-y: scroll;
+}
+
+.item {
+  @apply w-full flex flex-col my-20;
+}

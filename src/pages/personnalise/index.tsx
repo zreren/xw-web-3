@@ -16,6 +16,7 @@ import SweatshirtComponent from "@/components/SwearShirtComponent";
 import Tablier from "@/components/Tablier";
 import HalfTablier from "@/components/Tablier/HalfTablier";
 import CompleteTablier from "@/components/Tablier/CompleteTablier";
+import KitchenCloth from "@/components/kitchenCloth";
 
 const Personnalise: NextPage<{}> = () => {
   const [menuVisibleObject, setMenuVisibleObject] = useState<Record<string, any>>({
@@ -139,6 +140,11 @@ const Personnalise: NextPage<{}> = () => {
           {menuVisibleObject.tablier.complete && (
             <CompleteTablier />
           )}
+
+          {/* 厨房服装部分  */}
+          {menuVisibleObject.kitchenCloth && isBoolean(menuVisibleObject.kitchenCloth) && <div className={styles.tablier}>
+            <KitchenCloth />
+          </div>}
         </div>
       </div>
       <div className="px-12 md:mb-4 mb-1">
