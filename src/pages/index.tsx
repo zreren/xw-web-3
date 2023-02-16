@@ -92,12 +92,12 @@ function Home() {
                   <span>sites web et d'emballages, etc. L'équipe d'E. design se réjouit d'écouter les</span>
                   <span>besoins de ses clients et de trouver la solution la plus adaptée.</span>
                 </div>
-                <div className='flex flex-col items-end font-semibold text-blue-700 mt-12'>
+                <div className='flex flex-col items-end font-extrabold text-2xl text-blue-600 mt-12'>
                   <span>PARIS11.</span>
-                  <span>61 Bid. Voltaire</span>
+                  <span>61 Bld. Voltaire</span>
                   <span>→ CONTACT NOUS</span>
-                  <span onClick={toBottom} className='mr-32 cursor-pointer'>
-                    <Image src={iconarrowdown} alt="" />
+                  <span onClick={toBottom} className='mr-56 cursor-pointer'>
+                    <Image width={70} src={iconarrowdown} alt="" />
                   </span>
                 </div>
               </div>
