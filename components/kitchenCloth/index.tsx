@@ -15,19 +15,33 @@ const KitchenCloth:React.FC<{}> = (props) => {
       >
         <div className={styles.item}>
           <Image src={chefIndex} alt="" />
+          <div className="flex justify-center items-center">
+            © 2022-2023 E.des/gn
+          </div>
         </div>
         <div className={styles.item}>
           <Image src={chef1} alt="" />
+          <div>
+          vêtements de chef 101 Blanc
+          </div>
         </div>
         <div className={styles.item}>
           <Image src={chef2} alt="" />
+          <div>
+          vêtements de chef 101 Noir
+          </div>
         </div>
         <div className={styles.item}>
           <Image src={chef3} alt="" />
+          <div>
+          vêtements de chef 102 Blanc/Noir
+          </div>
         </div>
         <div className={styles.item}>
           <Image src={chef4} alt="" />
-          <div></div>
+          <div>
+          vêtements de chef 103 Blanc/Noir
+          </div>
         </div>
       </div>
   )
