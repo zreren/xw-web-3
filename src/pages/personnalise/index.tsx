@@ -72,7 +72,7 @@ const Personnalise: NextPage<{}> = () => {
             )}>
               <div onClick={() => handleClickMenu('workCloth', '')} className={cs(styles.item, menuVisibleObject.workCloth ? styles.active : '')}>
                 <p>Vètements de travail</p>
-                <p>常规工作服</p>
+                <p className="text-[20px]">常规工作服</p>
               </div>
                 {menuVisibleObject.workCloth && <ul className="md:text-[18px] text-[8px] text-black italic">
                   <li className="cursor-pointer" onClick={() => handleClickMenu('workCloth', 'tshirtContent')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>T-shirt</span></li>
@@ -85,7 +85,7 @@ const Personnalise: NextPage<{}> = () => {
                 menuVisibleObject.tablier ? styles.active : ''
               )}>
                 <p>Tablier</p>
-                <p>围裙</p>
+                <p className="text-[20px]">围裙</p>
               </div>
               {menuVisibleObject.tablier && <ul className="md:text-[18px] text-[8px] text-black italic">
                 <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'half')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>半身围裙</span></li>
@@ -95,23 +95,23 @@ const Personnalise: NextPage<{}> = () => {
                 menuVisibleObject.kitchenCloth ? styles.active : ''
               }>
                 <p>vétements de travail de cuisine</p>
-                <p>厨房工作服</p>
+                <p className="text-[20px]">厨房工作服</p>
               </div>
               <div onClick={() => handleClickMenu('accessories', '')} className="my-2">
                 <p>Accessoires</p>
-                <p>配饰</p>
+                <p className="text-[20px]">配饰</p>
               </div>
               <div onClick={gotoPrixlogos}>
                 <p>Prix pour 'impression de logos</p>
-                <p>印制 go价目装</p>
+                <p className="text-[20px]">印制 go价目装</p>
               </div>
             </div>
           </div>
-          {menuVisibleObject.initVisible &&  <div className="flex text-right flex-col md:mr-20 md:justify-center md:mt-48 md:text-5xl text-4xl font-bold">
+          {menuVisibleObject.initVisible &&  <div className="flex text-right flex-col md:mr-20 md:justify-center md:mt-48 md:text-8xl text-4xl font-semibold">
             <div>
               <p>VÊTEMENTS</p>
               <p className="md:my-8 my-4">PERSONNALISES</p>
-              <p>工作服订制</p>
+              <p className="md:text-5xl text-4xl ">工作服订制</p>
             </div>
           </div>}
               {/* 工作服部分 */}
