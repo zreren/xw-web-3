@@ -18,19 +18,26 @@ const Navigation: React.FC<NavigationProps> = (props) => {
 
   return (
     <div className={styles.navigation}>
-      <nav className="w-full flex flex-row items-center justify-between px-12 py-4 px-4">
-       <div className="flex flex-row items-center justify-between">
-      <div className='flex flex-col'>
-        <div><span className='md:text-5xl text-4xl font-bold'>E.</span><span className='text-3xl font-semibold'>design</span></div>
-        <div className='md:text-2xl text-1xl font-semibold  text-white'>小雯工作室</div>
-      </div>
-      <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
-    </div>
-    <div className="cursor-pointer" onClick={closeNavigation}>
-      <Image className="bg-white bg-blend-screen" src={navigationlogo} alt="navlogo" />
-    </div>
+      <div className="h-full bg-text-blue-600">
+      <nav className={cs(
+        styles.nav,
+        "w-full flex flex-row items-center justify-between px-12 mt-4 px-4"
+      )}>
+       <div className="flex flex-row items-center justify-between w-full">
+          <div>
+            <span className='md:text-5xl text-4xl font-bold'>E.</span>
+            <span className='md:text-4xl font-semibold tracking-wider	'>design</span>
+            <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
+          </div>
+          <div className="cursor-pointer" onClick={closeNavigation}>
+          <Image className="bg-white bg-blend-screen" src={navigationlogo} alt="navlogo" />
+        </div>
+        </div>
     </nav>
-     <div className="mt-12 md:text-2xl text-1xl">
+
+     <div className="h-full md:text-2xl text-1xl flex flex-col justify-between">
+     <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-white'>小雯工作室</div>
+      <div>
         <div className={cs(
           styles.item
         )}>
@@ -49,9 +56,16 @@ const Navigation: React.FC<NavigationProps> = (props) => {
           <Link href="/contact">CONTACT</Link>
           <Link href="/contact">联系我们</Link>
         </div>
+        <div className={styles.copyright}>
+        © 2022-2023 E.des/gn
+        </div>
+        <div className="flex justify-center items-center py-4">
+      </div>
+      <div className="flex justify-center items-center">
+        © 2022-2023 E.des/gn
+      </div>
      </div>
-     <div className="flex justify-center items-center py-4">
-      © 2022-2023 E.des/gn
+     </div>
      </div>
     </div>
   )

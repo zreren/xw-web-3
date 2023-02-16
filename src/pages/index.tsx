@@ -104,53 +104,51 @@ function Home() {
              
             </div>
             {/*  Content Menu */}
-            <div className='flex flex-col'>
-              <div className='md:text-[32px] text-[24px] text-blue-600'>
+            <div className='flex flex-col font-bold'>
+              <div className='md:text-[40px] text-[28px] text-blue-600 tracking-wider'>
                 SUR MESURE</div>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[20px] text-[16px]' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
                 <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[20px] w-[16px] bg-blend-lighten' src={branding} alt="" />
+                  <Image className='md:w-[32px] w-[28px]' src={branding} alt="" />
                 </span>
-                <span>
-                  EBRANDING 品牌形象规划
-                </span>
+                <span className='tracking-wider'>EBRANDING 品牌形象规划</span>
               </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[20px] text-[16px]' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
               <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[20px] w-[16px]' src={menu} alt="" />
+                  <Image className='md:w-[32px] w-[28px]' src={menu} alt="" />
                 </span>
                 <span>
-                  MENU DESIGN 菜单订制
+                  <span className='tracking-wider'>MENU DESIGN 菜单订制</span>
                 </span>
                 </Link>
-                <Link className='flex flex-row items-center hover:text-blue-600 md:text-[20px] text-[16px]' href={''}>
+                <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
               <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[20px] w-[16px]' src={menu} alt="" />
+                  <Image className='md:w-[32px] w-[28px]' src={menu} alt="" />
                 </span>
                 <span>
-                  攝影
+                <span className='tracking-wider'> PHOTOGRAPHIE 攝影</span>
                 </span>
                 </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[20px] text-[16px]' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
               <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[20px] w-[16px]' src={photographie} alt="" />
+                  <Image className='md:w-[32px] w-[28px]' src={photographie} alt="" />
                 </span>
                 <span>
-                M FLYER/DEPLIANT/ BROCHURE 广告纸/页/册
+                <span className='tracking-wider'> M FLYER/DEPLIANT/ BROCHURE 广告纸/页/册</span>
                 </span>
                 </Link>
               
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[20px] text-[16px]' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
               <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[20px] w-[16px]' src={tampon} alt="" />
+                  <Image className='md:w-[32px] w-[28px]' src={tampon} alt="" />
                 </span>
                 <span>
-                凸TAMPON 公司/优惠卡印章
+                <span className='tracking-wider'>TAMPON 公司/优惠卡印章</span>
                 </span>
                 </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[20px] text-[16px]' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
                 <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[20px] w-[16px]' src={vetement} alt="" />
+                  <Image className='md:w-[32px] w-[28px]' src={vetement} alt="" />
                 </span>
                 <span>
                 IVETEMENT PERSONNALISES 工作服订制

@@ -1,8 +1,17 @@
 .navigation {
-  @apply fixed text-white w-full bg-black z-50;
+  @apply fixed text-white w-full bg-black z-50 flex flex-col h-screen;
+  /* background-color: red; */
+}
+
+.nav {
+  border-bottom: 1px solid white;
 }
 
 .item {
-  @apply flex justify-between px-12 py-4;
+  @apply flex justify-between px-12 md:text-4xl text-xl pt-2 font-semibold tracking-wider;
   border-bottom: 1px solid white;
+}
+
+.copyright {
+  @apply flex justify-center py-9 md:text-[16px] text-[12px];
 }
