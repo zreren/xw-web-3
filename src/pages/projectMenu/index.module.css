@@ -1,0 +1,35 @@
+.projectMenu {
+  @apply w-full h-screen flex flex-col;
+}
+
+.head {
+  @apply flex flex-row;
+}
+
+.infos {
+  @apply flex items-start md:text-3xl text-2xl ml-10 font-bold flex items-center;
+}
+
+.other {
+  @apply flex-1 flex flex-col justify-between;
+  background-color: lightgreen
+}
+
+.navigation {
+  @apply fixed text-white w-full bg-black z-50 flex flex-col h-screen;
+}
+
+.nav {
+  @apply px-12 pt-4;
+  border-bottom: 1px solid white;
+}
+
+.item {
+  @apply flex justify-between px-12 md:text-4xl text-xl pt-2 font-semibold tracking-wider;
+  border-bottom: 1px solid white;
+}
+
+.copyright {
+  @apply flex justify-center py-9 md:text-[16px] text-[12px];
+}
+
