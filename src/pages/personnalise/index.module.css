@@ -1,8 +1,5 @@
 .personnalise {
   @apply h-screen flex flex-col justify-between relative;
-  /* background: url(../../../public/images/personalise.png); */
-  /* background-repeat: no-repeat; */
-  
 }
 
 .content {
@@ -59,7 +56,6 @@
 .workCloth {
   width: 100%;
   height: 100%;
-  /* background-size: cover; */
   object-fit: cover;
   object-position: left top;
   overflow-x: scroll;
@@ -69,5 +65,4 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  /* height: 500px; */
 }

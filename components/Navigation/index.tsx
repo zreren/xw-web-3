@@ -21,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
       <div className="h-full bg-text-blue-600">
       <nav className={cs(
         styles.nav,
-        "w-full flex flex-row items-center justify-between px-12 mt-4 px-4"
+        "w-full flex flex-row items-center justify-between px-12 mt-4"
       )}>
        <div className="flex flex-row items-center justify-between w-full">
           <div>

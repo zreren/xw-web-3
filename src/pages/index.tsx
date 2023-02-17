@@ -72,7 +72,7 @@ function Home() {
               <div><span className='md:text-5xl text-4xl font-bold'>E.</span><span className='text-3xl font-semibold'>design</span></div>
               <div className='md:text-2xl text-1xl font-semibold'>小雯工作室</div>
             </div>
-            <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
+            <Link href='/contact' className='md:text-[44px] text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className='cursor-pointer' onClick={toogleNavigation}>
             <Image src={navigationlogo} alt="navlogo" />
@@ -85,7 +85,7 @@ function Home() {
           <div ref={contentRef} className='flex flex-col px-8 pt-32 justify-between	'>
             <div style={{ height: '80vh'}}>
               <div className='flex flex-col md:text-[16px] text-[13px]'>
-                <div className='flex flex-col font-semibold'>
+                <div className='flex md:text-[24px] text-[16px] flex-col font-semibold'>
                   <span>Forte de ses années d'expérience dans le domaine de la conception visuelle</span>
                   <span>et graphique, E. design est en mesure de fournir des services de conception</span>
                   <span>visuelle tels que la conception de marques, de photographies, de menus, de</span>
@@ -105,50 +105,50 @@ function Home() {
             </div>
             {/*  Content Menu */}
             <div className='flex flex-col font-bold'>
-              <div className='md:text-[40px] text-[28px] text-blue-600 tracking-wider'>
+              <div className='md:text-[56px] text-[48px] text-blue-600 tracking-wider'>
                 SUR MESURE</div>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-[20px] font-bold mb-2	' href={'/projectMenu?active=brand'}>
                 <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[32px] w-[28px]' src={branding} alt="" />
+                  <Image className='md:w-[42px] w-[20px]' src={branding} alt="" />
                 </span>
                 <span className='tracking-wider'>EBRANDING 品牌形象规划</span>
               </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4' href={''}>
               <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[32px] w-[28px]' src={menu} alt="" />
+                  <Image className='md:w-[42px] w-[20px]' src={menu} alt="" />
                 </span>
                 <span>
                   <span className='tracking-wider'>MENU DESIGN 菜单订制</span>
                 </span>
                 </Link>
-                <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
+                <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={''}>
               <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[32px] w-[28px]' src={menu} alt="" />
+                  <Image className='md:w-[42px] w-[20px]' src={menu} alt="" />
                 </span>
                 <span>
                 <span className='tracking-wider'> PHOTOGRAPHIE 攝影</span>
                 </span>
                 </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={''}>
               <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[32px] w-[28px]' src={photographie} alt="" />
+                  <Image className='md:w-[42px] w-[32px]' src={photographie} alt="" />
                 </span>
                 <span>
-                <span className='tracking-wider'> M FLYER/DEPLIANT/ BROCHURE 广告纸/页/册</span>
+                <span className='tracking-wider'>FLYER/DEPLIANT/ BROCHURE 广告纸/页/册</span>
                 </span>
                 </Link>
               
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={''}>
               <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[32px] w-[28px]' src={tampon} alt="" />
+                  <Image className='md:w-[42px] w-[20px]' src={tampon} alt="" />
                 </span>
                 <span>
                 <span className='tracking-wider'>TAMPON 公司/优惠卡印章</span>
                 </span>
                 </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-3xl text-2xl font-bold	' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={''}>
                 <span className='mr-2 font-semibold'>
-                  <Image className='md:w-[32px] w-[28px]' src={vetement} alt="" />
+                  <Image className='md:w-[42px] w-[32px]' src={vetement} alt="" />
                 </span>
                 <span>
                 IVETEMENT PERSONNALISES 工作服订制
