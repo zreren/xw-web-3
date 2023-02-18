@@ -3,7 +3,7 @@
 }
 
 .slide {
-  display: block;
+  display: flex;
   /* width: 100% !important; */
   /* height: 1000% !important; */
   /* object-fit: cover !important; */

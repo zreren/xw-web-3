@@ -17,11 +17,17 @@ const WorkCloth:React.FC<{}> = (props) => {
       arr.push(
         <SwiperSlide className={styles.slide} key={`slide-1`}>
           <img
-            className="w-full" 
+            className="" 
             src={`/images/personnalise/workCloth/fotor${i + 1}.png`}
             style={{ listStyle: 'none' }}
             alt={`Slide ${i+1}`}
           />
+          {/* <img
+            className="" 
+            src={`/images/personnalise/workCloth/fotor${i + 1}.png`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide ${i+2}`}
+          /> */}
         </SwiperSlide>
       );
     }
@@ -34,9 +40,13 @@ const WorkCloth:React.FC<{}> = (props) => {
         modules={[Navigation]}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
+        slidesPerView={2}
       >
         {slides}
       </Swiper>
+    // <div className="overflow-scroll	">
+    //   <img className="w-[2000px]" src={workCloth.src} />
+    // </div>
   )
 }
 
