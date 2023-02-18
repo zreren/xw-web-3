@@ -18,6 +18,7 @@ import HalfTablier from "@/components/Tablier/HalfTablier";
 import CompleteTablier from "@/components/Tablier/CompleteTablier";
 import KitchenCloth from "@/components/kitchenCloth";
 import AccessoiresComponent from "@/components/Accessoires";
+import WorkCloth from "@/components/WorkCloth";
 
 const Personnalise: NextPage<{}> = () => {
   const [menuVisibleObject, setMenuVisibleObject] = useState<Record<string, any>>({
@@ -55,14 +56,16 @@ const Personnalise: NextPage<{}> = () => {
     }
   }
 
-  console.log('menuVisibleObject.tablier', menuVisibleObject.tablier)
+  console.log('menuVisibleObject.tablier', menuVisibleObject)
 
   return (
-    <div className={cs(
+    <div
+      className={cs(
+        menuVisibleObject.initVisible ? 'bg-[url(/images/personalise.png)] bg-no-repeat bg-bottom' : '',
       styles.personnalise,
       menuVisibleObject.initVisible ?  '' : 'bg-white'
       )}>
-        {menuVisibleObject.initVisible && <Image className="absolute h-full w-full z-0" src={personnalise} alt="" />}
+        {/* {menuVisibleObject.initVisible && <Image className="absolute h-full w-full z-0" src={personnalise} alt="" />} */}
       <div className="flex flex-col">
         <Navbar classname="bg-transparent px-12 z-10" />
         <div className={styles.content}>
@@ -76,9 +79,26 @@ const Personnalise: NextPage<{}> = () => {
                 <p className="text-[20px]">常规工作服</p>
               </div>
                 {menuVisibleObject.workCloth && <ul className="md:text-[18px] text-[8px] text-black italic">
-                  <li className="cursor-pointer" onClick={() => handleClickMenu('workCloth', 'tshirtContent')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>T-shirt</span></li>
-                  <li className="cursor-pointer" onClick={() => handleClickMenu('workCloth', 'poloContent')}><span className="md:text-2xl text-xl text-blue-600  font-semibold">•&nbsp;</span><span>Polo</span></li>
-                  <li className="cursor-pointer" onClick={() => handleClickMenu('workCloth', 'sweatshirtContent')}><span className="md:text-2xl text-xl text-blue-600  font-semibold">•&nbsp;</span><span>Sweatshirt</span></li>
+                  <li className={cs(
+                    "cursor-pointer",
+                    menuVisibleObject.workCloth.tshirtContent ? styles.activeSubMenu : ""
+                  )} onClick={() => handleClickMenu('workCloth', 'tshirtContent')}>
+                    <span className={cs(
+                      "md:text-2xl text-blue-600 text-xl font-semibold")}>•&nbsp;</span>
+                      <span>T-shirt</span>
+                    </li>
+                  <li
+                    className={cs(
+                      "cursor-pointer",
+                      menuVisibleObject.workCloth.poloContent ? styles.activeSubMenu : ""
+                    )} 
+                    onClick={() => handleClickMenu('workCloth', 'poloContent')}><span className="md:text-2xl text-xl text-blue-600  font-semibold">•&nbsp;</span><span>Polo</span></li>
+                  <li
+                    className={cs(
+                      "cursor-pointer",
+                      menuVisibleObject.workCloth.sweatshirtContent ? styles.activeSubMenu : ""
+                    )} 
+                    onClick={() => handleClickMenu('workCloth', 'sweatshirtContent')}><span className="md:text-2xl text-xl text-blue-600  font-semibold">•&nbsp;</span><span>Sweatshirt</span></li>
                 </ul>}
               <div onClick={() => handleClickMenu('tablier', '')} className={cs(
                 "my-2",
@@ -89,8 +109,18 @@ const Personnalise: NextPage<{}> = () => {
                 <p className="text-[20px]">围裙</p>
               </div>
               {menuVisibleObject.tablier && <ul className="md:text-[18px] text-[8px] text-black italic">
-                <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'half')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>半身围裙</span></li>
-                <li className="cursor-pointer" onClick={() => handleClickMenu('tablier', 'complete')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>全身围裙</span></li>
+                <li
+                  className={cs(
+                    "cursor-pointer",
+                    menuVisibleObject.tablier.half ? styles.activeSubMenu : ""
+                  )} 
+                  onClick={() => handleClickMenu('tablier', 'half')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>半身围裙</span></li>
+                <li
+                  className={cs(
+                    "cursor-pointer",
+                    menuVisibleObject.tablier.complete ? styles.activeSubMenu : ""
+                  )} 
+                  onClick={() => handleClickMenu('tablier', 'complete')}><span className="md:text-2xl text-blue-600 text-xl font-semibold">•&nbsp;</span><span>全身围裙</span></li>
               </ul>}
               <div onClick={() => handleClickMenu('kitchenCloth', '')} className={
                 menuVisibleObject.kitchenCloth ? styles.active : ''
@@ -116,8 +146,9 @@ const Personnalise: NextPage<{}> = () => {
             </div>
           </div>}
               {/* 工作服部分 */}
-            {menuVisibleObject.workCloth && isBoolean(menuVisibleObject.workCloth) && <div>
-              <Image className={styles.workCloth} src={workClothImg} alt="" />
+            {menuVisibleObject.workCloth && isBoolean(menuVisibleObject.workCloth) && <div className={styles.workCloth}>
+              {/* <Image className={styles.workCloth} src={workClothImg} alt="" /> */}
+              <WorkCloth />
             </div>}
           {
             menuVisibleObject.workCloth.tshirtContent && (

@@ -1,0 +1,11 @@
+.tablierSwiper {
+  @apply w-full flex md:flex-row flex-col;
+}
+
+.slide {
+  display: block;
+  /* width: 100% !important; */
+  /* height: 1000% !important; */
+  /* object-fit: cover !important; */
+  margin-right: 0 !important;
+}
