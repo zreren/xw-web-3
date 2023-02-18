@@ -6,10 +6,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import Image from 'next/image'
-import workCloth from '@/public/images/personnalise/workCloth1.png';
 
-const WorkCloth:React.FC<{}> = (props) => {
+const WorkCloth:React.FC<{}> = () => {
 
   const slides = (function() {
     const arr = [];
@@ -22,12 +20,6 @@ const WorkCloth:React.FC<{}> = (props) => {
             style={{ listStyle: 'none' }}
             alt={`Slide ${i+1}`}
           />
-          {/* <img
-            className="" 
-            src={`/images/personnalise/workCloth/fotor${i + 1}.png`}
-            style={{ listStyle: 'none' }}
-            alt={`Slide ${i+2}`}
-          /> */}
         </SwiperSlide>
       );
     }
@@ -44,9 +36,6 @@ const WorkCloth:React.FC<{}> = (props) => {
       >
         {slides}
       </Swiper>
-    // <div className="overflow-scroll	">
-    //   <img className="w-[2000px]" src={workCloth.src} />
-    // </div>
   )
 }
 
