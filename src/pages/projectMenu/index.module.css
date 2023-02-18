@@ -1,5 +1,5 @@
 .projectMenu {
-  @apply w-full h-screen flex flex-col;
+  @apply w-full h-screen flex flex-col relative;
 }
 
 .head {
@@ -19,7 +19,7 @@
 }
 
 .menu {
-  @apply pl-12 md:mt-0 mt-4 h-full flex md:items-end items-start md:w-5/12 w-full;
+  @apply pl-12 md:mt-0 mt-4 md:h-full h-4/5 flex md:items-end items-start md:w-5/12 w-full;
 }
 
 .menu li {
@@ -38,7 +38,7 @@
   position: absolute;
   bottom: 0;
   left: -3rem;
-  width: 120%;
+  width: 125%;
   padding-left: 3rem;
   height: 100%;
   z-index: -1;
@@ -54,6 +54,10 @@
 
 .imageOrigin {
   @apply flex-1 w-full h-full;
+}
+
+.contentRight {
+  @apply w-full h-full p-10 relative;
 }
 
 .navigation {
@@ -72,5 +76,22 @@
 
 .copyright {
   @apply flex justify-center py-9 md:text-[16px] text-[12px];
+}
+
+.backImage {
+  @apply w-full h-full absolute;
+}
+
+@media(max-width: 650px) {
+  .headLeft {
+    background: black !important;
+    color: white;
+  }
+  .headRight {
+    background: black !important;
+  }
+  /* .other {
+    min-height: 120vh;
+  } */
 }
 

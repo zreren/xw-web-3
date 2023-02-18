@@ -5,7 +5,10 @@ import cs from 'classnames';
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
+import photoBackImage from '@/public/images/photo/photoBackImage.png'
 import FooterLocation from "@/components/FooterLocation";
+import Advertisement from "@/components/Advertisement";
+import Card from "@/components/Card";
 
 
 interface NavigationProps {
@@ -79,6 +82,7 @@ export default function ProjectMenu() {
   const { query } = useRouter();
   const [activeMenu, setActiveMenu] = useState<string>('');
   const [navigationVisible, setNavigationVisible] = useState<boolean>(false);
+  const [photoBackground, setPhotoBackground] = useState<string>('');
   const [backgroundColor, setBackgroundColor] = useState<Record<string, any>>({
     headLeft: 'bg-gray-50',
     headRight: 'bg-gray-50',
@@ -117,6 +121,7 @@ export default function ProjectMenu() {
       }));
       setTextColor('text-black');
       setText2Color('text-white')
+      setPhotoBackground('')
     } else if(menu === 'brand') {
       setBackgroundColor(pre => ({
         ...pre,
@@ -127,7 +132,8 @@ export default function ProjectMenu() {
       }))
       setTextColor('text-black')
       setText2Color('text-black')
-    } else if (menu === 'photo' || menu === 'card') {
+      setPhotoBackground('')
+    } else if (menu === 'card') {
       setBackgroundColor(pre => ({
         ...pre,
         headLeft: 'bg-black',
@@ -137,11 +143,25 @@ export default function ProjectMenu() {
       }))
       setText2Color('text-white')
       setTextColor('text-white')
+      setPhotoBackground('')
+    } else if (menu === 'photo' ) {
+      setBackgroundColor(pre => ({
+        ...pre,
+        headLeft: 'bg-black',
+        headRight: 'bg-black',
+        contentLeft: 'transparent',
+        contentRight: 'transparent',
+      }))
+      setText2Color('text-white')
+      setTextColor('text-white')
+      setPhotoBackground('bg-[url(/images/photo/photoBackImage.png)] bg-center')
     }
   }
-  
+  console.log('textColor2', textColor2)
   return (
-    <div className={styles.projectMenu}>
+    <div
+      className={styles.projectMenu}
+    >
     {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
       <div className={cs(
         'bg-blend-lighten',
@@ -165,6 +185,7 @@ export default function ProjectMenu() {
         </div>
         <div className={cs(
           `flex-1 ${backgroundColor.headRight}`,
+          styles.headRight
         )}>
           <div className="h-full flex justify-end items-center pr-12" onClick={toogleNavigation}>
             <Image className="bg-white" src={navigationlogo} alt="navlogo" />
@@ -172,8 +193,11 @@ export default function ProjectMenu() {
         </div>
       </div>
       {/* Content */}
-      <div className={styles.other}>
-        <div className={`flex-1 flex md:flex-row flex-col items-end ${backgroundColor.contentLeft}`}>
+      <div
+        className={styles.other}>
+        <div
+          // style={{ background: 'url(/images/photo/photoBackImage.png)', backgroundPosition: 'center' }}
+          className={`flex-1 flex md:flex-row flex-col items-end ${backgroundColor.contentLeft} ${photoBackground}`}>
             <ul className={cs(
               `${textColor} `,
               styles.menu,
@@ -207,18 +231,51 @@ export default function ProjectMenu() {
               <div>Etiquettes adhesives</div>
               <div>貼紙</div>
               </li>
+              <div>
+                RETOUR
+              </div>
               </div>
             </ul>
           <div className={cs(
             `${backgroundColor.contentRight} ${textColor2}`,
             styles.imageOrigin
           )}>
-            222
+            <div className={styles.contentRight}>
+            {activeMenu === 'brand' && (
+              <div>
+
+              </div>
+            )}
+            {activeMenu === 'design' && (
+              <div className="w-full h-full flex justify-center items-start">
+                <div className="flex flex-col md:text-[32px] text-[20px] font-bold">
+                  <Link href={''}>Japonais 日餐</Link>
+                  <Link href={''}>Chinois 中餐</Link>
+                  <Link href={''}>Thailandais 泰餐</Link>
+                  <Link href={''}>Vietnamien 越餐</Link>
+                  <Link href={''}>Coreen 韩餐</Link>
+                  <Link href={''}>BAR 酒吧</Link>
+                </div>
+              </div>
+            )}
+            {activeMenu === 'brochure' && (
+              <Advertisement />
+            )}
+            {activeMenu === 'card' && (
+              <Card />
+            )}
+              <div className="absolute bottom-0">
+                NON Script
+              </div>
+            </div>
+          </div>
+          <div>
+            
           </div>
         </div>
-        <div className="md:px-12 px-1 md:mb-4 mb-1">
+        {/* <div className="md:hidden flex md:px-12 px-1 md:mb-4 mb-1">
           <FooterLocation leftLocation="/project" />
-        </div>
+        </div> */}
       </div>
     </div>
   )
