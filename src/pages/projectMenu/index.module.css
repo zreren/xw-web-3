@@ -74,6 +74,7 @@
   border-bottom: 1px solid white;
 }
 
+
 .copyright {
   @apply flex justify-center py-9 md:text-[16px] text-[12px];
 }
@@ -82,8 +83,79 @@
   @apply w-full h-full absolute;
 }
 
+
 .tamponBox {
   @apply w-full h-full flex items-center;
+}
+
+/*  底部右侧 部分  */
+.bottomRight {
+ @apply absolute bottom-6 right-0 flex items-center justify-between w-full;
+}
+
+.noncontacter {
+  @apply relative md:text-[40px] text-[24px];
+}
+
+.noncontacter {
+  cursor: pointer;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+}
+
+
+.noncontacter:hover {
+  color: rgb(37 99 235);
+  -webkit-text-fill-color: rgb(37 99 235);
+}
+
+.noncontacter > span:nth-child(1) {
+  @apply absolute -bottom-4 md:right-96 right-60;
+  transition: all .3s;
+}
+
+.noncontacter > span:nth-child(2) {
+  @apply absolute -bottom-4 right-2;
+  transition: all .3s;
+}
+
+.noncontacter:hover span:nth-child(1) {
+  @apply right-2;
+}
+
+.noncontacter:hover span:nth-child(2) {
+  @apply right-12;
+}
+
+
+/*    底部左侧部分    */
+.bottomLeft {
+  @apply mb-24 mt-6 md:text-[40px] text-[24px] md:flex hidden;
+  cursor: pointer;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+}
+
+.bottomLeft:hover {
+  color: rgb(37 99 235);
+  -webkit-text-fill-color: rgb(37 99 235);
+}
+.bottomLeft > span:nth-child(1) {
+  @apply absolute left-14 bottom-4;
+  transition: left .3s;
+}
+
+.bottomLeft > span:nth-child(2) {
+  @apply absolute left-56 bottom-4;
+  transition: left .3s;
+}
+
+.bottomLeft:hover > span:nth-child(1) {
+  @apply absolute left-24;
+}
+
+.bottomLeft:hover > span:nth-child(2) {
+  @apply absolute left-12;
 }
 
 @media(max-width: 650px) {

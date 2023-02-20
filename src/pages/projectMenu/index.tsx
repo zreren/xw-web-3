@@ -3,7 +3,7 @@ import styles from './index.module.css';
 import Image from 'next/image';
 import cs from 'classnames';
 import Link from "next/link";
-import { useRouter } from 'next/router';
+import router, { useRouter } from 'next/router';
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
 import tamponBackground from '@/public/images/tampon.png'
 import photoBackImage from '@/public/images/photo/photoBackImage.png'
@@ -24,6 +24,7 @@ const Navigation:React.FC<NavigationProps> = (props) => {
   const closeNavigation = () => {
     handleCloseNavigation()
   }
+
 
   return (
   <div className={styles.navigation}>
@@ -168,10 +169,13 @@ export default function ProjectMenu() {
       }))
       setText2Color('text-white')
       setTextColor('text-white')
-      // setTamponBackground('bg-[url(/images/tampon.png)] bg-center')
+      setPhotoBackground('')
     }
   }
-  console.log('textColor2', textColor2)
+  
+  const rightIcon = '>'
+  const leftIcon = '<'
+
   return (
     <div
       className={styles.projectMenu}
@@ -210,8 +214,7 @@ export default function ProjectMenu() {
       <div
         className={styles.other}>
         <div
-          // style={{ background: 'url(/images/photo/photoBackImage.png)', backgroundPosition: 'center' }}
-          className={`flex-1 flex md:flex-row flex-col items-end ${backgroundColor.contentLeft} ${photoBackground}`}>
+          className={`flex-1 flex md:flex-row flex-col justify-between ${backgroundColor.contentLeft} ${photoBackground}`}>
             <ul className={cs(
               `${textColor} `,
               styles.menu,
@@ -245,8 +248,9 @@ export default function ProjectMenu() {
               <div>Etiquettes adhesives</div>
               <div>貼紙</div>
               </li>
-              <div>
-                RETOUR
+              <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
+                <span>RETOUR</span>
+                <span>{leftIcon}</span>
               </div>
               </div>
             </ul>
@@ -263,12 +267,12 @@ export default function ProjectMenu() {
             {activeMenu === 'design' && (
               <div className="w-full h-full flex justify-center items-start">
                 <div className="flex flex-col md:text-[32px] text-[20px] font-bold">
-                  <Link href={''}>Japonais 日餐</Link>
-                  <Link href={''}>Chinois 中餐</Link>
-                  <Link href={''}>Thailandais 泰餐</Link>
-                  <Link href={''}>Vietnamien 越餐</Link>
-                  <Link href={''}>Coreen 韩餐</Link>
-                  <Link href={''}>BAR 酒吧</Link>
+                  <Link href={'/projectMenu/japonais'}>Japonais 日餐</Link>
+                  <Link href={'/projectMenu/chinois'}>Chinois 中餐</Link>
+                  <Link href={'/projectMenu/thailandais'}>Thailandais 泰餐</Link>
+                  <Link href={'/projectMenu/vietnamien'}>Vietnamien 越餐</Link>
+                  <Link href={'/projectMenu/coreen'}>Coreen 韩餐</Link>
+                  <Link href={'/projectMenu/bar'}>BAR 酒吧</Link>
                 </div>
               </div>
             )}
@@ -283,18 +287,20 @@ export default function ProjectMenu() {
                 <Image src={tamponBackground} alt="" />
               </div>
             )}
-              <div className="absolute bottom-0">
-                NON Script
+              <div className={styles.bottomRight}>
+                <div className="md:text-[14px] text-[8px]">
+                © 2022-2023 E.des/gn
+                </div>
+                <div className={styles.noncontacter} onClick={() => router.push('/contact')}>
+                  <span>{rightIcon}</span>
+                  <span>NOUS&nbsp;&nbsp;CONTACTER</span>
+                </div>
               </div>
             </div>
           </div>
           <div>
-            
           </div>
         </div>
-        {/* <div className="md:hidden flex md:px-12 px-1 md:mb-4 mb-1">
-          <FooterLocation leftLocation="/project" />
-        </div> */}
       </div>
     </div>
   )
