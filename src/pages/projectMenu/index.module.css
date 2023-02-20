@@ -82,6 +82,10 @@
   @apply w-full h-full absolute;
 }
 
+.tamponBox {
+  @apply w-full h-full flex items-center;
+}
+
 @media(max-width: 650px) {
   .headLeft {
     background: black !important;

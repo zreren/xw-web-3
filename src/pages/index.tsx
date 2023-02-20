@@ -113,7 +113,7 @@ function Home() {
                 </span>
                 <span className='tracking-wider'>EBRANDING 品牌形象规划</span>
               </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4' href={'/projectMenu?active=design'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[42px] w-[20px]' src={menu} alt="" />
                 </span>
@@ -121,7 +121,7 @@ function Home() {
                   <span className='tracking-wider'>MENU DESIGN 菜单订制</span>
                 </span>
                 </Link>
-                <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={''}>
+                <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4' href={'/projectMenu?active=photo'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[42px] w-[20px]' src={menu} alt="" />
                 </span>
@@ -129,7 +129,7 @@ function Home() {
                 <span className='tracking-wider'> PHOTOGRAPHIE 攝影</span>
                 </span>
                 </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4' href={'/projectMenu?active=brochure'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[42px] w-[32px]' src={photographie} alt="" />
                 </span>
@@ -138,7 +138,7 @@ function Home() {
                 </span>
                 </Link>
               
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4' href={'/projectMenu?active=tampon'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[42px] w-[20px]' src={tampon} alt="" />
                 </span>
@@ -146,7 +146,7 @@ function Home() {
                 <span className='tracking-wider'>TAMPON 公司/优惠卡印章</span>
                 </span>
                 </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={''}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={'/personnalise'}>
                 <span className='mr-2 font-semibold'>
                   <Image className='md:w-[42px] w-[32px]' src={vetement} alt="" />
                 </span>

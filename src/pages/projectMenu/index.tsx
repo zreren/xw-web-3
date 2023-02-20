@@ -5,10 +5,12 @@ import cs from 'classnames';
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
+import tamponBackground from '@/public/images/tampon.png'
 import photoBackImage from '@/public/images/photo/photoBackImage.png'
 import FooterLocation from "@/components/FooterLocation";
 import Advertisement from "@/components/Advertisement";
 import Card from "@/components/Card";
+
 
 
 interface NavigationProps {
@@ -83,6 +85,7 @@ export default function ProjectMenu() {
   const [activeMenu, setActiveMenu] = useState<string>('');
   const [navigationVisible, setNavigationVisible] = useState<boolean>(false);
   const [photoBackground, setPhotoBackground] = useState<string>('');
+  // const [tamponBackground, setTamponBackground] = useState<string>('');
   const [backgroundColor, setBackgroundColor] = useState<Record<string, any>>({
     headLeft: 'bg-gray-50',
     headRight: 'bg-gray-50',
@@ -104,7 +107,7 @@ export default function ProjectMenu() {
   
   useEffect(() => {
     const { active = '' } = query;
-    setActiveMenu(active as string);
+    handleClickMenu(active as string);
   }, [])
 
   console.log('activeMenu', activeMenu, 'query', query);
@@ -155,6 +158,17 @@ export default function ProjectMenu() {
       setText2Color('text-white')
       setTextColor('text-white')
       setPhotoBackground('bg-[url(/images/photo/photoBackImage.png)] bg-center')
+    } else if(menu === 'tampon') {
+      setBackgroundColor(pre => ({
+        ...pre,
+        headLeft: 'bg-black',
+        headRight: 'bg-black',
+        contentLeft: 'bg-black',
+        contentRight: 'bg-black',
+      }))
+      setText2Color('text-white')
+      setTextColor('text-white')
+      // setTamponBackground('bg-[url(/images/tampon.png)] bg-center')
     }
   }
   console.log('textColor2', textColor2)
@@ -263,6 +277,11 @@ export default function ProjectMenu() {
             )}
             {activeMenu === 'card' && (
               <Card />
+            )}
+            {activeMenu === 'tampon' && (
+              <div className={styles.tamponBox}>
+                <Image src={tamponBackground} alt="" />
+              </div>
             )}
               <div className="absolute bottom-0">
                 NON Script
