@@ -8,11 +8,16 @@ import japonais5 from '@/public/images/foods/japonais/japonais5.png'
 import japonais6 from '@/public/images/foods/japonais/japonais6.png'
 import japonais7 from '@/public/images/foods/japonais/japonais7.png'
 import japonais8 from '@/public/images/foods/japonais/japonais8.png'
+import edesignLogo from '@/public/images/edesignLogo.png';
+import FooterLocation from "@/components/FooterLocation";
 
 export default function Japonais() {
 
   return (
     <div className={styles.japonais}>
+      <div className={styles.logo}>
+        <img src={edesignLogo.src} alt="" />
+      </div>
       <div className={styles.title}>
         <span>Japonais</span>
         <div>日餐</div>
@@ -33,6 +38,9 @@ export default function Japonais() {
         <img src={japonais6.src} alt="" />
         </div>
       </div>
+        <div className="fixed bottom-0 md:px-12 px-2 w-full">
+        <FooterLocation />
+        </div>
     </div>
   )
 }
