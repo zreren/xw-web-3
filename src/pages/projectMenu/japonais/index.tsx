@@ -39,7 +39,7 @@ export default function Japonais() {
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 px-2 w-full">
-        <FooterLocation />
+        <FooterLocation leftLocation="/projectMenu?active=design" />
         </div>
     </div>
   )

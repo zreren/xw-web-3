@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './index.module.css';
 import Link from 'next/link';
 import cs from 'classnames';
+import qs from 'qs';
 import router from 'next/router';
 
 interface FooterLocationProps {
@@ -18,9 +19,18 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
 
   const goLeft = () => {
     if(handleLeftCallback) handleLeftCallback();
-    router.push({
-      pathname: leftLocation
-    })
+    let target = leftLocation;
+    if(leftLocation.length > 1) {
+      let query = {};
+      if(/\?/g.test(leftLocation)) {
+        query = qs.parse(leftLocation.split('?')[1])
+        target = leftLocation.split('?')[0]
+      }
+      router.push({
+        pathname: target,
+        query
+      })
+    }
   }
 
     return (

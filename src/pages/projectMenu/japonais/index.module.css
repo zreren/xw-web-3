@@ -15,11 +15,10 @@
 }
 
 .content {
-  @apply flex flex-row max-w-[980px];
+  @apply flex flex-row md:max-w-[1050px];
 }
 
 .contentItem {
-  flex: 1;
   margin: 30px;
 }
 
@@ -28,8 +27,8 @@
   margin-top: 8px;
   transition: all 0.3s ease-in-out;
 }
-.contentItem img:hover{
+/* .contentItem img:hover{
   cursor: pointer;
   transform: scale(1.05);
   box-shadow: 0px 3px 2px 1px #999;
-}
+} */
