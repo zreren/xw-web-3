@@ -245,8 +245,8 @@ export default function ProjectMenu() {
                 <div>TAMPON</div>
                 <div>公司/优惠卡印章</div>
               </li>
-              <li>
-              <div onClick={() => handleClickMenu('etique')}>Etiquettes adhesives</div>
+              <li onClick={() => handleClickMenu('etique')} className={activeMenu === 'etique' ? styles.active : undefined}>
+              <div>Etiquettes adhesives</div>
               <div>貼紙</div>
               </li>
               <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
