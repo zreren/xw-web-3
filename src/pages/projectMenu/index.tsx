@@ -6,6 +6,7 @@ import Link from "next/link";
 import router, { useRouter } from 'next/router';
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
 import tamponBackground from '@/public/images/tampon.png'
+import etique1 from '@/public/images/etique/Etiquettes1.png'
 import photoBackImage from '@/public/images/photo/photoBackImage.png'
 import FooterLocation from "@/components/FooterLocation";
 import Advertisement from "@/components/Advertisement";
@@ -159,7 +160,7 @@ export default function ProjectMenu() {
       setText2Color('text-white')
       setTextColor('text-white')
       setPhotoBackground('bg-[url(/images/photo/photoBackImage.png)] bg-center')
-    } else if(menu === 'tampon') {
+    } else if(menu === 'tampon' || menu === 'etique') {
       setBackgroundColor(pre => ({
         ...pre,
         headLeft: 'bg-black',
@@ -245,7 +246,7 @@ export default function ProjectMenu() {
                 <div>公司/优惠卡印章</div>
               </li>
               <li>
-              <div>Etiquettes adhesives</div>
+              <div onClick={() => handleClickMenu('etique')}>Etiquettes adhesives</div>
               <div>貼紙</div>
               </li>
               <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
@@ -286,6 +287,11 @@ export default function ProjectMenu() {
               <div className={styles.tamponBox}>
                 <Image src={tamponBackground} alt="" />
               </div>
+            )}
+            {activeMenu === 'etique' && (
+             <div className={styles.tamponBox}>
+              <Image src={etique1} alt="" />
+            </div>
             )}
               <div className={styles.bottomRight}>
                 <div className="md:text-[14px] text-[8px]">
