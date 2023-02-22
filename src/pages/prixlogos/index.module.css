@@ -1,10 +1,12 @@
 .title {
-  @apply flex flex-col relative z-10;
+  @apply flex flex-col relative z-10 w-full;
   color: white;
-  background-color: rgb(0, 88, 248);
-  margin-left: -3rem;
-  padding-left: 3rem;
   width: 90%;
+}
+
+.active {
+  background-color: rgb(0, 88, 248);
+  /* margin-left: -3rem; */
 }
 
 .item {
@@ -31,6 +33,6 @@
   transition: all .7s;
 }
 
-.imgBox {
-  width: 800px;
+.rightBox {
+  @apply relative flex-1 w-full;
 }

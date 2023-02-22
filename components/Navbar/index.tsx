@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import Image from 'next/image'
 import Link from 'next/link'
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
+import menuLight from '@/public/images/home/menuLight.png'
 import Navigation from "../Navigation";
 import cs from 'classnames'
 
 interface NavBarProps {
   classname?: string;
+  dark?: boolean;
 }
 
 const Navbar: React.FC<NavBarProps> = (props) => {
-  const { classname } = props;
+  const { classname, dark } = props;
   const [navigationVisible, setNavigationVisible] = useState<boolean>(false);
 
   const closeNavigation = () => {
@@ -38,7 +40,7 @@ const Navbar: React.FC<NavBarProps> = (props) => {
       <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
     </div>
     <div className="cursor-pointer" onClick={toogleNavigation}>
-      <Image src={navigationlogo} alt="navlogo" />
+      <Image src={dark ? menuLight : navigationlogo} alt="navlogo" />
     </div>
     </nav>
     </>
