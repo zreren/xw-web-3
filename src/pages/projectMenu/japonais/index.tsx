@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './index.module.css';
+import router from 'next/router';
 import japonais1 from '@/public/images/foods/japonais/japonais1.png'
 import japonais2 from '@/public/images/foods/japonais/japonais2.png'
 import japonais3 from '@/public/images/foods/japonais/japonais3.png'
@@ -12,15 +13,27 @@ import edesignLogo from '@/public/images/edesignLogo.png';
 import FooterLocation from "@/components/FooterLocation";
 
 export default function Japonais() {
+  const [title, setTitle] = useState<string>('Japonais')
+
+  const gotoVietnamien = () => {
+    router.push({
+      pathname: '/projectMenu/vietnamien/vietnamien2'
+    })
+  }
 
   return (
     <div className={styles.japonais}>
       <div className={styles.logo}>
         <img src={edesignLogo.src} alt="" />
       </div>
-      <div className={styles.title}>
-        <span>Japonais</span>
-        <div>日餐</div>
+      <div className={styles.title} onMouseEnter={() => setTitle('Vietnamien')} onMouseLeave={() => setTitle('Japonais')}>
+        {
+          title === 'Japonais' ? (
+            <><span className="cursor-pointer">Japonais</span><div className="cursor-pointer">日餐</div></>
+            ) : (
+              <><span className="cursor-pointer text-blue-500" onClick={gotoVietnamien}>Vietnamien</span><div className="cursor-pointe text-blue-500">越餐</div></>
+          )
+          }
       </div>
       <div className={styles.content}>
         <div className={styles.contentItem}>

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './index.module.css';
 import cs from 'classnames';
+import router from 'next/router';
 import viet1 from '@/public/images/foods/vietnamien2/viet1.png'
 import viet2 from '@/public/images/foods/vietnamien2/viet2.png'
 import viet3 from '@/public/images/foods/vietnamien2/viet3.png'
@@ -8,13 +9,25 @@ import edesignLogo from '@/public/images/edesignLogo.png';
 import FooterLocation from "@/components/FooterLocation";
 
 export default function Vietnamien() {
+  const [title, setTitle] = useState<string>('Vietnamien')
+
+  const gotoJaponais = () => {
+    router.push({
+      pathname: '/projectMenu/japonais'
+    })
+  }
 
   return (
     <div className={styles.container}>
 
-      <div className={styles.title}>
-        <span>Vietnamien</span>
-        <div>越餐</div>
+      <div className={styles.title} onMouseEnter={() => setTitle('Vietnamien')} onMouseLeave={() => setTitle('Japonais')}>
+        {
+          title === 'Vietnamien' ? (
+            <><span className="cursor-pointer text-blue-500" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointer text-blue-500">日餐</div></>
+            ) : (
+            <><span className="cursor-pointer">Vietnamien</span><div className="cursor-pointer">越餐</div></>
+          )
+          }
       </div>
       <div className={styles.content}>
         <div className={cs(
