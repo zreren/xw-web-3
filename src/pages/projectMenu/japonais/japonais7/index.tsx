@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import styles from './index.module.css';
 import cs from 'classnames';
 import router from 'next/router';
-import viet1 from '@/public/images/foods/vietnamien2/viet1.png'
-import viet2 from '@/public/images/foods/vietnamien2/viet2.png'
-import viet3 from '@/public/images/foods/vietnamien2/viet3.png'
-import edesignLogo from '@/public/images/edesignLogo.png';
+import japonais1 from '@/public/images/foods/japonais7/okiyama-1.png'
+import japonais2 from '@/public/images/foods/japonais7/okiyama-2.png'
+import japonais3 from '@/public/images/foods/japonais7/okiyama-3.png'
 import FooterLocation from "@/components/FooterLocation";
 
-export default function Vietnamien() {
-  const [title, setTitle] = useState<string>('Vietnamien')
+export default function Japonais7() {
 
   const gotoJaponais = () => {
     router.push({
@@ -19,22 +17,15 @@ export default function Vietnamien() {
 
   return (
     <div className={styles.container}>
-
-      <div className={styles.title} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('Vietnamien')}>
-        {
-          title === 'Vietnamien' ? (
-            <><span className="cursor-pointer">Vietnamien</span><div className="cursor-pointer">越餐</div></>
-            ) : (
-              <><span className="cursor-pointer text-blue-500" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointer text-blue-500">日餐</div></>
-          )
-          }
+      <div className={styles.title}>
+      <><span className="cursor-pointer" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointer">日餐</div></>
       </div>
       <div className={styles.content}>
         <div className={cs(
           'md:w-5/12 w-full flex flex-col',
           styles.contentItem)}>
           <div className="italic text-[28px]  tracking-wider">
-          Asian Gourmet,
+           Sushi do,
           </div>
           <div className="italic tracking-wider text-[24px] font-extralight">
           2022, 24 pages
@@ -56,13 +47,13 @@ export default function Vietnamien() {
           'w-full flex-1 items-center',
           styles.contentItem
         )}>
-          <img src={viet1.src} alt="" />
-          <img src={viet2.src} alt="" />
-          <img src={viet3.src} alt="" />
+          <img src={japonais1.src} alt="" />
+          <img src={japonais2.src} alt="" />
+          <img src={japonais3.src} alt="" />
         </div>
       </div>
-        <div className="fixed bottom-0 md:px-12 md:mb-4 mb-0  px-2 w-full">
-        <FooterLocation leftLocation="/projectMenu?active=design" />
+        <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
+        <FooterLocation leftLocation="/projectMenu/japonais" />
         </div>
     </div>
   )
