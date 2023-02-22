@@ -11,10 +11,11 @@ interface FooterLocationProps {
   classname?: string;
   leftLocation?: string;
   handleLeftCallback?: () => void;
+  hidden?: string;
 }
 
 const FooterLocation:React.FC<FooterLocationProps> = (props) => {
-  const { classname, handleLeftCallback, leftLocation = '/' } = props;
+  const { classname, handleLeftCallback, leftLocation = '/', hidden } = props;
   const renderLeft = (leftIcon: string) => {
 
   const goLeft = () => {
@@ -58,7 +59,7 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
       styles.footer)}>
       {renderLeft('<')}
       <div className={styles.copyrightone}>© 2022-2023 E.des/gn</div>
-      {renderRight('>')}
+      {hidden === 'right' ? null : renderRight('>')}
     </div>
     <div className={styles.copyrighttwo}>© 2022-2023 E.des/gn</div>
     </>

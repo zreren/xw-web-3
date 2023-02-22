@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Image from 'next/image'
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
+import menuLight from '@/public/images/home/menuLight.png'
 import styles from './index.module.css';
 import cs from 'classnames';
 
@@ -27,10 +28,10 @@ const Navigation: React.FC<NavigationProps> = (props) => {
           <div>
             <span className='md:text-5xl text-4xl font-bold'>E.</span>
             <span className='md:text-4xl text-4xl font-semibold tracking-wider	'>design</span>
-            <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
+            <Link href='/' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={closeNavigation}>
-          <Image className="bg-white bg-blend-screen" src={navigationlogo} alt="navlogo" />
+          <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />
         </div>
         </div>
     </nav>
