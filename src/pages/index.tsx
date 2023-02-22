@@ -12,7 +12,7 @@ import copyright from '@/public/images/home/copyright.png'
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
 import iconarrowdown from '@/public/images/home/Iconarrowdown.png'
 import Link from 'next/link'
-import { useEffect, useState, useCallback, useRef } from 'react'
+import { useEffect, useState, useCallback, useRef,  } from 'react'
 import cs from 'classnames'
 import styles from './index.module.css';
 
@@ -20,7 +20,7 @@ import styles from './index.module.css';
 // Home
 function Home() {
   const [visible, setVisible] = useState<boolean>(false);
-  const contentRef = useRef<HTMLElement | null>(null)
+  const contentRef = useRef<any>(null)
   const [navigationVisible, setNavigationVisible] =  useState<boolean>(false);
 
   const handleScroll = useCallback(() => {
@@ -175,8 +175,6 @@ function Home() {
   )
 }
 
-// Home 因为Navigation是滑动到一定位置才出现， 因此采用自定义的Navigation
-Home.layout = null
 
 export default Home;
 
