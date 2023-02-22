@@ -31,6 +31,10 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
         pathname: target,
         query
       })
+    } else {
+      router.push({
+        pathname: '/',
+      })
     }
   }
 
