@@ -61,11 +61,10 @@ const Personnalise: NextPage<{}> = () => {
   return (
     <div
       className={cs(
-        menuVisibleObject.initVisible ? 'bg-[url(/images/personalise.png)] bg-no-repeat bg-bottom' : '',
       styles.personnalise,
       menuVisibleObject.initVisible ?  '' : 'bg-white'
       )}>
-        {/* {menuVisibleObject.initVisible && <Image className="absolute h-full w-full z-0" src={personnalise} alt="" />} */}
+        {menuVisibleObject.initVisible && <div className="absolute bg-cover  w-full h-screen  bg-no-repeat cover bg-[url(/images/personalise.png)]"></div>}
       <div className="flex flex-col">
         <Navbar classname="bg-transparent px-12 z-10" />
         <div className={styles.content}>
