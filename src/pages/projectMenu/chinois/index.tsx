@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './index.module.css';
+import Link from 'next/link';
 import chinois1 from '@/public/images/foods/chinois/chinois1.png'
 import chinois2 from '@/public/images/foods/chinois/chinois2.png'
 import edesignLogo from '@/public/images/edesignLogo.png';
@@ -18,7 +19,9 @@ export default function Japonais() {
       </div>
       <div className={styles.content}>
         <div className={styles.contentItem}>
+          <Link href={"/projectMenu/chinois/chinois1"}>
           <img src={chinois2.src} alt="" />
+          </Link>
         </div>
         <div className={styles.contentItem}>
         <img src={chinois1.src} alt="" />
