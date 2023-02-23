@@ -44,16 +44,19 @@ export default function Japonais3() {
           </div>
         </div>
         <div className={cs(
-          'w-full flex-1 items-center',
+          'w-full flex-1 items-center relative',
           styles.contentItem
         )}>
           <img src={japonais1.src} alt="" />
-          <div className="flex flex-row mt-4">
-            <img style={{ width: '49%', marginRight: '15px' }} src={japonais2.src} alt="" />
-            <img style={{ width: '49%' }} className="w-1/2"  src={japonais3.src} alt="" />
+          <div className={cs(
+            "relative flex flex-row mb-8",
+            styles.imgBox2
+          )}>
+            <img src={japonais2.src} alt="" />
+            <img src={japonais3.src} alt="" />
           </div>
-          <img src={japonais2.src} alt="" />
-          <img src={japonais3.src} alt="" />
+            <img src={japonais2.src} alt="" />
+            <img src={japonais3.src} alt="" />
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
