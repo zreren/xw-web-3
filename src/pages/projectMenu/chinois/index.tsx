@@ -24,7 +24,9 @@ export default function Japonais() {
           </Link>
         </div>
         <div className={styles.contentItem}>
+        <Link href={"/projectMenu/chinois/chinois2"}>
         <img src={chinois1.src} alt="" />
+        </Link>
         </div>
         <div className="opacity-0">
         <img src={chinois2.src} alt="" />
