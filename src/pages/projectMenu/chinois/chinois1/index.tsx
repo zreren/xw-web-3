@@ -55,8 +55,10 @@ export default function Chinois1() {
           styles.contentItem
         )}>
           <Image src={chinois1} alt="" />
-            <Image src={chinois2} alt="" />
-          <Image src={chinois3} alt="" />
+          <div className={`relative md:h-[1200px] h-[840px]`}>
+            <Image className="absolute md:-top-10 top-0" src={chinois2} alt="" />
+            <Image className="absolute bottom-10" src={chinois3} alt="" />
+          </div>
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
