@@ -15,15 +15,15 @@
 }
 
 .content {
-  @apply flex;
+  @apply w-full flex md:px-8 px-0 md:flex-row flex-col;
 }
 
 .contentItem {
-  margin: 0 30px;
+  @apply mx-0 px-4;
 }
 
 .contentItem img{
-  width: 100%;
+  @apply md:w-[700px] w-[450px];
   margin-top: 8px;
   transition: all 0.3s ease-in-out;
 }

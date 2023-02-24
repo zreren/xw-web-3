@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from './index.module.css';
 import router from 'next/router';
+import Link from "next/link";
 import cs from 'classnames';
 import vietnamien1 from '@/public/images/foods/vietnamien/vietnamien1.png'
 import vietnamien2 from '@/public/images/foods/vietnamien/vietnamien2.png'
@@ -28,17 +29,17 @@ export default function Vietnamien() {
               <><span className="cursor-pointer text-blue-500" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointe text-blue-500">日餐</div></>
           )
           }
-        {/* <span>Vietnamien</span>
-        <div>越餐</div> */}
       </div>
       <div className={styles.content}>
         <div className={styles.contentItem}>
-          <img src={vietnamien1.src} alt="" />
+          <Link href={"/projectMenu/vietnamien/vietnamien1"}><img src={vietnamien1.src} alt="" /></Link>
         </div>
         <div className={cs(
           'flex items-center md:px-0 px-8',
         )}>
-        <img src={vietnamien2.src} alt="" />
+          <Link href={"/projectMenu/vietnamien/vietnamien2"}>
+            <img src={vietnamien2.src} alt="" />
+          </Link>
         </div>
         <div className=
           "opacity-0"
