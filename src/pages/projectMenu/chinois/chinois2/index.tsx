@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from './index.module.css';
 import cs from 'classnames';
 import router from 'next/router';
@@ -11,6 +11,8 @@ import FooterLocation from "@/components/FooterLocation";
 
 export default function Chinois1() {
   const [title, setTitle] = useState<string>('Chinois')
+  const [height, setHeight] = useState<number>();
+  const ref = useRef(null)
   const gotoJaponais = () => {
     router.push({
       pathname: '/projectMenu/japonais'
@@ -52,14 +54,14 @@ export default function Chinois1() {
           </div>
         </div>
         <div className={cs(
-          'w-full flex-1 items-center -mt-4',
+          'flex-1 items-center -mt-4',
           styles.contentItem
         )}>
           <Image src={chinois1} alt="" />
-          <div className="relative md:h-[900px] h-[640px]">
+          <div className={`relative md:h-[1200px] h-[840px]`}>
 
-            <Image className="absolute md:-top-56 -top-40" src={chinois2} alt="" />
-            <Image className="absolute md:top-32 top-24" src={chinois3} alt="" />
+            <Image className="absolute md:-top-80 -top-48" src={chinois2} alt="" />
+            <Image className="absolute md:top-36 bottom-72" src={chinois3} alt="" />
             <Image className="absolute bottom-0" src={chinois4} alt="" />
           </div>
           

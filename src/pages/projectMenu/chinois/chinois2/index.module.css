@@ -23,7 +23,7 @@
 }
 
 .contentItem img{
-  width: 100%;
+  @apply md:w-[700px] w-[450px];
   margin-top: 8px;
   transition: all 0.3s ease-in-out;
 }
