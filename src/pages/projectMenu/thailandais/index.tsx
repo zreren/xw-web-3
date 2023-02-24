@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './index.module.css';
+import Link from "next/link";
 import thailandais1 from '@/public/images/foods/thailandais/thailandais1.png'
 import edesignLogo from '@/public/images/edesignLogo.png';
 import FooterLocation from "@/components/FooterLocation";
@@ -17,7 +18,10 @@ export default function Thailandais() {
       </div>
       <div className={styles.content}>
         <div className={styles.contentItem}>
-          <img src={thailandais1.src} alt="" />
+          <Link href={'/projectMenu/thailandais/thailandais1'}>
+            <img src={thailandais1.src} alt="" />
+          </Link>
+          
         </div>
         <div className="opacity-0">
           <img src={thailandais1.src} alt="" />
