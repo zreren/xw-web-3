@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './index.module.css';
+import router from 'next/router';
 import cs from 'classnames';
 import vietnamien1 from '@/public/images/foods/vietnamien/vietnamien1.png'
 import vietnamien2 from '@/public/images/foods/vietnamien/vietnamien2.png'
@@ -7,28 +8,42 @@ import edesignLogo from '@/public/images/edesignLogo.png';
 import FooterLocation from "@/components/FooterLocation";
 
 export default function Vietnamien() {
+  const [title, setTitle] = useState<string>('vietnamien')
+  const gotoJaponais = () => {
+    router.push({
+      pathname: '/projectMenu/japonais'
+    })
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
         <img src={edesignLogo.src} alt="" />
       </div>
-      <div className={styles.title}>
-        <span>Vietnamien</span>
-        <div>越餐</div>
+      <div className={styles.title} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('vietnamien')}>
+      {
+          title === 'vietnamien' ? (
+            <><span className="cursor-pointer">Vietnamien</span><div className="cursor-pointer">越餐</div></>
+            ) : (
+              <><span className="cursor-pointer text-blue-500" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointe text-blue-500">日餐</div></>
+          )
+          }
+        {/* <span>Vietnamien</span>
+        <div>越餐</div> */}
       </div>
       <div className={styles.content}>
         <div className={styles.contentItem}>
           <img src={vietnamien1.src} alt="" />
         </div>
         <div className={cs(
-          'flex items-center',
-          styles.contentItem
+          'flex items-center md:px-0 px-8',
         )}>
         <img src={vietnamien2.src} alt="" />
         </div>
-        <div className="opacity-0">
-        {/* <img src={vietnamien2.src} alt="" /> */}
+        <div className=
+          "opacity-0"
+        >
+        <img src={vietnamien2.src} alt="" />
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 md:mb-4 mb-0  px-2 w-full">
