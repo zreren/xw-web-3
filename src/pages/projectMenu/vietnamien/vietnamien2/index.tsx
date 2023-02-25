@@ -5,7 +5,8 @@ import router from 'next/router';
 import viet1 from '@/public/images/foods/vietnamien2/viet1.png'
 import viet2 from '@/public/images/foods/vietnamien2/viet2.png'
 import viet3 from '@/public/images/foods/vietnamien2/viet3.png'
-import edesignLogo from '@/public/images/edesignLogo.png';
+import viet4 from '@/public/images/foods/vietnamien2/viet4.png'
+import Image from 'next/image';
 import FooterLocation from "@/components/FooterLocation";
 
 export default function Vietnamien() {
@@ -20,7 +21,10 @@ export default function Vietnamien() {
   return (
     <div className={styles.container}>
 
-      <div className={styles.title} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('Vietnamien')}>
+      <div className={cs(
+        'fixed z-[100]',
+        styles.title,
+      )} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('Vietnamien')}>
         {
           title === 'Vietnamien' ? (
             <><span className="cursor-pointer">Vietnamien</span><div className="cursor-pointer">越餐</div></>
@@ -31,10 +35,10 @@ export default function Vietnamien() {
       </div>
       <div className={styles.content}>
         <div className={cs(
-          'md:w-5/12 w-full flex flex-col',
+          'md:w-5/12 w-full flex flex-col sticky z-[100]',
           styles.contentItem)}>
           <div className="italic text-[28px]  tracking-wider">
-          Asian Gourmet,
+          Vietnem kitchen,
           </div>
           <div className="italic tracking-wider text-[24px] font-extralight">
           2022, 24 pages
@@ -52,14 +56,19 @@ export default function Vietnamien() {
           所有餐点图片由 Edesign 摄影师 Lea 拍摄
           </div>
         </div>
-        <div className={cs(
-          'w-full flex-1 items-center',
-          styles.contentItem
-        )}>
-          <img src={viet1.src} alt="" />
-          <img src={viet2.src} alt="" />
-          <img src={viet3.src} alt="" />
+          <Image className="absolute md:w-1/2 w-3/4 right-8 md:top-32 -bottom-64" src={viet1} alt="" />
+          {/* <Image className="absolute w-full top-1/3"  src={viet3} alt="" />
+          <Image className="absolute w-full bottom-1/4"  src={viet2} alt="" />
+          <Image className="absolute w-full bottom-20"  src={viet4} alt="" /> */}
+      </div>
+      <div className="md:h-[1700px] h-[800px] relative mt-16 mx-8 flex justify-center">
+        <div className="w-full mt-48 relative">
+          
+          <Image src={viet3} alt="" /> 
+          <Image src={viet2} alt="" /> 
+          <Image className="absolute" src={viet4} alt="" /> 
         </div>
+
       </div>
         <div className="fixed bottom-0 md:px-12 md:mb-4 mb-0  px-2 w-full">
         <FooterLocation leftLocation="/projectMenu?active=design" />
