@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from './index.module.css';
 import cs from 'classnames';
 import router from 'next/router';
+import Image from "next/image";
 import japonais1 from '@/public/images/foods/japonais1/japonais1.png'
 import japonais2 from '@/public/images/foods/japonais1/japonais2.png'
 import japonais3 from '@/public/images/foods/japonais1/japonais3.png'
@@ -19,12 +20,15 @@ export default function Japonais1() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-      <><span className="cursor-pointer" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointer">日餐</div></>
+      <div className={cs(
+        'fixed z-[100]',
+        styles.title
+      )}>
+      <><span className="cursor-pointer hover:text-blue-600" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointer hover:text-blue-600">日餐</div></>
       </div>
       <div className={styles.content}>
         <div className={cs(
-          'md:w-5/12 w-full flex flex-col',
+          'md:w-5/12 w-full flex flex-col fixed mt-36 z-[100]',
           styles.contentItem)}>
           <div className="italic text-[28px]  tracking-wider">
           Ayako,
@@ -45,17 +49,18 @@ export default function Japonais1() {
           所有餐点图片由 Edesign 摄影师 Lea 拍摄
           </div>
         </div>
+        <div className="md:w-5/12"></div>
         <div className={cs(
-          'w-full flex-1 items-center',
+          'w-full flex-1 items-center mt-32',
           styles.contentItem
         )}>
-          <img src={japonais1.src} alt="" />
-          <div className="flex flex-row mt-4">
-            <img style={{ width: '49%', marginRight: '15px' }} src={japonais2.src} alt="" />
-            <img style={{ width: '49%' }} className="w-1/2"  src={japonais3.src} alt="" />
+          <Image src={japonais1} alt="" />
+          <div className={styles.halfImage}>
+            <Image className="mr-12" src={japonais2} alt="" />
+            <Image src={japonais3} alt="" />
           </div>
-          <img src={japonais4.src} alt="" />
-          <img src={japonais5.src} alt="" />
+          <Image src={japonais4} alt="" />
+          <Image src={japonais5} alt="" />
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">

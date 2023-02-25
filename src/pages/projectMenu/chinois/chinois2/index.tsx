@@ -56,7 +56,7 @@ export default function Chinois1() {
         </div>
         <div className="md:w-5/12"></div>
         <div className={cs(
-          'flex-1 items-center -mt-4',
+          'flex-1 items-center mt-24',
           styles.contentItem
         )}>
           <Image src={chinois1} alt="" />
