@@ -57,13 +57,9 @@ export default function Vietnamien() {
           </div>
         </div>
           <Image className="absolute md:w-1/2 w-3/4 right-8 md:top-32 -bottom-64" src={viet1} alt="" />
-          {/* <Image className="absolute w-full top-1/3"  src={viet3} alt="" />
-          <Image className="absolute w-full bottom-1/4"  src={viet2} alt="" />
-          <Image className="absolute w-full bottom-20"  src={viet4} alt="" /> */}
       </div>
-      <div className="md:h-[1700px] h-[800px] relative mt-16 mx-8 flex justify-center">
+      <div className="md:h-[1700px] h-[750px] relative mt-16 mx-8 flex justify-center">
         <div className="w-full mt-48 relative">
-          
           <Image src={viet3} alt="" /> 
           <Image src={viet2} alt="" /> 
           <Image className="absolute" src={viet4} alt="" /> 

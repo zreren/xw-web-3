@@ -19,7 +19,10 @@ export default function Chinois1() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('Chinois')}>
+      <div className={cs(
+        'fixed z-[100]',
+        styles.title
+      )} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('Chinois')}>
         {
           title === 'Chinois' ? (
             <><span className="cursor-pointer">Chinois</span><div className="cursor-pointer">中餐</div></>
@@ -30,7 +33,7 @@ export default function Chinois1() {
       </div>
       <div className={styles.content}>
         <div className={cs(
-          'md:w-5/12 w-full flex flex-col',
+          'md:w-5/12 w-full flex flex-col fixed mt-36 z-[100]',
           styles.contentItem)}>
           <div className="italic text-[28px]  tracking-wider">
           Han shi fang,
@@ -51,6 +54,7 @@ export default function Chinois1() {
           所有餐点图片由 Edesign 摄影师 Lea 拍摄
           </div>
         </div>
+        <div className="md:w-5/12"></div>
         <div className={cs(
           'flex-1 items-center -mt-4',
           styles.contentItem
