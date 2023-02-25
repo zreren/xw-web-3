@@ -8,8 +8,8 @@ import coreen2 from '@/public/images/foods/coreen2/coreen2.png'
 import coreen3 from '@/public/images/foods/coreen2/coreen3.png'
 import FooterLocation from "@/components/FooterLocation";
 
-export default function Chinois1() {
-  const [title, setTitle] = useState<string>('Chinois')
+export default function Coreen2() {
+  const [title, setTitle] = useState<string>('Coreen')
   const gotoJaponais = () => {
     router.push({
       pathname: '/projectMenu/japonais'
@@ -21,9 +21,9 @@ export default function Chinois1() {
       <div className={cs(
         'fixed z-[100]',
         styles.title
-      )} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('Chinois')}>
+      )} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('Coreen')}>
         {
-          title === 'Chinois' ? (
+          title === 'Coreen' ? (
             <><span className="cursor-pointer">Coréen</span><div className="cursor-pointer">韩餐</div></>
             ) : (
               <><span className="cursor-pointer text-blue-500" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointe text-blue-500">日餐</div></>

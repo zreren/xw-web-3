@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './index.module.css';
+import Link from "next/link";
 import bar1 from '@/public/images/bar/Bar-1.png'
 import bar2 from '@/public/images/bar/Bar-2.png'
 import bar3 from '@/public/images/bar/Bar-3.png'
@@ -19,13 +20,19 @@ export default function Coreen() {
       </div>
       <div className={styles.content}>
         <div className={styles.contentItem}>
-          <img src={bar1.src} alt="" />
+          <Link href={"/projectMenu/bar/bar1"}>
+            <img src={bar1.src} alt="" />
+          </Link>
         </div>
         <div className={styles.contentItem}>
-        <img src={bar2.src} alt="" />
+        <Link href={"/projectMenu/bar/bar2"}>
+          <img src={bar2.src} alt="" />
+          </Link>
         </div>
         <div className={styles.contentItem}>
-        <img src={bar3.src} alt="" />
+        <Link href={"/projectMenu/bar/bar3"}>
+         <img src={bar3.src} alt="" />
+        </Link>
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 px-2 w-full">
