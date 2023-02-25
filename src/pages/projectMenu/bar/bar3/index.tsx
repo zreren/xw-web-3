@@ -3,11 +3,11 @@ import styles from './index.module.css';
 import cs from 'classnames';
 import router from 'next/router';
 import Image from "next/image";
-import bar3 from '@/public/images/bar/bar3.png'
-import bar4 from '@/public/images/bar/bar4.png'
+import bar5 from '@/public/images/bar/bar5.png'
+import bar6 from '@/public/images/bar/bar6.png'
 import FooterLocation from "@/components/FooterLocation";
 
-export default function Bar2() {
+export default function Bar3() {
   const [title, setTitle] = useState<string>('Bar')
   const gotoJaponais = () => {
     router.push({
@@ -31,10 +31,10 @@ export default function Bar2() {
       </div>
       <div className={styles.content}>
         <div className={cs(
-          'md:w-2/12 w-full flex flex-col fixed mt-36 z-[100]',
+          'md:w-4/12 w-full flex flex-col fixed mt-36 z-[100]',
           styles.contentItem)}>
           <div className="italic text-[28px]  tracking-wider">
-          Planet work,
+          Royal montgallet,
           </div>
           <div className="italic tracking-wider text-[24px] font-extralight">
           2022, carte de vins
@@ -51,9 +51,9 @@ export default function Bar2() {
           'w-full flex-1 items-center mt-16',
           styles.contentItem
         )}>
-          <Image src={bar3} alt="" />
+          <Image src={bar5} alt="" />
           <div className={`relative md:h-[900px] h-[50px]`}>
-            <Image className="absolute md:-top-8 top-8" src={bar4} alt="" />
+            <Image className="absolute md:-top-8 top-8" src={bar6} alt="" />
           </div>
         </div>
       </div>
