@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from './index.module.css';
 import coreen1 from '@/public/images/foods/coreen/coreen1.png'
 import coreen2 from '@/public/images/foods/coreen/coreen2.png'
@@ -18,10 +19,14 @@ export default function Coreen() {
       </div>
       <div className={styles.content}>
         <div className={styles.contentItem}>
-          <img src={coreen1.src} alt="" />
+          <Link href={"/projectMenu/coreen/coreen1"}>
+            <img src={coreen1.src} alt="" />
+          </Link>
         </div>
         <div className={styles.contentItem}>
-        <img src={coreen2.src} alt="" />
+        <Link href={"/projectMenu/coreen/coreen1"}>
+          <img src={coreen2.src} alt="" />
+          </Link>
         </div>
         <div className="opacity-0">
         <img src={coreen1.src} alt="" />
