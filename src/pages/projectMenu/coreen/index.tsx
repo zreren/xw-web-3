@@ -24,7 +24,7 @@ export default function Coreen() {
           </Link>
         </div>
         <div className={styles.contentItem}>
-        <Link href={"/projectMenu/coreen/coreen1"}>
+        <Link href={"/projectMenu/coreen/coreen2"}>
           <img src={coreen2.src} alt="" />
           </Link>
         </div>
