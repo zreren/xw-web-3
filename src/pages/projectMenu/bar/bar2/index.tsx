@@ -13,6 +13,7 @@ export default function Bar2() {
     router.push({
       pathname: '/projectMenu/japonais'
     })
+    
   }
 
   return (
