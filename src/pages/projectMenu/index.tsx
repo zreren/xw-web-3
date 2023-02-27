@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { animated, useTransition } from "react-spring";
 import styles from './index.module.css';
 import Image from 'next/image';
 import cs from 'classnames';
@@ -7,6 +8,8 @@ import router, { useRouter } from 'next/router';
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
 import tamponBackground from '@/public/images/tampon.png'
 import etique1 from '@/public/images/etique/Etiquettes1.png'
+import cardImg1 from '@/public/images/cardImg/card1.png';
+import cardImg2 from '@/public/images/cardImg/card2.png';
 import photoBackImage from '@/public/images/photo/photoBackImage.png'
 import FooterLocation from "@/components/FooterLocation";
 import Advertisement from "@/components/Advertisement";
@@ -86,8 +89,10 @@ export default function ProjectMenu() {
   const { query } = useRouter();
   const [activeMenu, setActiveMenu] = useState<string>('');
   const [navigationVisible, setNavigationVisible] = useState<boolean>(false);
+  const [cardMenuVisible, setCardMenuVisible] = useState<boolean>(true);
   const [photoBackground, setPhotoBackground] = useState<string>('');
-  // const [tamponBackground, setTamponBackground] = useState<string>('');
+  const [cardImageVisible, setCardImageVisible] = useState<boolean>(false);
+  const [imgIndex, setImgIndex] = useState<number>(0);
   const [backgroundColor, setBackgroundColor] = useState<Record<string, any>>({
     headLeft: 'bg-gray-50',
     headRight: 'bg-gray-50',
@@ -97,6 +102,23 @@ export default function ProjectMenu() {
   const [textColor, setTextColor] = useState<string>('text-black')
   const [textColor2, setText2Color] = useState<string>('text-black')
 
+
+  // card 整体切换动画
+  const cardMenuTransitions = useTransition(cardMenuVisible, {
+    from: { opacity: 0, transform: "translateY(100%)" },
+    enter: { opacity: 1, transform: "translateY(0%)" },
+    leave: { opacity: 0, transform: "translateY(100%)" },
+    // config: config.slow
+  });
+
+
+  const cardImgTransitions = useTransition(imgIndex, {
+    from: { opacity: 0, transform: "translateX(100%)" },
+    enter: { opacity: 1, transform: "translateX(0%)" },
+    leave: { opacity: 0, transform: "translateX(50%)" },
+    // config: config.slow
+  });
+
   const closeNavigation = () => {
     setNavigationVisible(false)
   }
@@ -105,6 +127,18 @@ export default function ProjectMenu() {
     setNavigationVisible(pre => (
       !pre
     ))
+  }
+
+  const clickImage = (num: number) => {
+    setCardImageVisible(true)
+    setImgIndex(num)
+    setCardMenuVisible(false)
+  }
+
+  const clickImageRestore = () => {
+    setCardImageVisible(false)
+    setImgIndex(0)
+    setCardMenuVisible(true)
   }
   
   useEffect(() => {
@@ -176,7 +210,8 @@ export default function ProjectMenu() {
   
   const rightIcon = '>'
   const leftIcon = '<'
-
+  console.log('cardImageVisible', cardImageVisible);
+  
   return (
     <div
       className={styles.projectMenu}
@@ -256,7 +291,7 @@ export default function ProjectMenu() {
               </div>
             </ul>
           <div className={cs(
-            `${backgroundColor.contentRight} ${textColor2}`,
+            `${backgroundColor.contentRight} ${textColor2} relative`,
             styles.imageOrigin
           )}>
             <div className={styles.contentRight}>
@@ -281,8 +316,43 @@ export default function ProjectMenu() {
               <Advertisement />
             )}
             {activeMenu === 'card' && (
-              <Card />
+              <>
+              <div>
+                {cardMenuTransitions(
+                  (style, item) =>
+                    item && (
+                      <animated.div
+                      style={{
+                        ...style
+                      }}
+                      >
+                        <div>
+                          <Card handClickImage={(num) => clickImage(num)} />
+                        </div>
+                      </animated.div>
+                    )
+                )}
+              </div>
+               </>
             )}
+            {cardImageVisible && <div onClick={clickImageRestore}>
+               {cardImgTransitions(
+                 (style, item) =>
+                 item && (
+                   <animated.img
+                   src={cardImg1.src}
+                   style={{
+                     ...style,
+                    position: "absolute",
+                    top: 0,
+                    right: '3rem',
+                    cursor: 'pointer'
+                   }}
+                   >
+                   </animated.img>
+                 )
+               )}
+               </div>}
             {activeMenu === 'tampon' && (
               <div className={styles.tamponBox}>
                 <Image src={tamponBackground} alt="" />
