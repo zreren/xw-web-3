@@ -344,10 +344,10 @@ export default function ProjectMenu() {
               <div>Etiquettes adhesives</div>
               <div>貼紙</div>
               </li>
-              <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
+              {/* <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
                 <span>RETOUR</span>
                 <span>{leftIcon}</span>
-              </div>
+              </div> */}
               </div>
             </ul>
           <div onClick={handleClickPhotoImage} className={cs(
@@ -412,61 +412,61 @@ export default function ProjectMenu() {
                    </animated.img>
                  )
                )}
-               </div>}
-               {cardImageVisible.cardImage2 && <div onClick={clickImageRestore}>
-               {cardImgOtherTransitions(
-                 (style, item) =>
-                 item && (
-                   <animated.img
-                    src={cardImg2.src}
-                    style={{
-                      ...style,
-                    position: "absolute",
-                    top: 0,
-                    // right: '3rem',
-                    cursor: 'pointer'
-                   }}
-                   >
-                   </animated.img>
-                 )
-               )}
-               </div>}
-               {cardImageVisible.cardImage3 && <div onClick={clickImageRestore}>
-               {cardImgOtherTransitions(
-                 (style, item) =>
-                 item && (
-                   <animated.img
-                    src={cardImg3.src}
-                    style={{
-                      ...style,
-                    position: "absolute",
-                    top: 0,
-                    right: '3rem',
-                    cursor: 'pointer'
-                   }}
-                   >
-                   </animated.img>
-                 )
-               )}
-               </div>}
-               {cardImageVisible.cardImage4 && <div onClick={clickImageRestore}>
-               {cardImgOtherTransitions(
-                 (style, item) =>
-                 item && (
-                   <animated.img
-                    src={cardImg4.src}
-                    style={{
-                      ...style,
-                    position: "absolute",
-                    top: 0,
-                    right: '5rem',
-                    cursor: 'pointer'
-                   }}
-                   >
-                   </animated.img>
-                 )
-               )}
-               </div>}
+            </div>}
+            {cardImageVisible.cardImage2 && <div onClick={clickImageRestore}>
+            {cardImgOtherTransitions(
+              (style, item) =>
+              item && (
+                <animated.img
+                src={cardImg2.src}
+                style={{
+                  ...style,
+                position: "absolute",
+                top: 0,
+                // right: '3rem',
+                cursor: 'pointer'
+                }}
+                >
+                </animated.img>
+              )
+            )}
+            </div>}
+            {cardImageVisible.cardImage3 && <div onClick={clickImageRestore}>
+            {cardImgOtherTransitions(
+              (style, item) =>
+              item && (
+                <animated.img
+                src={cardImg3.src}
+                style={{
+                  ...style,
+                position: "absolute",
+                top: 0,
+                right: '3rem',
+                cursor: 'pointer'
+                }}
+                >
+                </animated.img>
+              )
+            )}
+            </div>}
+            {cardImageVisible.cardImage4 && <div onClick={clickImageRestore}>
+            {cardImgOtherTransitions(
+              (style, item) =>
+              item && (
+                <animated.img
+                src={cardImg4.src}
+                style={{
+                  ...style,
+                position: "absolute",
+                top: 0,
+                right: '5rem',
+                cursor: 'pointer'
+                }}
+                >
+                </animated.img>
+              )
+            )}
+            </div>}
             {activeMenu === 'tampon' && (
               <div className={styles.tamponBox}>
                 <Image src={tamponBackground} alt="" />
@@ -478,7 +478,11 @@ export default function ProjectMenu() {
             </div>
             )}
               <div className={styles.bottomRight}>
-                <div className="md:text-[14px] text-[8px]">
+                <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
+                  <span>RETOUR</span>
+                  <span>{leftIcon}</span>
+                </div>
+                <div className="md:text-[14px] text-[8px] mt-8">
                 © 2022-2023 E.des/gn
                 </div>
                 <div className={styles.noncontacter} onClick={() => router.push('/contact')}>
@@ -491,6 +495,21 @@ export default function ProjectMenu() {
           <div>
           </div>
         </div>
+      {activeMenu === 'photo' && photoImgIdx === 0 && <div className="bg-black text-white h-screen flex items-center px-12">
+        <div className="flex justify-between w-full">
+              <div className="md:text-[32px] text-[20px] font-bold">
+                <div className="cursor-pointer hover:text-blue-600">JAPONAISE</div>
+                <div className="hover:text-blue-600">CHINOISE</div>
+                <div className="hover:text-blue-600">CORÉENNE</div>
+                <div className="hover:text-blue-600">THAILANDAISE ET VIETNAMIENNE</div>
+                <div className="hover:text-blue-600">BOISSONS/DESSERT</div>
+              </div>
+              <div className="md:text-7xl text-4xl font-bold">
+                <div>Photographie</div>
+                <div className="text-right">culinaire</div>
+              </div>
+        </div>
+      </div>}
       </div>
     </div>
   )

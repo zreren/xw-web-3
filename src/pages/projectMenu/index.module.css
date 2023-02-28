@@ -90,7 +90,7 @@
 
 /*  底部右侧 部分  */
 .bottomRight {
- @apply absolute bottom-6 right-0 flex items-center justify-between w-full;
+ @apply fixed bottom-0 right-0 flex items-center justify-between w-full;
 }
 
 .noncontacter {
@@ -98,6 +98,7 @@
 }
 
 .noncontacter {
+  @apply mt-12;
   cursor: pointer;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
