@@ -12,11 +12,15 @@ import cardImg1 from '@/public/images/cardImg/card1.png';
 import cardImg2 from '@/public/images/cardImg/card2.png';
 import cardImg3 from '@/public/images/cardImg/card3.png';
 import cardImg4 from '@/public/images/cardImg/card4.png';
-import photoBackImage from '@/public/images/photo/photoBackImage.png'
+import photoBackImage1 from '@/public/images/photo/photoBackImage1.png';
+import photoBackImage2 from '@/public/images/photo/photoBackImage2.png';
+import photoBackImage3 from '@/public/images/photo/photoBackImage3.png';
+import photoBackImage4 from '@/public/images/photo/photoBackImage4.png';
+import photoBackImage5 from '@/public/images/photo/photoBackImage5.png';
+import photoBackImage6 from '@/public/images/photo/photoBackImage6.png';
 import FooterLocation from "@/components/FooterLocation";
 import Advertisement from "@/components/Advertisement";
 import Card from "@/components/Card";
-
 
 
 interface NavigationProps {
@@ -87,6 +91,15 @@ const Navigation:React.FC<NavigationProps> = (props) => {
 }
 
 
+const images = [
+  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage1.src} alt="" />,
+  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage2.src} alt="" />,
+  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage3.src} alt="" />,
+  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage4.src} alt="" />,
+  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage5.src} alt="" />,
+  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage6.src} alt="" />,
+]
+
 export default function ProjectMenu() {
   const { query } = useRouter();
   const [activeMenu, setActiveMenu] = useState<string>('');
@@ -100,6 +113,7 @@ export default function ProjectMenu() {
     cardImage4: false,
   });
   const [imgIndex, setImgIndex] = useState<number>(0);
+  const [photoImgIdx, setPhotoImgIdx] = useState<number>(0);
   const [backgroundColor, setBackgroundColor] = useState<Record<string, any>>({
     headLeft: 'bg-gray-50',
     headRight: 'bg-gray-50',
@@ -170,16 +184,20 @@ export default function ProjectMenu() {
     setImgIndex(0)
     setCardMenuVisible(true)
   }
+
+  // 点击摄影背景图
+  const handleClickBackground = () => {
+
+  }
   
   useEffect(() => {
     const { active = '' } = query;
     handleClickMenu(active as string);
   }, [])
-
-  console.log('activeMenu', activeMenu, 'query', query);
   
   const handleClickMenu = (menu: string):void => {
     setActiveMenu(menu);
+    setPhotoImgIdx(0)
     if(menu === 'design' || menu === 'brochure') {
       setBackgroundColor(pre => ({
         ...pre,
@@ -218,12 +236,12 @@ export default function ProjectMenu() {
         ...pre,
         headLeft: 'bg-black',
         headRight: 'bg-black',
-        contentLeft: 'transparent',
+        contentLeft: 'bg-black',
         contentRight: 'transparent',
       }))
       setText2Color('text-white')
       setTextColor('text-white')
-      setPhotoBackground('bg-[url(/images/photo/photoBackImage.png)] bg-center')
+      setPhotoBackground('bg-[url(/images/photo/photoBackImage1.png)] bg-center')
     } else if(menu === 'tampon' || menu === 'etique') {
       setBackgroundColor(pre => ({
         ...pre,
@@ -241,7 +259,15 @@ export default function ProjectMenu() {
   
   const rightIcon = '>'
   const leftIcon = '<'
-  console.log('cardImageVisible', cardImageVisible);
+
+  const handleClickPhotoImage = () => {
+    if(activeMenu !== 'photo') return;
+    setPhotoImgIdx(pre => {
+      return pre + 1 === 6 ? 0 : pre + 1 
+    })
+  }
+
+  const MyImage = images[photoImgIdx]
   
   return (
     <div
@@ -281,7 +307,10 @@ export default function ProjectMenu() {
       <div
         className={styles.other}>
         <div
-          className={`flex-1 flex md:flex-row flex-col justify-between ${backgroundColor.contentLeft} ${photoBackground}`}>
+          onClick={handleClickBackground}
+          // ${photoBackground}
+          className={`flex-1 flex md:flex-row flex-col justify-between ${backgroundColor.contentLeft} relative`}>
+            {activeMenu === 'photo' && <MyImage classname="absolute w-[1100px] right-0 cursor-pointer" />}
             <ul className={cs(
               `${textColor} `,
               styles.menu,
@@ -321,7 +350,7 @@ export default function ProjectMenu() {
               </div>
               </div>
             </ul>
-          <div className={cs(
+          <div onClick={handleClickPhotoImage} className={cs(
             `${backgroundColor.contentRight} ${textColor2} relative`,
             styles.imageOrigin
           )}>
