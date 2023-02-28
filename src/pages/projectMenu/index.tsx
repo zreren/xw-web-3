@@ -91,7 +91,12 @@ export default function ProjectMenu() {
   const [navigationVisible, setNavigationVisible] = useState<boolean>(false);
   const [cardMenuVisible, setCardMenuVisible] = useState<boolean>(true);
   const [photoBackground, setPhotoBackground] = useState<string>('');
-  const [cardImageVisible, setCardImageVisible] = useState<boolean>(false);
+  const [cardImageVisible, setCardImageVisible] = useState<Record<string, boolean>>({
+    cardImage1: false,
+    cardImage2: false,
+    cardImage3: false,
+    cardImage4: false,
+  });
   const [imgIndex, setImgIndex] = useState<number>(0);
   const [backgroundColor, setBackgroundColor] = useState<Record<string, any>>({
     headLeft: 'bg-gray-50',
@@ -119,6 +124,13 @@ export default function ProjectMenu() {
     // config: config.slow
   });
 
+  const cardImgOtherTransitions = useTransition(imgIndex, {
+    from: { opacity: 0, transform: "translate(100%, 100%)" },
+    enter: { opacity: 1, transform: "translate(0px 0px)" },
+    leave: { opacity: 0, transform: "translateX(50%, 50%)" },
+    // config: config.slow
+  });
+
   const closeNavigation = () => {
     setNavigationVisible(false)
   }
@@ -130,13 +142,29 @@ export default function ProjectMenu() {
   }
 
   const clickImage = (num: number) => {
-    setCardImageVisible(true)
+    setCardImageVisible(pre => {
+      const res = Object.fromEntries(Object.entries(pre).map(item => ([item[0], false])))
+      return {
+        ...res,
+        [`cardImage${num}`]: true,
+      }
+    })
     setImgIndex(num)
     setCardMenuVisible(false)
   }
 
+  const closeCardImageAndOpenCardMenu = () => {
+    setCardImageVisible(pre => {
+      const res = Object.fromEntries(Object.entries(pre).map(item => ([item[0], false])))
+      return {
+        ...res,
+      }
+    })
+    setCardMenuVisible(true)
+  }
+
   const clickImageRestore = () => {
-    setCardImageVisible(false)
+    closeCardImageAndOpenCardMenu()
     setImgIndex(0)
     setCardMenuVisible(true)
   }
@@ -206,6 +234,7 @@ export default function ProjectMenu() {
       setTextColor('text-white')
       setPhotoBackground('')
     }
+    closeCardImageAndOpenCardMenu()
   }
   
   const rightIcon = '>'
@@ -335,7 +364,7 @@ export default function ProjectMenu() {
               </div>
                </>
             )}
-            {cardImageVisible && <div onClick={clickImageRestore}>
+            {cardImageVisible.cardImage1 && <div onClick={clickImageRestore}>
                {cardImgTransitions(
                  (style, item) =>
                  item && (
@@ -346,6 +375,24 @@ export default function ProjectMenu() {
                     position: "absolute",
                     top: 0,
                     right: '3rem',
+                    cursor: 'pointer'
+                   }}
+                   >
+                   </animated.img>
+                 )
+               )}
+               </div>}
+               {cardImageVisible.cardImage2 && <div onClick={clickImageRestore}>
+               {cardImgOtherTransitions(
+                 (style, item) =>
+                 item && (
+                   <animated.img
+                    src={cardImg2.src}
+                    style={{
+                      ...style,
+                    position: "absolute",
+                    top: 0,
+                    // right: '3rem',
                     cursor: 'pointer'
                    }}
                    >

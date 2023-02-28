@@ -27,7 +27,7 @@ export default function Card(props: ICardProp) {
         <img src={fotor5.src} alt="" />
       </div>
       <div className={styles.item} id="water-fall-02">
-        <img src={fotor2.src} alt="" />
+        <img onClick={() => clickImage(2)}  src={fotor2.src} alt="" />
         <img src={fotor4.src} alt="" />
         <img src={fotor6.src} alt="" />
         <img src={fotor7.src} alt="" />
