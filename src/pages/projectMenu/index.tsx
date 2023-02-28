@@ -10,6 +10,8 @@ import tamponBackground from '@/public/images/tampon.png'
 import etique1 from '@/public/images/etique/Etiquettes1.png'
 import cardImg1 from '@/public/images/cardImg/card1.png';
 import cardImg2 from '@/public/images/cardImg/card2.png';
+import cardImg3 from '@/public/images/cardImg/card3.png';
+import cardImg4 from '@/public/images/cardImg/card4.png';
 import photoBackImage from '@/public/images/photo/photoBackImage.png'
 import FooterLocation from "@/components/FooterLocation";
 import Advertisement from "@/components/Advertisement";
@@ -393,6 +395,42 @@ export default function ProjectMenu() {
                     position: "absolute",
                     top: 0,
                     // right: '3rem',
+                    cursor: 'pointer'
+                   }}
+                   >
+                   </animated.img>
+                 )
+               )}
+               </div>}
+               {cardImageVisible.cardImage3 && <div onClick={clickImageRestore}>
+               {cardImgOtherTransitions(
+                 (style, item) =>
+                 item && (
+                   <animated.img
+                    src={cardImg3.src}
+                    style={{
+                      ...style,
+                    position: "absolute",
+                    top: 0,
+                    right: '3rem',
+                    cursor: 'pointer'
+                   }}
+                   >
+                   </animated.img>
+                 )
+               )}
+               </div>}
+               {cardImageVisible.cardImage4 && <div onClick={clickImageRestore}>
+               {cardImgOtherTransitions(
+                 (style, item) =>
+                 item && (
+                   <animated.img
+                    src={cardImg4.src}
+                    style={{
+                      ...style,
+                    position: "absolute",
+                    top: 0,
+                    right: '5rem',
                     cursor: 'pointer'
                    }}
                    >
