@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
+      colors: {
+        'default': '#000000',
+      },
       zIndex: {
         '100': '100',
       }
