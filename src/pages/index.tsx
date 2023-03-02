@@ -57,7 +57,7 @@ function Home() {
   const str = '>'
 
   return (
-       <div className='w-full h-full min-h-screen bg-neutral-200'> 
+       <div className='w-full h-full min-h-screen bg-neutral-200 text-black'> 
         {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
         {/* nav */}
         <nav className={cs(
@@ -85,7 +85,10 @@ function Home() {
           <div ref={contentRef} className='flex flex-col px-8 pt-32 justify-between	'>
             <div style={{ height: '80vh'}}>
               <div className='flex flex-col md:text-[16px] text-[13px]'>
-                <div className='flex md:text-[24px] text-[16px] flex-col font-semibold'>
+                <div className={cs(
+                  'flex md:text-[24px] text-[16px] flex-col font-semibold',
+                  styles.blackText,
+                )}>
                   <span>Forte de ses années d'expérience dans le domaine de la conception visuelle</span>
                   <span>et graphique, E. design est en mesure de fournir des services de conception</span>
                   <span>visuelle tels que la conception de marques, de photographies, de menus, de</span>

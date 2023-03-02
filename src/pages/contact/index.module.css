@@ -1,5 +1,5 @@
 .contact {
-  @apply h-screen bg-neutral-200 flex flex-col;
+  @apply h-screen bg-neutral-200 flex flex-col text-black;
 }
 
 .tipsText {
