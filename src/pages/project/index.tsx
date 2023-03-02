@@ -35,14 +35,14 @@ const Project: NextPage<{}> = () => {
                 <span className='mr-2 font-semibold'>
                   <Image className='md:w-[42px] w-[20px]' src={branding} alt="" />
                 </span>
-                <span className='tracking-wider'>EBRANDING 品牌形象规划</span>
+                <span className='tracking-wider text-black'>EBRANDING 品牌形象规划</span>
               </Link>
               <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={'/projectMenu?active=design'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[42px] w-[20px]' src={menu} alt="" />
                 </span>
                 <span>
-                  <span className='tracking-wider'>MENU DESIGN 菜单订制</span>
+                  <span className='tracking-wider text-black'>MENU DESIGN 菜单订制</span>
                 </span>
                 </Link>
                 <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4		' href={'/projectMenu?active=photo'}>
@@ -50,7 +50,7 @@ const Project: NextPage<{}> = () => {
                   <Image className='md:w-[42px] w-[20px]' src={menu} alt="" />
                 </span>
                 <span>
-                <span className='tracking-wider'> PHOTOGRAPHIE 攝影</span>
+                <span className='tracking-wider text-black'> PHOTOGRAPHIE 攝影</span>
                 </span>
                 </Link>
               <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4' href={'/projectMenu?active=brochure'}>
@@ -58,7 +58,7 @@ const Project: NextPage<{}> = () => {
                   <Image className='md:w-[42px] w-[32px]' src={photographie} alt="" />
                 </span>
                 <span>
-                <span className='tracking-wider'>FLYER/DEPLIANT/ BROCHURE 广告纸/页/册</span>
+                <span className='tracking-wider text-black'>FLYER/DEPLIANT/ BROCHURE 广告纸/页/册</span>
                 </span>
                 </Link>
               
@@ -67,7 +67,7 @@ const Project: NextPage<{}> = () => {
                   <Image className='md:w-[42px] w-[20px]' src={tampon} alt="" />
                 </span>
                 <span>
-                <span className='tracking-wider'>TAMPON 公司/优惠卡印章</span>
+                <span className='tracking-wider text-black'>TAMPON 公司/优惠卡印章</span>
                 </span>
                 </Link>
               {/* <Link className='flex flex-row items-center hover:text-blue-600 md:text-[44px] text-2xl font-bold mb-4' href={''}>
