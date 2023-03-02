@@ -344,10 +344,10 @@ export default function ProjectMenu() {
               <div>Etiquettes adhesives</div>
               <div>貼紙</div>
               </li>
-              {/* <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
+              {activeMenu !== 'photo' && <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
                 <span>RETOUR</span>
                 <span>{leftIcon}</span>
-              </div> */}
+              </div>}
               </div>
             </ul>
           <div onClick={handleClickPhotoImage} className={cs(
