@@ -6,6 +6,11 @@ module.exports = {
     extend: {
       zIndex: {
         '100': '100',
+      },
+      colors: {
+        slate: {
+          550: 'rgb(101 101 101)'
+        }
       }
     },
   },

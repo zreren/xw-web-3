@@ -23,7 +23,7 @@ const Advertisement = () => {
   console.log('activeMenu', activeMenu);
   
   return (
-    <ul className={styles.advertisement}>
+    <ul className={cs(styles.advertisement, activeMenu && styles.unActiveText)}>
         <li className={cs(styles.titleOne, activeMenu === 'depliant'? styles.active : "")} onClick={() => handClickMenu('depliant')}>Depliant 折页</li>
         {activeMenu === 'depliant' && (
           transitions(
@@ -37,9 +37,9 @@ const Advertisement = () => {
             ))
         )}
        
-        <li onClick={() => handClickMenu('brochure')}>Brochure 册子</li>
-        <li onClick={() => handClickMenu('flyer')}>Flyer 广告纸</li>
-        <li onClick={() => handClickMenu('affiche')}>Affiche 海报</li>
+        <li className={cs(styles.titleOne, activeMenu === 'brochure'? styles.active : "")}  onClick={() => handClickMenu('brochure')}>Brochure 册子</li>
+        <li className={cs(styles.titleOne, activeMenu === 'flyer'? styles.active : "")}  onClick={() => handClickMenu('flyer')}>Flyer 广告纸</li>
+        <li className={cs(styles.titleOne, activeMenu === 'affiche'? styles.active : "")}  onClick={() => handClickMenu('affiche')}>Affiche 海报</li>
     </ul>
   )
 }

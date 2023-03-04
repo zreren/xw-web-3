@@ -498,7 +498,7 @@ export default function ProjectMenu() {
           </div>
         </div>
       {activeMenu === 'photo' && photoImgIdx === 0 && <div className="bg-black text-white h-screen flex items-center px-12">
-        <div className="flex justify-between w-full">
+        <div className="flex justify-evenly w-full md:h-[300px] h-full md:flex-row flex-col ">
               <div className="md:text-[32px] text-[20px] font-bold">
                 <div className="cursor-pointer hover:text-blue-600">JAPONAISE</div>
                 <div className="hover:text-blue-600">CHINOISE</div>
