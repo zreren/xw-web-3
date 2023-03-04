@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { animated, useTransition } from "react-spring";
+import router from 'next/router';
 import Image from "next/image";
 import cs from 'classnames';
 import styles from './index.module.css';
@@ -44,9 +45,9 @@ const Advertisement = () => {
             (style, item) =>
               item && (
               <animated.div style={{ ...style }} className={styles.depliant}>
-                <Image src={depliant1} alt="" />
-                <Image src={depliant2} alt=""  />
-                <Image src={depliant3} alt=""  />
+                <Image onClick={() => router.push('/depliant/one')} src={depliant1} alt="" />
+                <Image onClick={() => router.push('/depliant/two')} src={depliant2} alt=""  />
+                <Image onClick={() => router.push('/depliant/three')} src={depliant3} alt=""  />
               </animated.div>
             ))
         )}

@@ -142,3 +142,7 @@ a {
 .text-title {
   @apply md:text-5xl text-4xl font-bold;
 }
+
+li {
+  list-style: none;
+}
