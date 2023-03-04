@@ -1,0 +1,27 @@
+.advertisement {
+  @apply md:text-[32px] text-[20px] font-bold mt-8;
+}
+
+.advertisement > li {
+  @apply cursor-pointer md:mb-4;
+}
+
+.advertisement > li.active {
+  @apply text-blue-600;
+}
+
+.depliant {
+  @apply flex justify-evenly md:flex-row flex-col;
+}
+
+.depliant img {
+  @apply w-[200px] h-[170px];
+}
+
+.depliant > img:nth-child(1) {
+  @apply w-[180px] h-[160px]
+}
+
+.depliant > img:nth-child(2) {
+  @apply md:ml-16 ml-0;
+}

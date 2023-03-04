@@ -19,7 +19,7 @@
 }
 
 .menu {
-  @apply pl-12 md:mt-0 mt-4 md:h-full h-4/5 flex items-start md:w-5/12 w-full;
+  @apply pl-12 mt-0 h-4/5 flex items-start mt-12 md:w-5/12 w-full;
 }
 
 .menu li {
