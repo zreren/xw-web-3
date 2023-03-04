@@ -1,21 +1,23 @@
 .advertisement {
-  @apply md:text-[32px] text-[20px] font-bold md:mt-8 mt-0;
+  @apply md:text-[32px] text-[20px] h-full font-bold md:mt-8 mt-0 relative mb-10;
 }
 
 .unActiveText {
   @apply text-slate-550;
 }
 
+
 .advertisement > li {
-  @apply cursor-pointer md:mb-4;
+  @apply cursor-pointer md:mb-4 absolute;
+  transition: all 0.5s;
 }
 
 .advertisement > li.active {
   @apply text-blue-600;
 }
 
-.depliant {
-  @apply flex justify-evenly flex-row;
+.depliant,.flyer {
+  @apply flex justify-evenly flex-row mt-4;
 }
 
 .depliant img {
@@ -28,4 +30,93 @@
 
 .depliant > img:nth-child(2) {
   @apply md:ml-16 ml-0;
+}
+
+.flyer > img:nth-child(2) {
+  @apply mr-8;
+}
+
+/*  初始 位置  */
+.advertisement > li:nth-child(1) {
+  @apply top-0;
+}
+
+.advertisement > li:nth-child(2) {
+  @apply top-[50px];
+}
+
+.advertisement > li:nth-child(3) {
+  @apply top-[100px];
+}
+
+.advertisement > li:nth-child(4) {
+  @apply top-[150px];
+}
+
+/* depliant 位置 */
+.advertisement > li:nth-child(1) {
+  @apply top-0;
+}
+
+.advertisement.depliantPosition > li:nth-child(2) {
+  @apply top-[240px];
+}
+
+.advertisement.depliantPosition > li:nth-child(3) {
+  @apply top-[290px];
+}
+
+.advertisement.depliantPosition > li:nth-child(4) {
+  @apply top-[340px];
+}
+
+/*  brochure 位置  */
+.advertisement.brochurePosition > li:nth-child(1) {
+  @apply top-[240px];
+}
+
+.advertisement.brochurePosition > li:nth-child(2) {
+  @apply top-[0px];
+}
+
+.advertisement.brochurePosition > li:nth-child(3) {
+  @apply top-[290px];
+}
+
+.advertisement.brochurePosition > li:nth-child(4) {
+  @apply top-[340px];
+}
+
+/*  flyer 位置  */
+.advertisement.flyerPosition > li:nth-child(1) {
+  @apply top-[280px];
+}
+
+.advertisement.flyerPosition > li:nth-child(2) {
+  @apply top-[330px];
+}
+
+.advertisement.flyerPosition > li:nth-child(3) {
+  @apply top-[0px];
+}
+
+.advertisement.flyerPosition > li:nth-child(4) {
+  @apply top-[380px];
+}
+
+/*  affiche 位置  */
+.advertisement.affichePosition > li:nth-child(1) {
+  @apply top-[290px];
+}
+
+.advertisement.affichePosition > li:nth-child(2) {
+  @apply top-[340px];
+}
+
+.advertisement.affichePosition > li:nth-child(3) {
+  @apply top-[400px];
+}
+
+.advertisement.affichePosition > li:nth-child(4) {
+  @apply top-[0px];
 }

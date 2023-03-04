@@ -11,6 +11,9 @@ module.exports = {
         slate: {
           550: 'rgb(101 101 101)'
         }
+      },
+      top: {
+        84: '22rem'
       }
     },
   },
