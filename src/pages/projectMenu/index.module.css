@@ -19,8 +19,7 @@
 }
 
 .menu {
-  @apply pl-12 md:mt-0 mt-4 md:h-full h-4/5 flex md:items-end items-start w-full;
-  width: 33.35555%;
+  @apply pl-12 md:mt-0 mt-4 md:h-full h-4/5 flex items-start md:w-5/12 w-full;
 }
 
 .menu li {

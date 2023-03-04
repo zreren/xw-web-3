@@ -280,7 +280,7 @@ export default function ProjectMenu() {
       )}> 
         <div
           className={cs(
-          `flex flex-row w-2/6  ${textColor} ${backgroundColor.headLeft}`,
+          `flex flex-row w-5/12  ${textColor} ${backgroundColor.headLeft}`,
           styles.headLeft
         )}>
           <div className="px-12 pt-4">
@@ -344,10 +344,12 @@ export default function ProjectMenu() {
               <div>Etiquettes adhesives</div>
               <div>貼紙</div>
               </li>
-              {activeMenu !== 'photo' && <div className={styles.bottomLeft} onClick={() => router.push('/project')}>
-                <span>RETOUR</span>
+              {/* <div className={cs(
+                styles.bottomLeft,
+              )} onClick={() => router.push('/project')}>
+                <span>RETOUR1</span>
                 <span>{leftIcon}</span>
-              </div>}
+              </div> */}
               </div>
             </ul>
           <div onClick={handleClickPhotoImage} className={cs(
