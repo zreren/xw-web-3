@@ -46,7 +46,7 @@
 }
 
 .menu li > div:nth-child(1) {
-  @apply md:text-[32px] text-[20px] font-bold;
+  @apply md:text-[32px] text-[20px] font-bold h-[40px];
 }
 .menu li > div:nth-child(2) {
   @apply md:text-[22px] text-[16px] font-extrabold mb-2;
@@ -70,8 +70,12 @@
 }
 
 .item {
-  @apply flex justify-between px-12 md:text-4xl text-xl pt-2 font-semibold tracking-wider;
+  @apply flex justify-between items-center px-12 md:text-[48px] h-[60px] text-xl pt-2 font-semibold tracking-widest;
   border-bottom: 1px solid white;
+}
+
+.item > a:nth-child(2) {
+
 }
 
 
@@ -90,7 +94,7 @@
 
 /*  底部右侧 部分  */
 .bottomRight {
- @apply fixed bottom-0 right-0 flex items-center justify-between w-full;
+ @apply fixed bottom-0 right-0 flex items-center justify-between w-full px-12;
 }
 
 .noncontacter {

@@ -17,14 +17,18 @@
 }
 
 .left {
-  @apply flex flex-col justify-evenly;
+  @apply flex flex-col justify-evenly py-10;
 }
 
 .right {
-  @apply h-full absolute -right-20;
+  @apply h-full absolute -right-20 bottom-10;
   /* bg-[url(/images/contact/maisonedesign-2.png)] */
 }
 
+.right img {
+  /* height: 100%; */
+}
+
 .rightText {
-  @apply mb-12 md:text-5xl text-4xl font-bold text-blue-600 md:absolute md:bottom-32 md:ml-0 ml-8 -left-48;
+  @apply mb-12 md:text-5xl text-4xl font-bold text-blue-600 md:absolute md:bottom-8 md:ml-0 ml-8 -left-48;
 }

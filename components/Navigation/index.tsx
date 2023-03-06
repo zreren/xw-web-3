@@ -35,7 +35,6 @@ const Navigation: React.FC<NavigationProps> = (props) => {
         </div>
         </div>
     </nav>
-
      <div className="h-full md:text-2xl text-1xl flex flex-col justify-between">
      <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-white'>小雯工作室</div>
       <div>

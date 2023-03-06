@@ -16,8 +16,8 @@ const Contact: React.FC<{}> = () => {
        <div className={styles.content}>
         <div className={styles.left}>
             <div className="">
-             <p className="md:text-[64px] tracking-wider text-4xl font-bold">Contact nous</p>
-             <div className="md:text-[20px] text-[13px] font-medium mt-[10px]">
+             <p className="md:text-[64px] tracking-wider text-4xl font-bold md:mb-8 mb-2">Contact nous</p>
+             <div className="md:text-[24px] text-[13px] font-medium mt-[10px]">
                <p>Ouvert du lundi au vendredi</p>
                <p>9:30-12:30 13:15-18:30 (18:00 si couvre feu)</p>
                <p>Métro ligne 9 : saint-ambroise, PRENDRE LA SORTIE 5.</p>

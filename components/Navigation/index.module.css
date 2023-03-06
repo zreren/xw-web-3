@@ -8,7 +8,7 @@
 }
 
 .item {
-  @apply flex justify-between px-12 md:text-4xl text-xl pt-2 font-semibold tracking-wider;
+  @apply flex justify-between items-center px-12 md:text-[48px] h-[60px] text-xl pt-2 font-semibold tracking-widest;
   border-bottom: 1px solid white;
 }
 

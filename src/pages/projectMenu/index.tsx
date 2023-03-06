@@ -308,7 +308,6 @@ export default function ProjectMenu() {
         className={styles.other}>
         <div
           onClick={handleClickBackground}
-          // ${photoBackground}
           className={`flex-1 flex md:flex-row flex-col justify-between ${backgroundColor.contentLeft} relative`}>
             {activeMenu === 'photo' && <MyImage classname="absolute w-[1100px] right-0 cursor-pointer" />}
             <ul className={cs(
@@ -344,12 +343,6 @@ export default function ProjectMenu() {
               <div>Etiquettes adhesives</div>
               <div>貼紙</div>
               </li>
-              {/* <div className={cs(
-                styles.bottomLeft,
-              )} onClick={() => router.push('/project')}>
-                <span>RETOUR1</span>
-                <span>{leftIcon}</span>
-              </div> */}
               </div>
             </ul>
           <div onClick={handleClickPhotoImage} className={cs(
