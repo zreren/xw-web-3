@@ -3,7 +3,7 @@
 }
 
 .logo {
-  @apply fixed bottom-40 md:right-36 right-12;
+  @apply fixed bottom-40 md:right-12 right-4;
 }
 
 .title {
@@ -15,18 +15,22 @@
 }
 
 .content {
-  @apply flex flex-row md:max-w-[1050px];
+  @apply flex flex-col w-full px-12;
 }
 
 .contentItem {
-  margin: 30px;
+  @apply flex flex-row w-full;
+}
+
+.contentItem a {
+  flex: 1;
 }
 
 .contentItem img{
-  width: 100%;
-  margin-top: 8px;
+  width: 80%;
+  /* margin-top: 8px; */
   transition: all 0.3s ease-in-out;
-}
+} 
 /* .contentItem img:hover{
   cursor: pointer;
   transform: scale(1.05);
