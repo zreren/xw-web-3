@@ -48,7 +48,7 @@ export default function Japonais() {
           {/* <Link href={"/projectMenu/japonais/japonais4"}><img src={japonais4.src} alt="" /></Link>
           <Link href={"/projectMenu/japonais/japonais7"}><img src={japonais7.src} alt="" /></Link> */}
         </div>
-        <div className={styles.contentItem}>
+        <div style={{ margin: '100px 0' }} className={styles.contentItem}>
         <Link href={"/projectMenu/japonais/japonais2"}>
             <img src={japonais4.src} alt="" />
           </Link>

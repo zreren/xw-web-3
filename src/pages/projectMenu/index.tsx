@@ -6,6 +6,7 @@ import cs from 'classnames';
 import Link from "next/link";
 import router, { useRouter } from 'next/router';
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
+import menuLight from '@/public/images/home/menuLight.png'
 import tamponBackground from '@/public/images/tampon.png'
 import etique1 from '@/public/images/etique/Etiquettes1.png'
 import cardImg1 from '@/public/images/cardImg/card1.png';
@@ -49,7 +50,7 @@ const Navigation:React.FC<NavigationProps> = (props) => {
             <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={closeNavigation}>
-          <Image className="bg-white bg-blend-screen" src={navigationlogo} alt="navlogo" />
+          <Image className="bg-blend-screen" src={menuLight} alt="navlogo" />
         </div>
         </div>
     </nav>
@@ -299,7 +300,11 @@ export default function ProjectMenu() {
           styles.headRight
         )}>
           <div className="h-full flex justify-end items-center pr-12" onClick={toogleNavigation}>
-            <Image className="bg-white" src={navigationlogo} alt="navlogo" />
+            {activeMenu === 'brand' ?
+              <Image className="bg-white" src={navigationlogo} alt="navlogo" />
+              :
+              <Image src={menuLight} alt="navlogo" />
+            }
           </div>
         </div>
       </div>
