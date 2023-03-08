@@ -61,7 +61,7 @@ function Home() {
         {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
         {/* nav */}
         <nav className={cs(
-          'w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-neutral-200',
+          'w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-nav-color',
           visible && !navigationVisible ? {
             fixed: true,
             zIndex: 1000,
