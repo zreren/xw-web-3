@@ -23,7 +23,7 @@
 }
 
 .imgContent {
-  @apply mx-12 md:mt-12 mt-4 z-[100];
+  @apply mx-12 pt-28 z-[100];
 }
 
 /* .imgContent img {

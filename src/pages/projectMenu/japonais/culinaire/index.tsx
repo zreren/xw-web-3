@@ -51,7 +51,7 @@ const Culinaire: NextPage<{}> = () => {
   return (
     <div className={styles.main}>
       {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
-        <div className="sticky">
+        <div className="fixed w-full">
         <nav className={cs(
           styles.nav,
           "w-full flex flex-row items-center justify-between px-12 pt-4 relative"
