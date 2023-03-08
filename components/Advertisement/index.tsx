@@ -14,8 +14,8 @@ import flyer2 from './img/flyer-2.png';
 import flyer3 from './img/flyer-3.png';
 import affiche from './img/affiche.png';
 
-const Advertisement = () => {
-  const [activeMenu, setActiveMenu] = useState<string>('');
+const Advertisement = ({ currentMenu = '' }) => {
+  const [activeMenu, setActiveMenu] = useState<string>(currentMenu);
 
   // card 整体切换动画
   const transitions = useTransition(activeMenu, {
@@ -45,9 +45,9 @@ const Advertisement = () => {
             (style, item) =>
               item && (
               <animated.div style={{ ...style }} className={styles.depliant}>
-                <Image onClick={() => router.push('/depliant/one')} src={depliant1} alt="" />
-                <Image onClick={() => router.push('/depliant/two')} src={depliant2} alt=""  />
-                <Image onClick={() => router.push('/depliant/three')} src={depliant3} alt=""  />
+                <Image onClick={() => router.push('/depliant?page=one')} src={depliant1} alt="" />
+                <Image onClick={() => router.push('/depliant?page=two')} src={depliant2} alt=""  />
+                <Image onClick={() => router.push('/depliant?page=three')} src={depliant3} alt=""  />
               </animated.div>
             ))
         )}
@@ -59,8 +59,8 @@ const Advertisement = () => {
               (style, item) =>
                 item && (
                 <animated.div style={{ ...style }} className={styles.depliant}>
-                  <Image src={brochure1} alt="" />
-                  <Image src={brochure2} alt=""  />
+                  <Image onClick={() => router.push('/brochure')}  src={brochure1} alt="" />
+                  <Image onClick={() => router.push('/brochure')}  src={brochure2} alt=""  />
                 </animated.div>
               ))
           )}
@@ -72,9 +72,9 @@ const Advertisement = () => {
               (style, item) =>
                 item && (
                 <animated.div style={{ ...style }} className={styles.flyer}>
-                  <Image src={flyer1} alt="" />
-                  <Image src={flyer2} alt=""  />
-                  <Image src={flyer3} alt=""  />
+                  <Image onClick={() => router.push('/flyer')} src={flyer1} alt="" />
+                  <Image onClick={() => router.push('/flyer')} src={flyer2} alt=""  />
+                  <Image onClick={() => router.push('/flyer')} src={flyer3} alt=""  />
                 </animated.div>
               ))
           )}
@@ -86,7 +86,7 @@ const Advertisement = () => {
               (style, item) =>
                 item && (
                 <animated.div style={{ ...style }} className={styles.flyer}>
-                  <Image src={affiche} alt="" />
+                  <Image src={affiche} onClick={() => router.push('/affiche')} alt="" />
                 </animated.div>
               ))
           )}

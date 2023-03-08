@@ -123,8 +123,10 @@ export default function ProjectMenu() {
   })
   const [textColor, setTextColor] = useState<string>('text-black')
   const [textColor2, setText2Color] = useState<string>('text-black')
+  const { subMenu = '' } = query;
 
-
+  console.log('query===>', query);
+  
   // card 整体切换动画
   const cardMenuTransitions = useTransition(cardMenuVisible, {
     from: { opacity: 0, transform: "translateY(100%)" },
@@ -373,7 +375,7 @@ export default function ProjectMenu() {
               </div>
             )}
             {activeMenu === 'brochure' && (
-              <Advertisement />
+              <Advertisement currentMenu={subMenu as string} />
             )}
             {activeMenu === 'card' && (
               <>

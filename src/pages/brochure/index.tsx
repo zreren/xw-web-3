@@ -4,19 +4,23 @@ import Link from 'next/link';
 import { useRouter } from "next/router";
 import Image from 'next/image'
 import depliant1 from '@/public/images/depliant/depliant-1.png';
-import piles1 from '@/public/images/depliant/piles-1.png';
-import piles2 from '@/public/images/depliant/piles-2.png';
-import piles3 from '@/public/images/depliant/piles-3.png';
-import piles4 from '@/public/images/depliant/piles-4.png';
-import piles5 from '@/public/images/depliant/piles-5.png';
+import brochure1 from '@/public/images/brochure/brochure-1.png';
+import brochure2 from '@/public/images/brochure/brochure-2.png';
+import brochure3 from '@/public/images/brochure/brochure-3.png';
 import menuLight from '@/public/images/home/menuLight.png'
 import cs from 'classnames';
 import styles from "./index.module.css";
 import FooterLocation from "@/components/FooterLocation";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
-const DepliantOne: NextPage<{}> = () => {
+const Brochure: NextPage<{}> = () => {
   const { query, pathname } = useRouter();
-  const { activeMenu = '' } = query;
+  const { activeMenu = '', page } = query;
 
   return (
     <div className={styles.depliant}>
@@ -59,43 +63,32 @@ const DepliantOne: NextPage<{}> = () => {
             </div>
             
           </div>
-          <div className={styles.pilis}>
-            <div className="">
-              <Link className={activeMenu === 'two' ? styles.active : ''} href={`${pathname}?activeMenu=two`}><li> 
-                <span> 2 plis</span><span>兩折頁</span>
-                 </li></Link>
-              <Link className={activeMenu === 'three' ? styles.active : ''} href={`${pathname}?activeMenu=three`}><li>  
-                <span> 3 plis</span><span>三折頁</span>
-                 </li></Link>
-              <Link className={activeMenu === 'four' ? styles.active : ''} href={`${pathname}?activeMenu=four`}><li> 
-              <span> 4 plis</span><span>四折頁</span>
-                 </li></Link>
-              <Link className={activeMenu === 'five' ? styles.active : ''} href={`${pathname}?activeMenu=five`}><li> 
-                <span> 5 plis</span>
-                <span>五折頁</span>
-                 </li></Link>
-              <Link className={activeMenu === 'six' ? styles.active : ''} href={`${pathname}?activeMenu=six`}><li> 
-                <span> 6 plis</span>
-                <span>六折頁</span>
-                </li></Link>
-            </div>
-            <div></div>
-          </div>
         </div>
         <div className={styles.contentRight}>
-          {activeMenu === 'two' && <Image src={piles1} alt="" />}
-          {activeMenu === 'three' && <Image src={piles2} alt="" />}
-          {activeMenu === 'four' && <Image src={piles3} alt="" />}
-          {activeMenu === 'five' && <Image src={piles4} alt="" />}
-          {activeMenu === 'six' && <Image src={piles5} alt="" />}
+        <Swiper
+        className={styles.tablierSwiper}
+        modules={[Navigation]}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide className={styles.slide} key={`slide-1`}>
+        <Image className="w-full" src={brochure1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide className={styles.slide} key={`slide-2`}>
+            <Image className="w-full" src={brochure2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide className={styles.slide} key={`slide-2`}>
+            <Image className="w-full" src={brochure3} alt="" />
+        </SwiperSlide>
+      </Swiper>
         </div>
       </div>
 
       <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
-        <FooterLocation hidden="right" leftLocation="/projectMenu?active=brochure" />
+        <FooterLocation hidden="right" leftLocation="/projectMenu?active=brochure&subMenu=brochure" />
       </div>
     </div>
   )
 }
 
-export default DepliantOne;
+export default Brochure;
