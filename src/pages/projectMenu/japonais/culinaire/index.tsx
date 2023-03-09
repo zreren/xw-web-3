@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from 'next/link'
 import { NextPage } from "next";
-import navigationlogo from '@/public/images/home/Navigationlogo.png'
 import menuLight from '@/public/images/home/menuLight.png'
 import culinaire1 from '@/public/images/culinaire/culinaire-1.png';
 import culinaire2 from '@/public/images/culinaire/culinaire-2.png';
