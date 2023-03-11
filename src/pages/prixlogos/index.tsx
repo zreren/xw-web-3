@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { animated, useTransition } from "react-spring";
+import { animated, useTransition, useSpring } from "react-spring";
 import Navbar from "@/components/Navbar";
 import Image from 'next/image'
 import styles from './index.module.css';
@@ -10,12 +10,13 @@ import cs from 'classnames';
 import whiteT from '@/public/images/whiteT.png';
 import cixiuone from '@/public/images/prixlogos/cixiu-1.png'
 import cixiutwo from '@/public/images/prixlogos/cixiu-2.png'
+import printing from '@/public/images/prixlogos/printing.png'
 
 const PrixLogos: NextPage<{}> = () => {
-  const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [activeMenu, setActiveMenu] = useState<string>('price');
-  const [flocageVisible, setFlocageVisible] = useState<boolean>(false); // 绣花
+  const [flocageVisible, setFlocageVisible] = useState<boolean>(false); // 印花
   const [broderieVisible, setBroderieVisible] = useState<boolean>(false); // 刺绣
+  const [printVisible, setPrintVisible] = useState<boolean>(false); // 刺绣
   const transitions = useTransition(flocageVisible, {
     from: { opacity: 0, transform: "translate(-100px, 200px)" },
     enter: { opacity: 1, transform: "translate(0px 0px)" },
@@ -28,31 +29,48 @@ const PrixLogos: NextPage<{}> = () => {
     leave: { opacity: 0, transform: "translate(150px 250px)" },
   });
 
+  const transitions3 = useTransition(printVisible, {
+    from: { opacity: 0,  scale: 1,  transform: "translate(-150px, -300px)" },
+    enter: { scale: 1, opacity: 1, transform: "translate(0px 0px)" },
+    leave: { opacity: 0, transform: "translate(-150px -300px)" },
+  });
+
+
   const handleClickFlocage = () => {
     setFlocageVisible(true);
     setBroderieVisible(false);
+    setPrintVisible(false);
     setActiveMenu('flocage');
   }
-
+  
   const handleClickBroderie = () => {
     setFlocageVisible(false);
     setBroderieVisible(true);
+    setPrintVisible(false);
     setActiveMenu('Broderie');
   }
 
   const handleClickPrice = () => {
     setFlocageVisible(false);
     setBroderieVisible(false);
+    setPrintVisible(false);
     setActiveMenu('price');
   }
 
   const leftCallback = () => {
     setFlocageVisible(false);
     setBroderieVisible(false);
+    setPrintVisible(false);
+  }
+
+  const handleClickEmbro = () => {
+    setFlocageVisible(false);
+    setBroderieVisible(false);
+    setPrintVisible(true);
   }
 
   return (
-    <div className="h-screen text-white bg-black flex flex-col justify-between">
+    <div className="min-h-screen text-white bg-black flex flex-col justify-between">
       <div>
       <Navbar classname="z-50	sticky top-0 bg-black px-12" dark={true} />
         <div className="flex md:flex-row flex-col relative">
@@ -88,13 +106,12 @@ const PrixLogos: NextPage<{}> = () => {
               (style, item) =>
                 item && (
                   <animated.div
+                    className="md:-top-36 z-50 absolute"
                     style={{
-                      ...style
+                      ...style,
                     }}
                   >
-                    <div className="md:w-[600px] w-[400px] absolute -left-20 md:-top-20 top-20">
-                      <Image src={cixiuone} alt="" />
-                    </div>
+                      <Image onClick={handleClickEmbro} src={cixiuone} alt="" />
                   </animated.div>
                 )
             )}
@@ -102,24 +119,46 @@ const PrixLogos: NextPage<{}> = () => {
             (style, item) =>
               item && (
                 <animated.div
+                  className="md:-top-36 z-50 absolute"
                   style={{
-                    ...style
+                    ...style,
                   }}
                 >
-                  <div className="md:w-[600px] w-[400px] absolute -left-20 md:-top-20 top-20">
-                      <Image src={cixiutwo} alt="" />
+                  <div>
+                      <Image onClick={handleClickEmbro} src={cixiutwo} alt="" />
                     </div>
                 </animated.div>
               )
           )}
-          <div className="absolute top-10">
-             {(!flocageVisible && !broderieVisible) && (
-              <div className="md:w-[600px] w-[400px] absolute -left-20 md:-top-20 top-20">
-              <Image src={whiteT} alt="" />
+          {transitions3(
+            (style, item) =>
+              item && (
+                <animated.div
+                  className="md:-top-36 z-50 absolute"
+                  style={{
+                    ...style,
+                  }}
+                >
+                  <div>
+                      <Image src={printing} alt="" />
+                    </div>
+                </animated.div>
+              )
+          )}
+          {printVisible && (
+            <div className="flex justify-end mr-12 z-[56] absolute right-0">
+              <div className="text-blue-600 text-right">
+                <div className="text-4xl font-medium tracking-wider">查看价格表</div>
+                <div className="text-xl">voir le prix</div>
+
+              </div>
+            </div>
+          )}
+             {(!flocageVisible && !broderieVisible && !printVisible) && (
+              <div className="absolute -left-20 md:-top-36 z-50 top-20">
+              <Image className="h-[950px]" src={whiteT} alt="" />
             </div>
              )}
-          </div>
-          
             </div>
         </div>
       </div>

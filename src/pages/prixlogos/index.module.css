@@ -37,5 +37,11 @@
 }
 
 .rightBox {
-  @apply relative flex-1 w-full;
+  @apply flex-1 h-screen relative;
+  /* @apply absolute -top-48; */
+  /* @apply absolute; */
+}
+
+.rightBox img {
+  /* height: 1000px; */
 }
