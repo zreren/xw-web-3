@@ -13,11 +13,15 @@
 }
 
 .item > span {
-  /* @apply absolute; */
-  /* transition: all 1s; */
+  
+}
+
+.item > span:nth-child(1) {
+  @apply md:text-7xl text-3xl;
 }
 
 .item > span:nth-child(2) {
+  @apply text-base;
   left: 0;
   bottom: 0;
 }

@@ -70,16 +70,16 @@ const PrixLogos: NextPage<{}> = () => {
                   "md:mb-48 flex flex-col cursor-pointer h-24 text-blue-600 pl-12 w-3/4",
                   styles.item,
                 )} onClick={handleClickFlocage}>
-                  <span className="md:text-7xl text-3xl tracking-widest font-bold">印花</span>
-                  <span className="text-base">flocage</span>
+                  <span className="tracking-widest font-bold">印花</span>
+                  <span>flocage</span>
                 </div>
                 <div className={cs(
                   activeMenu === 'Broderie' ? styles.active : '',
                   "md:mb-24 flex flex-col cursor-pointer h-24 text-blue-600 md:mr-0 mr-18 w-3/4 pl-12",
                   styles.item
                 )} onClick={handleClickBroderie}>
-                  <span className="md:text-7xl text-3xl tracking-widest font-bold">刺绣</span>
-                  <span className="text-base">Broderie</span>
+                  <span className="tracking-widest font-bold">刺绣</span>
+                  <span>Broderie</span>
                 </div>
               </div>
           </div>
