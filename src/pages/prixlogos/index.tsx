@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { animated, useTransition, useSpring } from "react-spring";
 import Navbar from "@/components/Navbar";
+import { useRouter } from "next/router";
 import Image from 'next/image'
 import styles from './index.module.css';
 import Link from 'next/link'
@@ -11,12 +12,14 @@ import whiteT from '@/public/images/whiteT.png';
 import cixiuone from '@/public/images/prixlogos/cixiu-1.png'
 import cixiutwo from '@/public/images/prixlogos/cixiu-2.png'
 import printing from '@/public/images/prixlogos/printing.png'
+import { isString } from "lodash-es";
 
 const PrixLogos: NextPage<{}> = () => {
   const [activeMenu, setActiveMenu] = useState<string>('price');
   const [flocageVisible, setFlocageVisible] = useState<boolean>(false); // 印花
   const [broderieVisible, setBroderieVisible] = useState<boolean>(false); // 刺绣
   const [printVisible, setPrintVisible] = useState<boolean>(false); // 刺绣
+  const router = useRouter();
   const transitions = useTransition(flocageVisible, {
     from: { opacity: 0, transform: "translate(-100px, 200px)" },
     enter: { opacity: 1, transform: "translate(0px 0px)" },
@@ -35,6 +38,11 @@ const PrixLogos: NextPage<{}> = () => {
     leave: { opacity: 0, transform: "translate(-150px -300px)" },
   });
 
+  const props = useSpring({
+    from: { opacity: 0, transform: "translate(-150px, -300px)" },
+    enter: { opacity: 1, transform: "translate(-150px, -300px)" },
+    leave: { opacity: 0, transform: "translate(-150px, -300px)" },
+  })
 
   const handleClickFlocage = () => {
     setFlocageVisible(true);
@@ -67,6 +75,14 @@ const PrixLogos: NextPage<{}> = () => {
     setFlocageVisible(false);
     setBroderieVisible(false);
     setPrintVisible(true);
+  }
+
+  const handleViewPrice = () => {
+    if(activeMenu === 'flocage') {
+      router.push('/prixlogos/flocagePrice')
+    } else if(activeMenu === 'Broderie') {
+      router.push('/prixlogos/broderiePrice')
+    }
   }
 
   return (
@@ -134,29 +150,28 @@ const PrixLogos: NextPage<{}> = () => {
             (style, item) =>
               item && (
                 <animated.div
-                  className="md:-top-36 z-50 absolute"
+                  className="-left-20 md:-top-16 top-20 absolute"
                   style={{
                     ...style,
                   }}
                 >
                   <div>
-                      <Image src={printing} alt="" />
+                      <Image className="h-[900px] w-[800px]" src={printing} alt="" />
                     </div>
                 </animated.div>
               )
           )}
           {printVisible && (
-            <div className="flex justify-end mr-12 z-[56] absolute right-0">
-              <div className="text-blue-600 text-right">
+            <div className="flex justify-end mr-12 z-[56] absolute right-20 cursor-pointer">
+              <div className="text-blue-600 text-right" onClick={handleViewPrice}>
                 <div className="text-4xl font-medium tracking-wider">查看价格表</div>
                 <div className="text-xl">voir le prix</div>
-
               </div>
             </div>
           )}
              {(!flocageVisible && !broderieVisible && !printVisible) && (
-              <div className="absolute -left-20 md:-top-36 z-50 top-20">
-              <Image className="h-[950px]" src={whiteT} alt="" />
+              <div className="absolute -left-20 md:-top-16 top-20">
+              <Image className="h-[900px] w-[800px]"  src={whiteT} alt="" />
             </div>
              )}
             </div>

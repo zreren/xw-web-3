@@ -10,6 +10,9 @@ module.exports = {
         slate: {
           550: 'rgb(101 101 101)'
         },
+        slate: {
+          450: 'rgb(174 174 174)',
+        },
         'nav-color': 'rgba(251, 251, 251, 64%)'
       },
       top: {
