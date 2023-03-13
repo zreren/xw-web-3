@@ -1,9 +1,7 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React from "react";
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import Link from 'next/link';
 import Image from 'next/image'
-import cs from 'classnames';
 import menuLight from '@/public/images/home/menuLight.png'
 import whiteT from '@/public/images/white2.png';
 import broderie1 from '@/public/images/broderie-1.png';
@@ -12,9 +10,6 @@ import styles from './index.module.css';
 import FooterLocation from "@/components/FooterLocation";
 
 const FlocagePrice: NextPage<{}> = () => {
-  const [current, setCurrent] = useState<number>(0)
-  const [topArr, setTopArr] = useState<number[]>([])
-  const router = useRouter();
 
   return (
     <div className={styles.flocagePrice}>
@@ -59,7 +54,7 @@ const FlocagePrice: NextPage<{}> = () => {
         <div className={styles.contentTwo}>
           <div className="relative">
             <div className="underline decoration-1 px-12 text-[24px]">胸口店名字+LOGO图形</div>
-            <div className="text-slate-450 px-12">（最大宏度12cm)</div>
+            <div className="text-slate-450 px-12">（最大宏度12cm）</div>
             <div className="mr-8 italic px-12 flex flex-row">
               <div className="flex flex-col text-slate-450">
                 <span>(图形最大宽度14cm, </span>
@@ -82,7 +77,7 @@ const FlocagePrice: NextPage<{}> = () => {
         </div>
         <Image className="z-[10] absolute bottom-0 -right-40" src={whiteT} alt="" /> 
       </div>
-      <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
+      <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full z-[50]">
         <FooterLocation leftLocation="/prixlogos" />
       </div>
     </div>
