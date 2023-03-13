@@ -42,26 +42,24 @@ export default function Japonais() {
           <Link href={"/projectMenu/japonais/japonais2"}>
             <img src={japonais2.src} alt="" />
           </Link>
-          <Link href={"/projectMenu/japonais/japonais3"}>
-            <img src={japonais3.src} alt="" />
+          <Link className="relative" href={"/projectMenu/japonais/japonais3"}>
+            <img className="absolute -bottom-4" src={japonais3.src} alt="" />
           </Link>
-          {/* <Link href={"/projectMenu/japonais/japonais4"}><img src={japonais4.src} alt="" /></Link>
-          <Link href={"/projectMenu/japonais/japonais7"}><img src={japonais7.src} alt="" /></Link> */}
         </div>
         <div style={{ margin: '100px 0' }} className={styles.contentItem}>
         <Link href={"/projectMenu/japonais/japonais2"}>
             <img src={japonais4.src} alt="" />
           </Link>
-          <Link href={"/projectMenu/japonais/japonais5"}>
-            <img src={japonais5.src} alt="" />
+          <Link className="relative" href={"/projectMenu/japonais/japonais5"}>
+            <img className="absolute -bottom-4" src={japonais5.src} alt="" />
           </Link>
           <Link href={"/projectMenu/japonais/japonais8"}>
             <img src={japonais6.src} alt="" />
           </Link>
         </div>
-        <div className={styles.contentItem}>
-        <Link href={"/projectMenu/japonais/japonais2"}>
-            <img src={japonais7.src} alt="" />
+        <div style={{ marginBottom: '2rem' }} className={styles.contentItem}>
+        <Link className="relative" href={"/projectMenu/japonais/japonais2"}>
+            <img className="absolute bottom-8" src={japonais7.src} alt="" />
           </Link>
           <Link href={"/projectMenu/japonais/japonais5"}>
             <img src={japonais8.src} alt="" />
@@ -70,29 +68,6 @@ export default function Japonais() {
             <img src={japonais8.src} alt="" />
           </Link>
         </div>
-        {/* <div className={styles.contentItem}>
-          <Link href={"/projectMenu/japonais/japonais2"}>
-            <img src={japonais2.src} alt="" />
-          </Link>
-          <Link href={"/projectMenu/japonais/japonais5"}>
-            <img src={japonais5.src} alt="" />
-          </Link>
-          <Link href={"/projectMenu/japonais/japonais8"}>
-            <img src={japonais8.src} alt="" />
-          </Link>
-        </div> */}
-        {/* <div className={styles.contentItem}>
-          <Link href={"/projectMenu/japonais/japonais3"}>
-            <img src={japonais3.src} alt="" />
-          </Link>
-          <Link href={"/projectMenu/japonais/japonais6"}>
-            <img src={japonais6.src} alt="" />
-          </Link>
-
-          <Link href={"/projectMenu/japonais/japonais6"}>
-            <img src={japonais6.src} alt="" />
-          </Link>
-        </div> */}
       </div>
         <div className="fixed bottom-0 md:mb-4 mb-0  md:px-12 px-2 w-full">
         <FooterLocation leftLocation="/projectMenu?active=design" />
