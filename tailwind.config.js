@@ -17,6 +17,9 @@ module.exports = {
       },
       top: {
         84: '22rem'
+      },
+      bottom: {
+        84: '22rem'
       }
     },
   },

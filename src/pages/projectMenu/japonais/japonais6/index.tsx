@@ -45,13 +45,17 @@ export default function Japonais6() {
           </div>
         </div>
         <div className={cs(
-          'w-full flex-1 items-center',
+          'w-full flex-1 items-center relative',
           styles.contentItem
         )}>
-          <img src={japonais1.src} alt="" />
-          <img src={japonais2.src} alt="" />
-          <img src={japonais3.src} alt="" />
-          <img src={japonais4.src} alt="" />
+          <div className="relative -mt-8">
+            <img src={japonais1.src} alt="" />
+            <img className="absolute -bottom-80" src={japonais2.src} alt="" />
+          </div>
+          <div className="mt-48">
+            <img src={japonais3.src} alt="" />
+            <img className="" src={japonais4.src} alt="" />
+          </div>
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">

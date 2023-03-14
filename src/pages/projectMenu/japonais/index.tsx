@@ -47,21 +47,21 @@ export default function Japonais() {
           </Link>
         </div>
         <div style={{ margin: '100px 0' }} className={styles.contentItem}>
-        <Link href={"/projectMenu/japonais/japonais2"}>
+        <Link href={"/projectMenu/japonais/japonais4"}>
             <img src={japonais4.src} alt="" />
           </Link>
           <Link className="relative" href={"/projectMenu/japonais/japonais5"}>
             <img className="absolute -bottom-4" src={japonais5.src} alt="" />
           </Link>
-          <Link href={"/projectMenu/japonais/japonais8"}>
+          <Link href={"/projectMenu/japonais/japonais6"}>
             <img src={japonais6.src} alt="" />
           </Link>
         </div>
         <div style={{ marginBottom: '2rem' }} className={styles.contentItem}>
-        <Link className="relative" href={"/projectMenu/japonais/japonais2"}>
+        <Link className="relative" href={"/projectMenu/japonais/japonais7"}>
             <img className="absolute bottom-8" src={japonais7.src} alt="" />
           </Link>
-          <Link href={"/projectMenu/japonais/japonais5"}>
+          <Link href={"/projectMenu/japonais/japonais8"}>
             <img src={japonais8.src} alt="" />
           </Link>
           <Link className="opacity-0" href={"/projectMenu/japonais/japonais8"}>
