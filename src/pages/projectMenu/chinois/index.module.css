@@ -15,11 +15,11 @@
 }
 
 .content {
-  @apply flex;
+  @apply flex w-full px-12;
 }
 
 .contentItem {
-  margin: 0 30px;
+  /* margin: 0 30px; */
 }
 
 .contentItem img{

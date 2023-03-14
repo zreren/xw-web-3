@@ -64,9 +64,9 @@ export default function Japonais() {
           <Link href={"/projectMenu/japonais/japonais8"}>
             <img src={japonais8.src} alt="" />
           </Link>
-          <Link className="opacity-0" href={"/projectMenu/japonais/japonais8"}>
+          <div className="opacity-0">
             <img src={japonais8.src} alt="" />
-          </Link>
+          </div>
         </div>
       </div>
         <div className="fixed bottom-0 md:mb-4 mb-0  md:px-12 px-2 w-full">

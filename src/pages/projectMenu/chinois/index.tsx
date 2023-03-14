@@ -23,16 +23,16 @@ export default function Japonais() {
           <img src={chinois2.src} alt="" />
           </Link>
         </div>
-        <div className={styles.contentItem}>
-        <Link href={"/projectMenu/chinois/chinois2"}>
-        <img src={chinois1.src} alt="" />
-        </Link>
+        <div style={{ position: 'relative' }} className={styles.contentItem}>
+          <Link href={"/projectMenu/chinois/chinois2"}>
+            <img src={chinois1.src} alt="" />
+          </Link>
         </div>
         <div className="opacity-0">
-        <img src={chinois2.src} alt="" />
+          <img src={chinois2.src} alt="" />
         </div>
       </div>
-        <div className="fixed bottom-0 md:px-12 px-2 w-full">
+        <div className="fixed bottom-0 md:px-12 px-2 md:mb-4 mb-0 w-full">
         <FooterLocation leftLocation="/projectMenu?active=design" />
         </div>
     </div>
