@@ -3,7 +3,7 @@
 }
 
 .logo {
-  @apply fixed bottom-40 md:right-36 right-12;
+  @apply fixed bottom-40 md:right-36 right-12 z-[50];
 }
 
 .title {
@@ -15,10 +15,11 @@
 }
 
 .content {
-  @apply flex;
+  @apply flex w-full px-12 mb-12;
 }
 
 .contentItem {
+  flex: 1;
   margin: 0 30px;
 }
 

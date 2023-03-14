@@ -29,13 +29,13 @@ export default function Coreen() {
           <img src={bar2.src} alt="" />
           </Link>
         </div>
-        <div className={styles.contentItem}>
-        <Link href={"/projectMenu/bar/bar3"}>
+        <div style={{ position: 'relative' }} className={styles.contentItem}>
+        <Link className="absolute bottom-0 w-full z-[10]" href={"/projectMenu/bar/bar3"}>
          <img src={bar3.src} alt="" />
         </Link>
         </div>
       </div>
-        <div className="fixed bottom-0 md:px-12 px-2 w-full">
+        <div className="fixed bottom-0 md:px-12 md:mb-4 mb-0 px-2 w-full">
         <FooterLocation leftLocation="/projectMenu?active=design" />
         </div>
     </div>
