@@ -52,9 +52,9 @@ export default function Japonais6() {
             <img src={japonais1.src} alt="" />
             <img className="absolute -bottom-80" src={japonais2.src} alt="" />
           </div>
-          <div className="mt-48">
+          <div className="mt-56">
             <img src={japonais3.src} alt="" />
-            <img className="" src={japonais4.src} alt="" />
+            <img src={japonais4.src} alt="" />
           </div>
         </div>
       </div>
