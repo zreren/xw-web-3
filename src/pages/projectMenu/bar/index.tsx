@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './index.module.css';
 import Link from "next/link";
+import cs from 'classnames';
 import bar1 from '@/public/images/bar/Bar-1.png'
 import bar2 from '@/public/images/bar/Bar-2.png'
 import bar3 from '@/public/images/bar/Bar-3.png'
@@ -24,13 +25,13 @@ export default function Coreen() {
             <img src={bar1.src} alt="" />
           </Link>
         </div>
-        <div className={styles.contentItem}>
+        <div className={cs('mx-12', styles.contentItem)}>
         <Link href={"/projectMenu/bar/bar2"}>
           <img src={bar2.src} alt="" />
           </Link>
         </div>
         <div style={{ position: 'relative' }} className={styles.contentItem}>
-        <Link className="absolute bottom-0 w-full z-[10]" href={"/projectMenu/bar/bar3"}>
+        <Link className="absolute -top-4 w-full z-[10]" href={"/projectMenu/bar/bar3"}>
          <img src={bar3.src} alt="" />
         </Link>
         </div>
