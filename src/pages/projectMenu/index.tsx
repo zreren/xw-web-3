@@ -125,7 +125,13 @@ export default function ProjectMenu() {
   const [textColor2, setText2Color] = useState<string>('text-black')
   const { subMenu = '' } = query;
 
-  console.log('query===>', query);
+  // 摄影图片切换动画
+  const imgTransitions = useTransition(photoImgIdx, {
+    key: photoImgIdx,
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    config: { duration: 1000 },
+  })
   
   // card 整体切换动画
   const cardMenuTransitions = useTransition(cardMenuVisible, {
@@ -316,7 +322,20 @@ export default function ProjectMenu() {
         <div
           onClick={handleClickBackground}
           className={`flex-1 flex md:flex-row flex-col justify-between ${backgroundColor.contentLeft} relative`}>
-            {activeMenu === 'photo' && <MyImage classname="absolute w-[1100px] right-0 cursor-pointer" />}
+            {activeMenu === 'photo' && 
+            // imgTransitions
+            imgTransitions((style, i) => (
+              <animated.div
+                className={styles.bg}
+                style={{
+                  ...style,
+                }}
+              >
+                <MyImage classname="absolute w-[1100px] right-0 cursor-pointer" />
+              </animated.div>
+            ))
+            
+            }
             <ul className={cs(
               `${textColor} `,
               styles.menu,
