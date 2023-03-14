@@ -35,15 +35,14 @@ export default function Vietnamien() {
           <Link href={"/projectMenu/vietnamien/vietnamien1"}><img src={vietnamien1.src} alt="" /></Link>
         </div>
         <div className={cs(
-          'flex items-center md:px-0 px-8',
+          'relative',
+          styles.contentItem,
         )}>
           <Link href={"/projectMenu/vietnamien/vietnamien2"}>
-            <img src={vietnamien2.src} alt="" />
+            <img className="absolute bottom-40 ml-8" src={vietnamien2.src} alt="" />
           </Link>
         </div>
-        <div className=
-          "opacity-0"
-        >
+        <div className={cs('opacity-0', styles.contentItem)}>
         <img src={vietnamien2.src} alt="" />
         </div>
       </div>
