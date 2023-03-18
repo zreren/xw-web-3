@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
     "@next/font": "13.1.6",
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",
@@ -20,6 +21,7 @@
     "next": "13.1.6",
     "qs": "^6.11.0",
     "react": "18.2.0",
+    "react-awesome-reveal": "^4.2.3",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-masonry-component": "^6.3.0",
