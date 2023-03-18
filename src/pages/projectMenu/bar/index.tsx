@@ -31,7 +31,7 @@ export default function Coreen() {
           </Link>
         </div>
         <div style={{ position: 'relative' }} className={styles.contentItem}>
-        <Link className="absolute -top-4 w-full z-[10]" href={"/projectMenu/bar/bar3"}>
+        <Link className=" -top-4 w-full z-[10]" href={"/projectMenu/bar/bar3"}>
          <img src={bar3.src} alt="" />
         </Link>
         </div>

@@ -22,7 +22,6 @@ import photoBackImage3 from '@/public/images/photo/photoBackImage3.png';
 import photoBackImage4 from '@/public/images/photo/photoBackImage4.png';
 import photoBackImage5 from '@/public/images/photo/photoBackImage5.png';
 import photoBackImage6 from '@/public/images/photo/photoBackImage6.png';
-import FooterLocation from "@/components/FooterLocation";
 import Advertisement from "@/components/Advertisement";
 import Card from "@/components/Card";
 
@@ -199,11 +198,6 @@ export default function ProjectMenu() {
     setCardMenuVisible(true)
   }
 
-  // 点击摄影背景图
-  const handleClickBackground = () => {
-
-  }
-  
   useEffect(() => {
     const { active = '' } = query;
     handleClickMenu(active as string);
@@ -325,10 +319,8 @@ export default function ProjectMenu() {
       <div
         className={styles.other}>
         <div
-          onClick={handleClickBackground}
           className={`flex-1 flex md:flex-row flex-col justify-between ${backgroundColor.contentLeft} relative`}>
             {activeMenu === 'photo' && 
-            // imgTransitions
             imgTransitions((style, i) => (
               <animated.div
                 className="absolute w-[1000px] right-0 cursor-pointer"
@@ -389,12 +381,12 @@ export default function ProjectMenu() {
             {activeMenu === 'design' && (
               <div className="w-full h-full flex justify-center items-start">
                 <div className="flex flex-col md:text-[32px] text-[20px] font-bold">
-                  <Link href={'/projectMenu/japonais'}>Japonais 日餐</Link>
-                  <Link href={'/projectMenu/chinois'}>Chinois 中餐</Link>
-                  <Link href={'/projectMenu/thailandais'}>Thailandais 泰餐</Link>
-                  <Link href={'/projectMenu/vietnamien'}>Vietnamien 越餐</Link>
-                  <Link href={'/projectMenu/coreen'}>Coreen 韩餐</Link>
-                  <Link href={'/projectMenu/bar'}>BAR 酒吧</Link>
+                  <Link className="hover:text-blue-600" href={'/projectMenu/japonais'}>Japonais 日餐</Link>
+                  <Link className="hover:text-blue-600" href={'/projectMenu/chinois'}>Chinois 中餐</Link>
+                  <Link className="hover:text-blue-600" href={'/projectMenu/thailandais'}>Thailandais 泰餐</Link>
+                  <Link className="hover:text-blue-600" href={'/projectMenu/vietnamien'}>Vietnamien 越餐</Link>
+                  <Link className="hover:text-blue-600" href={'/projectMenu/coreen'}>Coreen 韩餐</Link>
+                  <Link className="hover:text-blue-600" href={'/projectMenu/bar'}>BAR 酒吧</Link>
                 </div>
               </div>
             )}
