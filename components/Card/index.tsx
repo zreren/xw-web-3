@@ -24,13 +24,13 @@ export default function Card(props: ICardProp) {
       <div className={styles.item} id="water-fall-01">
         <img onClick={() => clickImage(1)} src={fotor1.src} alt="" />
         <img onClick={() => clickImage(3)} src={fotor3.src} alt="" />
-        <img src={fotor5.src} alt="" />
+        <img onClick={() => clickImage(5)} src={fotor5.src} alt="" />
       </div>
       <div className={styles.item} id="water-fall-02">
         <img onClick={() => clickImage(2)}  src={fotor2.src} alt="" />
         <img onClick={() => clickImage(4)}  src={fotor4.src} alt="" />
-        <img src={fotor6.src} alt="" />
-        <img src={fotor7.src} alt="" />
+        <img onClick={() => clickImage(6)} src={fotor6.src} alt="" />
+        <img onClick={() => clickImage(7)} src={fotor7.src} alt="" />
       </div>
     </div>
   )

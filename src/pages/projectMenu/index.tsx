@@ -13,6 +13,9 @@ import cardImg1 from '@/public/images/cardImg/card1.png';
 import cardImg2 from '@/public/images/cardImg/card2.png';
 import cardImg3 from '@/public/images/cardImg/card3.png';
 import cardImg4 from '@/public/images/cardImg/card4.png';
+import cardImg5 from '@/public/images/cardImg/card5.png';
+import cardImg6 from '@/public/images/cardImg/card6.png';
+import cardImg7 from '@/public/images/cardImg/card7.png';
 import photoBackImage1 from '@/public/images/photo/photoBackImage1.png';
 import photoBackImage2 from '@/public/images/photo/photoBackImage2.png';
 import photoBackImage3 from '@/public/images/photo/photoBackImage3.png';
@@ -93,12 +96,12 @@ const Navigation:React.FC<NavigationProps> = (props) => {
 
 
 const images = [
-  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage1.src} alt="" />,
-  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage2.src} alt="" />,
-  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage3.src} alt="" />,
-  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage4.src} alt="" />,
-  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage5.src} alt="" />,
-  ({ classname }: { classname: string }) => <img className={classname} src={photoBackImage6.src} alt="" />,
+  ({ classname }: { classname?: string }) => <img className={classname} src={photoBackImage1.src} alt="" />,
+  ({ classname }: { classname?: string }) => <img className={classname} src={photoBackImage2.src} alt="" />,
+  ({ classname }: { classname?: string }) => <img className={classname} src={photoBackImage3.src} alt="" />,
+  ({ classname }: { classname?: string }) => <img className={classname} src={photoBackImage4.src} alt="" />,
+  ({ classname }: { classname?: string }) => <img className={classname} src={photoBackImage5.src} alt="" />,
+  ({ classname }: { classname?: string }) => <img className={classname} src={photoBackImage6.src} alt="" />,
 ]
 
 export default function ProjectMenu() {
@@ -112,6 +115,8 @@ export default function ProjectMenu() {
     cardImage2: false,
     cardImage3: false,
     cardImage4: false,
+    cardImage5: false,
+    cardImage6: false,
   });
   const [imgIndex, setImgIndex] = useState<number>(0);
   const [photoImgIdx, setPhotoImgIdx] = useState<number>(0);
@@ -326,12 +331,12 @@ export default function ProjectMenu() {
             // imgTransitions
             imgTransitions((style, i) => (
               <animated.div
-                className={styles.bg}
+                className="absolute w-[1000px] right-0 cursor-pointer"
                 style={{
                   ...style,
                 }}
               >
-                <MyImage classname="absolute w-[1100px] right-0 cursor-pointer" />
+                <MyImage />
               </animated.div>
             ))
             
@@ -476,6 +481,60 @@ export default function ProjectMenu() {
               item && (
                 <animated.img
                 src={cardImg4.src}
+                style={{
+                  ...style,
+                position: "absolute",
+                top: 0,
+                right: '5rem',
+                cursor: 'pointer'
+                }}
+                >
+                </animated.img>
+              )
+            )}
+            </div>}
+            {cardImageVisible.cardImage5 && <div onClick={clickImageRestore}>
+            {cardImgOtherTransitions(
+              (style, item) =>
+              item && (
+                <animated.img
+                src={cardImg5.src}
+                style={{
+                  ...style,
+                position: "absolute",
+                top: 0,
+                right: '5rem',
+                cursor: 'pointer'
+                }}
+                >
+                </animated.img>
+              )
+            )}
+            </div>}
+            {cardImageVisible.cardImage6 && <div onClick={clickImageRestore}>
+            {cardImgOtherTransitions(
+              (style, item) =>
+              item && (
+                <animated.img
+                src={cardImg6.src}
+                style={{
+                  ...style,
+                position: "absolute",
+                top: 0,
+                right: '5rem',
+                cursor: 'pointer'
+                }}
+                >
+                </animated.img>
+              )
+            )}
+            </div>}
+            {cardImageVisible.cardImage7 && <div onClick={clickImageRestore}>
+            {cardImgOtherTransitions(
+              (style, item) =>
+              item && (
+                <animated.img
+                src={cardImg7.src}
                 style={{
                   ...style,
                 position: "absolute",
