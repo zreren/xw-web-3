@@ -24,6 +24,7 @@ import photoBackImage5 from '@/public/images/photo/photoBackImage5.png';
 import photoBackImage6 from '@/public/images/photo/photoBackImage6.png';
 import Advertisement from "@/components/Advertisement";
 import Card from "@/components/Card";
+import { Fade } from "react-awesome-reveal";
 
 
 interface NavigationProps {
@@ -134,7 +135,7 @@ export default function ProjectMenu() {
     key: photoImgIdx,
     from: { opacity: 0 },
     enter: { opacity: 1 },
-    config: { duration: 1000 },
+    config: { duration: 2000 },
   })
   
   // card 整体切换动画
@@ -204,7 +205,13 @@ export default function ProjectMenu() {
   }, [])
   
   const handleClickMenu = (menu: string):void => {
-    setActiveMenu(menu);
+    if(menu === 'photo') {
+      setTimeout(() => {
+        setActiveMenu(menu);
+      }, 300)
+    } else {
+      setActiveMenu(menu);
+    }
     setPhotoImgIdx(0)
     if(menu === 'design' || menu === 'brochure') {
       setBackgroundColor(pre => ({
@@ -319,19 +326,22 @@ export default function ProjectMenu() {
       <div
         className={styles.other}>
         <div
-          className={`flex-1 flex md:flex-row flex-col justify-between ${backgroundColor.contentLeft} relative`}>
+          className={cs(
+            `${backgroundColor.contentLeft}`,
+            styles.content
+            )}>
             {activeMenu === 'photo' && 
             imgTransitions((style, i) => (
               <animated.div
                 className="absolute w-[1000px] right-0 cursor-pointer"
                 style={{
                   ...style,
+                  // transition: 'all 0.5s',
                 }}
               >
                 <MyImage />
               </animated.div>
             ))
-            
             }
             <ul className={cs(
               `${textColor} `,

@@ -8,6 +8,11 @@
 
 .headLeft {
   @apply w-5/12;
+  transition: all 0.5s;
+}
+
+.headRight {
+  transition: all 0.5s;
 }
 
 .infos {
@@ -16,6 +21,11 @@
 
 .other {
   @apply flex-1 flex flex-col justify-between tracking-wider;
+}
+
+.content {
+  @apply flex-1 flex md:flex-row flex-col justify-between relative;
+  transition: all 0.5s;
 }
 
 .menu {
@@ -54,6 +64,7 @@
 
 .imageOrigin {
   @apply flex-1 w-full h-full;
+  transition: all 0.5s;
 }
 
 .contentRight {
