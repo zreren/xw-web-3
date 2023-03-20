@@ -65,7 +65,9 @@ const Culinaire: NextPage<{}> = () => {
           <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />
         </div>
       </nav>
-      <div className={styles.title}>小雯工作室</div>
+      <Link href={"/"}>
+        <div className={styles.title}>小雯工作室</div>
+      </Link>
     </div>
 
       <div className={styles.imgContent}>

@@ -1,3 +1,11 @@
+.nav {
+  @apply w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-nav-color z-[50] md:text-5xl text-4xl;
+}
+
+.title {
+  @apply md:text-3xl font-normal px-12 tracking-wider text-black tracking-widest absolute -bottom-5 left-0 cursor-pointer;
+}
+
 .noscontacter {
   @apply flex relative items-center text-[18px] md:text-[38px] flex flex-1 mb-[5px];
   -webkit-text-fill-color: transparent;

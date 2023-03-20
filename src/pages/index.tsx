@@ -56,11 +56,13 @@ function Home() {
 
   const str = '>'
 
+  console.log('navigationVisible', visible, navigationVisible);
+  
+
   return (
        <div className='w-full h-full min-h-screen bg-neutral-200 text-black'> 
         {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
-        {/* nav */}
-        <nav className={cs(
+        {/* <nav className={cs(
           'w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-nav-color z-[50]',
           visible && !navigationVisible ? {
             fixed: true,
@@ -68,16 +70,37 @@ function Home() {
           } : { hidden: true },
           )}>
              <div className="flex flex-row items-center justify-between w-full">
-          <div>
-            <span className='md:text-5xl text-4xl font-bold'>E.</span>
-            <span className='md:text-5xl text-4xl font-semibold tracking-wider	'>design</span>
+          <div className='cursor-pointer'>
+            <span onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='md:text-5xl text-4xl font-bold '>E.</span>
+            <span onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='md:text-5xl text-4xl font-semibold tracking-wider'>design</span>
             <Link href='/contact' className='md:text-[42px] text-2xl  ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={toogleNavigation}>
           <Image className="bg-blend-screen" src={navigationlogo} alt="navlogo" />
         </div>
         </div>
-        </nav>
+
+        <div className="text-blue-500">小雯工作室</div>
+        </nav> */}
+        {visible && !navigationVisible && 
+        <nav className={cs(
+          styles.nav,
+          visible && !navigationVisible ? {
+            fixed: true,
+            zIndex: 1000,
+          } : { hidden: true },
+        )}>
+          <div className='cursor-pointer'>
+            <span className='font-bold' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>E.</span>
+            <span onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='font-semibold tracking-wider'>design</span>
+            <Link href='/contact' className='md:text-[42px] text-2xl  ml-10 font-bold'>Infos</Link>
+          </div>
+          <div className="cursor-pointer" onClick={toogleNavigation}>
+          <Image className="bg-blend-screen" src={navigationlogo} alt="navlogo" />
+        </div>
+       <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={styles.title}>小雯工作室</div>
+      </nav>
+      }
           
         {/* 图片 */}
         <video className='w-full' muted autoPlay loop src="/video/Final_２.mp4" />

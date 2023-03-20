@@ -1,0 +1,9 @@
+.nav {
+  @apply flex flex-row items-center justify-between w-full px-12 pt-4 relative md:text-5xl text-4xl;
+}
+
+
+
+.title {
+  @apply md:text-3xl font-normal px-12 tracking-wider tracking-widest;
+}
