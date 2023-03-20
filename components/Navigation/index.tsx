@@ -27,8 +27,8 @@ const Navigation: React.FC<NavigationProps> = (props) => {
        <div className="flex flex-row items-center justify-between w-full">
           <div>
             <span className='md:text-5xl text-4xl font-bold'>E.</span>
-            <span className='md:text-4xl text-4xl font-semibold tracking-wider	'>design</span>
-            <Link href='/' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
+            <span className='md:text-5xl text-4xl font-semibold tracking-wider	'>design</span>
+            <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={closeNavigation}>
           <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />

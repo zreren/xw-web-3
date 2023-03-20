@@ -67,16 +67,26 @@ function Home() {
             zIndex: 1000,
           } : { hidden: true },
           )}>
-          <div className="flex flex-row items-center justify-between">
+             <div className="flex flex-row items-center justify-between w-full">
+          <div>
+            <span className='md:text-5xl text-4xl font-bold'>E.</span>
+            <span className='md:text-5xl text-4xl font-semibold tracking-wider	'>design</span>
+            <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
+          </div>
+          <div className="cursor-pointer" onClick={toogleNavigation}>
+          <Image className="bg-blend-screen" src={navigationlogo} alt="navlogo" />
+        </div>
+        </div>
+          {/* <div className="flex flex-row items-center justify-between">
             <div className='flex flex-col'>
-              <div><span className='md:text-5xl text-4xl font-bold'>E.</span><span className='text-3xl font-semibold'>design</span></div>
+              <div><span className='md:text-5xl text-4xl font-bold'>E.</span><span className='md:text-5xl text-4xl  font-semibold'>design</span></div>
               <div className='md:text-2xl text-1xl font-semibold'>小雯工作室</div>
             </div>
             <Link href='/contact' className='md:text-[44px] text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className='cursor-pointer' onClick={toogleNavigation}>
             <Image src={navigationlogo} alt="navlogo" />
-          </div>
+          </div> */}
         </nav>
           
         {/* 图片 */}
