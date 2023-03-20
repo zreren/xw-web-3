@@ -44,7 +44,7 @@ const BroderiePrice: NextPage<{}> = () => {
           <div>
             <span className='font-bold'>E.</span>
             <span className='font-semibold tracking-wider'>design</span>
-            <Link href='/' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
+            <Link href='/' className='md:text-[42px] text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer">
           <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />

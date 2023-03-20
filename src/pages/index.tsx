@@ -71,7 +71,7 @@ function Home() {
           <div>
             <span className='md:text-5xl text-4xl font-bold'>E.</span>
             <span className='md:text-5xl text-4xl font-semibold tracking-wider	'>design</span>
-            <Link href='/contact' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
+            <Link href='/contact' className='md:text-[42px] text-2xl  ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={toogleNavigation}>
           <Image className="bg-blend-screen" src={navigationlogo} alt="navlogo" />

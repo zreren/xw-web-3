@@ -36,7 +36,7 @@ const Flyer: NextPage<{}> = () => {
             <Link href={"/"}>
               <span className='font-semibold tracking-wider'>design</span>
               </Link>
-            <Link href='/' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
+            <Link href='/' className='md:text-[42px] text-2xl  ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={toogleNavigation}>
           <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />
