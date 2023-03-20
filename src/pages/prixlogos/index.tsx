@@ -23,8 +23,6 @@ const PrixLogos: NextPage<{}> = () => {
     broderieVisible: query.activeMenu === 'broderie',
     printVisible: false, // 刺绣
   })
-  const [printVisible, setPrintVisible] = useState<boolean>(false); // 刺绣
-  // const router = useRouter();
   const transitions = useTransition(imageObjectVisible.flocageVisible, {
     from: { opacity: 0, transform: "translate(-100px, 200px)" },
     enter: { opacity: 1, transform: "translate(0px 0px)" },
