@@ -10,26 +10,6 @@ import 'swiper/css/scrollbar';
 
 const PoloComponent:React.FC<{}> = (props) => {
 
-  const slides = (function() {
-    const arr = [];
-    for (let i = 0; i < 5; i++) {
-      arr.push(
-        <SwiperSlide className="flex flex-col" key={`slide-${i}`} tag="li">
-          <img
-            src={`/images/polo/Polo-${i + 1}.png`}
-            style={{ listStyle: 'none' }}
-            alt={`Slide ${i+1}`}
-          />
-           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Basic-Manches courtes/unisex</span>
-            <span>基本中性翻领短袖</span>
-          </div>
-        </SwiperSlide>
-      );
-    }
-    return arr;
-  })();
-
   const renderPoloLong = () => {
     return (
       <Swiper
@@ -37,55 +17,52 @@ const PoloComponent:React.FC<{}> = (props) => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={3}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         navigation
       >
-         <SwiperSlide className="flex flex-col" key={`slide-2`} tag="li">
+         <SwiperSlide className="flex flex-col mt-4" key={`slide-2`} tag="li">
           <img
-            src={`/images/polo/Polo-long-1.png`}
+            src={`/images/polo/Polo-long-1.jpg`}
             style={{ listStyle: 'none' }}
             alt={`Slide 2`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Luxe-Manches courtes/unisex</span>
+          <div className="flex items-center">POLO-Luxe-Manches courtes/unisex<div className={cs('bg-black', styles.tag)}></div></div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-2`} tag="li">
-          <img
-            src={`/images/polo/Polo-long-4.png`}
-            style={{ listStyle: 'none' }}
-            alt={`Slide 2`}
-          />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Luxe-Manches courtes/unisex</span>
-            <span>基本中性翻领短袖</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-2`} tag="li">
+        <SwiperSlide className="flex flex-col mt-4" key={`slide-2`} tag="li">
           <img
             src={`/images/polo/Polo-long-2.jpg`}
             style={{ listStyle: 'none' }}
             alt={`Slide 2`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Luxe-Manches courtes/unisex</span>
+          <div className="flex items-center">POLO-Luxe-Manches courtes/unisex<div style={{ background: 'rgb(229 229 229)' }} className={styles.tag}></div></div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-2`} tag="li">
+        <SwiperSlide className="flex flex-col mt-4" key={`slide-2`} tag="li">
           <img
-            src={`/images/polo/Polo-long-3.png`}
+            src={`/images/polo/Polo-long-3.jpg`}
             style={{ listStyle: 'none' }}
             alt={`Slide 2`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Luxe-Manches courtes/unisex</span>
+          <div className="flex items-center">POLO-Luxe-Manches courtes/unisex<div className={cs('bg-black', styles.tag)}></div></div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
-       
+        <SwiperSlide className="flex flex-col mt-4" key={`slide-2`} tag="li">
+          <img
+            src={`/images/polo/Polo-long-4.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 2`}
+          />
+          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center">POLO-Luxe-Manches courtes/unisex<div style={{ background: 'rgb(143 61 51)' }} className={styles.tag}></div></div>
+            <span>基本中性翻领短袖</span>
+          </div>
+        </SwiperSlide>
       </Swiper>
     )
   }
@@ -106,11 +83,65 @@ const PoloComponent:React.FC<{}> = (props) => {
           onSwiper={(swiper) => console.log(swiper)}
           navigation
         >
-          {slides}
+          <SwiperSlide key={`slide-1`} tag="li">
+          <img
+            src={`/images/polo/Polo-1.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 1`}
+          />
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div className={cs('bg-black', styles.tag)}></div></div>
+            <span>基本中性翻领短袖</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide key={`slide-1`} tag="li">
+          <img
+            src={`/images/polo/Polo-2.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 1`}
+          />
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div style={{ background: 'rgb(229 229 229)' }} className={styles.tag}></div></div>
+            <span>基本中性翻领短袖</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide key={`slide-1`} tag="li">
+          <img
+            src={`/images/polo/Polo-3.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 1`}
+          />
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div style={{ background: 'rgb(152 29 31)' }} className={styles.tag}></div></div>
+            <span>基本中性翻领短袖</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide key={`slide-1`} tag="li">
+          <img
+            src={`/images/polo/Polo-4.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 1`}
+          />
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div style={{ background: 'rgb(176 179 179)' }} className={styles.tag}></div></div>
+            <span>基本中性翻领短袖</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide key={`slide-1`} tag="li">
+          <img
+            src={`/images/polo/Polo-5.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 1`}
+          />
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div style={{ background: 'rgb(215 171 151)' }} className={styles.tag}></div></div>
+            <span>基本中性翻领短袖</span>
+          </div>
+        </SwiperSlide>
         </Swiper>
       </div>
       <div className={cs(
-        'my-4',
+        'md:mt-48 mt-12',
         styles.short
       )}>
         <div className={styles.title}>
@@ -125,25 +156,26 @@ const PoloComponent:React.FC<{}> = (props) => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className="flex flex-col mt-8" key={`slide-1`} tag="li">
           <img
             src={`/images/polo/Polo-luxe-1.jpg`}
             style={{ listStyle: 'none' }}
             alt={`Slide 1`}
           />
+          
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Luxe-Manches courtes/unisex</span>
+          <div className="flex items-center"> POLO-Luxe-Manches courtes/unisex<div style={{ background: 'rgb(28 32 51)' }} className={styles.tag}></div></div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-2`} tag="li">
+        <SwiperSlide className="flex flex-col mt-8" key={`slide-2`} tag="li">
           <img
-            src={`/images/polo/Polo-luxe-2.png`}
+            src={`/images/polo/Polo-luxe-2.jpg`}
             style={{ listStyle: 'none' }}
             alt={`Slide 2`}
           />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Luxe-Manches courtes/unisex</span>
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center"> POLO-Luxe-Manches courtes/unisex<div style={{ background: 'rgb(27 26 31)' }} className={styles.tag}></div></div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './index.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import cs from 'classnames';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -8,23 +9,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const SweatshirtComponent:React.FC<{}> = (props) => {
-
-  const slides = (function() {
-    const arr = [];
-    for (let i = 0; i < 4; i++) {
-      arr.push(
-        <SwiperSlide key={`slide-${i}`} tag="li">
-          <img
-            src={`/images/personnalise/sweat/Sweat-shirt-${i + 1}.png`}
-            style={{ listStyle: 'none' }}
-            alt={`Slide ${i+1}`}
-          />
-        </SwiperSlide>
-      );
-    }
-    return arr;
-  })();
-
 
   return (
     <div className={styles.sweatshirt}>
@@ -38,11 +22,52 @@ const SweatshirtComponent:React.FC<{}> = (props) => {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={3}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
           navigation
         >
-          {slides}
+          <SwiperSlide key={`slide-1`} tag="li">
+            <img
+              src={`/images/personnalise/sweat/Sweat-shirt-1.jpg`}
+              style={{ listStyle: 'none' }}
+              alt={`Slide1`}
+            />
+          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+            <div className="flex items-center">Sweatshirt-Basic-longues/unisex <div className={cs('bg-black', styles.tag)}></div></div>
+            <div>基本中性圆领卫衣</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide key={`slide-2`} tag="li">
+            <img
+              src={`/images/personnalise/sweat/Sweat-shirt-2.jpg`}
+              style={{ listStyle: 'none' }}
+              alt={`Slide1`}
+            />
+          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+            <div className="flex items-center">Sweatshirt-Basic-longues/unisex <div style={{ background: 'rgb(229 229 229)' }} className={styles.tag}></div></div>
+            <div>基本中性圆领卫衣</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide key={`slide-3`} tag="li">
+            <img
+              src={`/images/personnalise/sweat/Sweat-shirt-3.jpg`}
+              style={{ listStyle: 'none' }}
+              alt={`Slide1`}
+            />
+          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+            <div className="flex items-center">Sweatshirt-Basic-longues/unisex <div style={{ background: 'rgb(152 29 31)' }} className={styles.tag}></div></div>
+            <div>基本中性圆领卫衣</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide key={`slide-3`} tag="li">
+            <img
+              src={`/images/personnalise/sweat/Sweat-shirt-4.jpg`}
+              style={{ listStyle: 'none' }}
+              alt={`Slide1`}
+            />
+          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+            <div className="flex items-center">Sweatshirt-Basic-longues/unisex <div style={{ background: 'rgb(158 149 115)' }} className={styles.tag}></div></div>
+            <div>基本中性圆领卫衣</div>
+          </div>
+        </SwiperSlide>
         </Swiper>
       </div>
     </div>

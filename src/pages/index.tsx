@@ -61,7 +61,7 @@ function Home() {
         {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
         {/* nav */}
         <nav className={cs(
-          'w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-nav-color',
+          'w-full flex flex-row mix-blend-multiply items-center justify-between px-12 py-4 bg-nav-color z-[50]',
           visible && !navigationVisible ? {
             fixed: true,
             zIndex: 1000,
@@ -77,20 +77,10 @@ function Home() {
           <Image className="bg-blend-screen" src={navigationlogo} alt="navlogo" />
         </div>
         </div>
-          {/* <div className="flex flex-row items-center justify-between">
-            <div className='flex flex-col'>
-              <div><span className='md:text-5xl text-4xl font-bold'>E.</span><span className='md:text-5xl text-4xl  font-semibold'>design</span></div>
-              <div className='md:text-2xl text-1xl font-semibold'>小雯工作室</div>
-            </div>
-            <Link href='/contact' className='md:text-[44px] text-2xl ml-10 font-bold'>Infos</Link>
-          </div>
-          <div className='cursor-pointer' onClick={toogleNavigation}>
-            <Image src={navigationlogo} alt="navlogo" />
-          </div> */}
         </nav>
           
         {/* 图片 */}
-          <Image className='w-full' src={homeImg} alt="home_image" />
+        <video className='w-full' muted autoPlay loop src="/video/Final_２.mp4" />
           {/* 内容区域 */}
           <div ref={contentRef} className='flex flex-col px-12 pt-32 justify-between	'>
             <div style={{ height: '80vh'}}>
