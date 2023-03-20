@@ -18,9 +18,9 @@ const PrixLogos: NextPage<{}> = () => {
   const { query, push } = useRouter();
   const [activeMenu, setActiveMenu] = useState<string>(query.activeMenu as string || 'initial');
   const [imageObjectVisible, setimageObjectVisible] = useState<Record<string, boolean>>({
-    initialVisible: true, // 初始 - 衣服
-    flocageVisible: false, // 印花
-    broderieVisible: false,
+    initialVisible: !query.activeMenu, // 初始 - 衣服
+    flocageVisible: query.activeMenu === 'flocage', // 印花
+    broderieVisible: query.activeMenu === 'broderie',
     printVisible: false, // 刺绣
   })
   const [printVisible, setPrintVisible] = useState<boolean>(false); // 刺绣

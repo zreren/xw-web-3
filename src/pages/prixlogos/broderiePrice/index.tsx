@@ -78,7 +78,7 @@ const FlocagePrice: NextPage<{}> = () => {
         <Image className="z-[10] absolute bottom-0 -right-40" src={whiteT} alt="" /> 
       </div>
       <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full z-[50]">
-        <FooterLocation leftLocation="/prixlogos?activeMenu=flocage" />
+        <FooterLocation leftLocation="/prixlogos?activeMenu=broderie" />
       </div>
     </div>
   )
