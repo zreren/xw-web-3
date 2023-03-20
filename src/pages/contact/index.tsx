@@ -5,7 +5,6 @@ import qrCode from '@/public/images/contact/qrCode.png'
 import maisonedesign from '@/public/images/contact/maisonedesign-2.png'
 import styles from './index.module.css';
 import Navbar from "@/components/Navbar";
-import Link from 'next/link'
 import FooterLocation from "@/components/FooterLocation";
 
 const Contact: React.FC<{}> = () => {

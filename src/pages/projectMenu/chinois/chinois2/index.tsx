@@ -25,7 +25,7 @@ export default function Chinois1() {
       )} onMouseEnter={() => setTitle('Japonais')} onMouseLeave={() => setTitle('Chinois')}>
         {
           title === 'Chinois' ? (
-            <><span className="cursor-pointer">Chinois</span><div className="cursor-pointer">中餐</div></>
+            <><span className="cursor-pointer">Chinois</span><div className="cursor-pointer">泰餐</div></>
             ) : (
               <><span className="cursor-pointer text-blue-500" onClick={gotoJaponais}>Japonais</span><div className="cursor-pointe text-blue-500">日餐</div></>
           )
@@ -69,7 +69,7 @@ export default function Chinois1() {
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
-        <FooterLocation leftLocation="/projectMenu/japonais" />
+        <FooterLocation leftLocation="/projectMenu/thailandais" />
         </div>
     </div>
   )

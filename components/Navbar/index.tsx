@@ -44,7 +44,7 @@ const Navbar: React.FC<NavBarProps> = (props) => {
     </div>
     </nav>
     <Link href={"/"}>
-       <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-black'>小雯工作室</div>
+       <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-black tracking-wider'>小雯工作室</div>
       </Link>
     </>
   )

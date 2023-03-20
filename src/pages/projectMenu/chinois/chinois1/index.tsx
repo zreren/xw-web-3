@@ -66,7 +66,7 @@ export default function Chinois1() {
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
-        <FooterLocation leftLocation="/projectMenu/japonais" />
+        <FooterLocation leftLocation="/projectMenu/chinois" />
         </div>
     </div>
   )

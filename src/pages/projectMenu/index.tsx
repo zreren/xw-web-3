@@ -50,7 +50,7 @@ const Navigation:React.FC<NavigationProps> = (props) => {
        <div className="flex flex-row items-center justify-between w-full">
           <div>
             <span className='md:text-5xl text-4xl font-bold'>E.</span>
-            <span className='md:text-4xl text-4xl font-semibold tracking-wider	'>design</span>
+            <span className='md:text-5xl text-4xl font-semibold tracking-wider'>design</span>
             <Link href='/contact' className='md:text-[42px] text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={closeNavigation}>
@@ -285,10 +285,6 @@ export default function ProjectMenu() {
     })
   }
 
-  const handleClickSubmenu = () => {
-    setDepliantVisible(true)
-  }
-
   const MyImage = images[photoImgIdx]
   
   return (
@@ -309,7 +305,7 @@ export default function ProjectMenu() {
             <Link href={"/"}>
             <div>
               <span className='md:text-5xl text-4xl font-bold'>E.</span>
-              <span className='md:text-4xl text-4xl font-semibold tracking-wider'>design</span>
+              <span className='md:text-5xl text-4xl font-semibold tracking-wider'>design</span>
             </div>
             <div className="md:text-3xl text-1xl font-semibold">小雯工作室</div>
             </Link>
@@ -324,7 +320,7 @@ export default function ProjectMenu() {
           `flex-1 ${backgroundColor.headRight}`,
           styles.headRight
         )}>
-          <div className="h-full flex justify-end items-center pr-12" onClick={toogleNavigation}>
+          <div className="h-full flex justify-end items-center pr-12 pb-5" onClick={toogleNavigation}>
             {activeMenu === 'brand' ?
               <Image className="bg-white" src={navigationlogo} alt="navlogo" />
               :
@@ -412,7 +408,7 @@ export default function ProjectMenu() {
               </div>
             )}
             {activeMenu === 'brochure' && (
-              <Advertisement currentMenu={subMenu as string} onClickSubmenu={handleClickSubmenu} />
+              <Advertisement currentMenu={subMenu as string} />
             )}
             {activeMenu === 'card' && (
               <>

@@ -66,7 +66,7 @@ export default function Coreen2() {
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
-        <FooterLocation leftLocation="/projectMenu/japonais" />
+        <FooterLocation leftLocation="/projectMenu/coreen" />
         </div>
     </div>
   )

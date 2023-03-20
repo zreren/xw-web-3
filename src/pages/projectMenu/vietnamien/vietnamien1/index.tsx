@@ -67,7 +67,7 @@ export default function Vietnamien() {
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 md:mb-4 mb-0  px-2 w-full">
-        <FooterLocation leftLocation="/projectMenu?active=design" />
+        <FooterLocation leftLocation="/projectMenu/vietnamien" />
         </div>
     </div>
   )
