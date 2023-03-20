@@ -15,7 +15,8 @@ import cixiutwo from '@/public/images/prixlogos/cixiu-2.png'
 import printing from '@/public/images/prixlogos/printing.png'
 
 const PrixLogos: NextPage<{}> = () => {
-  const [activeMenu, setActiveMenu] = useState<string>('price');
+  const { query, push } = useRouter();
+  const [activeMenu, setActiveMenu] = useState<string>(query.activeMenu as string || 'initial');
   const [imageObjectVisible, setimageObjectVisible] = useState<Record<string, boolean>>({
     initialVisible: true, // 初始 - 衣服
     flocageVisible: false, // 印花
@@ -23,7 +24,7 @@ const PrixLogos: NextPage<{}> = () => {
     printVisible: false, // 刺绣
   })
   const [printVisible, setPrintVisible] = useState<boolean>(false); // 刺绣
-  const router = useRouter();
+  // const router = useRouter();
   const transitions = useTransition(imageObjectVisible.flocageVisible, {
     from: { opacity: 0, transform: "translate(-100px, 200px)" },
     enter: { opacity: 1, transform: "translate(0px 0px)" },
@@ -56,6 +57,7 @@ const PrixLogos: NextPage<{}> = () => {
       [`${menu}Visible`]: true
      }
     })
+    setActiveMenu(menu)
   }
 
   const leftCallback = () => {
@@ -67,7 +69,7 @@ const PrixLogos: NextPage<{}> = () => {
     })
   }
 
-  const handleClickEmbro = () => {
+  const handleClickEmbro = (menu: string) => {
     setimageObjectVisible(pre => {
       const newPre = Object.fromEntries(Object.entries(pre).map(item => [item[0], false]))
      return {
@@ -75,13 +77,14 @@ const PrixLogos: NextPage<{}> = () => {
       printVisible: true
      }
     })
+    setActiveMenu(menu)
   }
 
   const handleViewPrice = () => {
     if(activeMenu === 'flocage') {
-      router.push('/prixlogos/flocagePrice')
-    } else if(activeMenu === 'Broderie') {
-      router.push('/prixlogos/broderiePrice')
+      push('/prixlogos/flocagePrice')
+    } else if(activeMenu === 'broderie') {
+      push('/prixlogos/broderiePrice')
     }
   }
 
@@ -93,7 +96,7 @@ const PrixLogos: NextPage<{}> = () => {
           <div className="md:w-2/5">
             <div style={{ paddingLeft: '3rem' }} className={cs(
               styles.title,
-              activeMenu === 'price' ? styles.active : '',
+              activeMenu === 'initial' ? styles.active : '',
             )}  onClick={() => handleClickImage('initial')}>
               <span>Prix pour 'impression de logas</span>
               <span>印制logo价目表</span>
@@ -101,14 +104,14 @@ const PrixLogos: NextPage<{}> = () => {
               <div className="absolute md:w-1/2 mt-8 text-blue-600 flex md:flex-col justify-between flex-row">
                 <div className={cs(
                   activeMenu === 'flocage' ? styles.active : '',
-                  "md:mb-48 flex flex-col cursor-pointer h-24 text-blue-600 pl-12 w-3/4",
+                  "md:mb-16 flex flex-col cursor-pointer h-24 text-blue-600 pl-12 w-3/4",
                   styles.item,
                 )} onClick={() => handleClickImage('flocage')}>
                   <span className="tracking-widest font-bold">印花</span>
                   <span>flocage</span>
                 </div>
                 <div className={cs(
-                  activeMenu === 'Broderie' ? styles.active : '',
+                  activeMenu === 'broderie' ? styles.active : '',
                   "md:mb-24 flex flex-col cursor-pointer h-24 text-blue-600 md:mr-0 mr-18 w-3/4 pl-12",
                   styles.item
                 )} onClick={() => handleClickImage('broderie')}>
@@ -127,7 +130,7 @@ const PrixLogos: NextPage<{}> = () => {
                       ...style,
                     }}
                   >
-                      <Image onClick={handleClickEmbro} src={cixiuone} alt="" />
+                      <Image onClick={() => handleClickEmbro('flocage')} src={cixiuone} alt="" />
                   </animated.div>
                 )
             )}
@@ -141,7 +144,7 @@ const PrixLogos: NextPage<{}> = () => {
                   }}
                 >
                   <div>
-                      <Image onClick={handleClickEmbro} src={cixiutwo} alt="" />
+                      <Image onClick={() => handleClickEmbro('broderie')} src={cixiutwo} alt="" />
                     </div>
                 </animated.div>
               )
@@ -162,16 +165,16 @@ const PrixLogos: NextPage<{}> = () => {
               )
           )}
         
-        {/* <Fade direction='bottom' triggerOnce> */}
           {imageObjectVisible.printVisible && (
+        <Fade direction='right' triggerOnce>
               <div className="flex justify-end mr-12 z-[56] absolute right-20 cursor-pointer">
                 <div className="text-blue-600 text-right" onClick={handleViewPrice}>
                   <div className="text-4xl font-medium tracking-wider">查看价格表</div>
                   <div className="text-xl">voir le prix</div>
                 </div>
               </div>
+            </Fade>
             )}
-            {/* </Fade> */}
              {transitions4(
             (style, item) =>
               item && (

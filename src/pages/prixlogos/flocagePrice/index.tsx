@@ -105,7 +105,7 @@ const BroderiePrice: NextPage<{}> = () => {
         <Image className="absolute w-1/2 left-1/4" src={flocage4} alt="" />
       </div>
       <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
-        <FooterLocation leftLocation="/prixlogos" />
+        <FooterLocation leftLocation="/prixlogos?activeMenu=flocage" />
       </div>
     </div>
   )
