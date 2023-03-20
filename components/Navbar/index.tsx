@@ -32,16 +32,6 @@ const Navbar: React.FC<NavBarProps> = (props) => {
       "flex flex-row items-center justify-between w-full px-12 pt-4 relative md:text-5xl text-4xl",
       classname,
     )}>
-       {/* <div className="flex flex-row items-center justify-between">
-      <div className='flex flex-col'>
-        <div><span className='md:text-5xl text-4xl font-bold'>E.</span><span className='md:text-5xl text-4xl font-semibold'>design</span></div>
-        <div className='md:text-3xl text-1xl font-semibold'>小雯工作室</div>
-      </div>
-      <Link href='/contact' className='md:text-[42px] text-2xl ml-10 font-bold'>Infos</Link>
-    </div>
-    <div className="cursor-pointer" onClick={toogleNavigation}>
-      <Image src={dark ? menuLight : navigationlogo} alt="navlogo" />
-    </div> */}
     <div>
         <Link href={"/"}><span className='font-bold'>E.</span></Link>
         <Link href={"/"}>

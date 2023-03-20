@@ -53,18 +53,17 @@ const Culinaire: NextPage<{}> = () => {
         <div className="fixed w-full">
         <nav className={cs(
           styles.nav,
-          "w-full flex flex-row items-center justify-between px-12 pt-4 relative"
         )}>
-        <div className="flex flex-row items-center justify-between w-full">
-            <div>
-              <span className='md:text-5xl text-4xl font-bold'>E.</span>
-              <span className='md:text-4xl text-4xl font-semibold tracking-wider	'>design</span>
-              <Link href='/' className='md:text-[42px] text-2xl  ml-10 font-bold'>Infos</Link>
-            </div>
-            <div className="cursor-pointer" onClick={toogleNavigation}>
-            <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />
+          <div>
+            <Link href={"/"}><span className='font-bold'>E.</span></Link>
+            <Link href={"/"}>
+              <span className='font-semibold tracking-wider'>design</span>
+              </Link>
+            <Link href='/' className='md:text-[42px] text-2xl  ml-10 font-bold'>Infos</Link>
           </div>
-          </div>
+          <div className="cursor-pointer" onClick={toogleNavigation}>
+          <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />
+        </div>
       </nav>
       <div className={styles.title}>小雯工作室</div>
     </div>

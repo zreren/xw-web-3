@@ -24,9 +24,9 @@ const Project: NextPage<{}> = () => {
   }
 
   return (
-      <div className="min-h-screen bg-white flex flex-col justify-between">
+      <div className="min-h-screen bg-white flex flex-col relativr">
         <Navbar classname="bg-white px-12" />
-        <div className="mb-6  md:px-12 px-8">
+        <div className="mb-6 absolute bottom-0 md:px-12 px-8">
           {/*  Content Menu */}
           <div className='flex flex-col font-bold'>
               <div className='md:text-[80px] text-[55px] text-blue-600 tracking-wider'>
