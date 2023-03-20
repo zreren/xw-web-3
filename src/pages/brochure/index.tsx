@@ -12,11 +12,12 @@ import cs from 'classnames';
 import styles from "./index.module.css";
 import FooterLocation from "@/components/FooterLocation";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Fade } from "react-awesome-reveal";
 
 const Brochure: NextPage<{}> = () => {
   const { query, pathname } = useRouter();
@@ -25,9 +26,11 @@ const Brochure: NextPage<{}> = () => {
   return (
     <div className={styles.depliant}>
        <nav className={styles.nav}>
-          <div>
-            <span className='font-bold'>E.</span>
-            <span className='font-semibold tracking-wider'>design</span>
+        <div>
+            <Link href={"/"}><span className='font-bold'>E.</span></Link>
+            <Link href={"/"}>
+              <span className='font-semibold tracking-wider'>design</span>
+              </Link>
             <Link href='/' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer">
@@ -48,18 +51,25 @@ const Brochure: NextPage<{}> = () => {
             </div>
             
             <div>
+            <Link href={"/projectMenu?active=brochure&subMenu=brochure"}>
               <li>
                 <span>Brochure</span>
                 <span>册子</span>
               </li>
+              </Link>
+              <Link href={"/projectMenu?active=brochure&subMenu=flyer"}>
               <li className="my-4">
                 <span>Flyer</span>
                 <span>广告纸</span>
               </li>
+              
+              </Link>
+              <Link href={"/projectMenu?active=brochure&subMenu=affiche"}>
               <li>
                 <span>Affiche</span>
                 <span>海报</span>
               </li>
+              </Link>
             </div>
             
           </div>

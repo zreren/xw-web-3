@@ -24,6 +24,8 @@ import photoBackImage5 from '@/public/images/photo/photoBackImage5.png';
 import photoBackImage6 from '@/public/images/photo/photoBackImage6.png';
 import Advertisement from "@/components/Advertisement";
 import Card from "@/components/Card";
+import DepliantOne from "@/components/Depliant";
+
 import { Fade } from "react-awesome-reveal";
 
 
@@ -128,6 +130,8 @@ export default function ProjectMenu() {
   })
   const [textColor, setTextColor] = useState<string>('text-black')
   const [textColor2, setText2Color] = useState<string>('text-black')
+  const [depliantVisible, setDepliantVisible] = useState<boolean>(false);
+
   const { subMenu = '' } = query;
 
   // 摄影图片切换动画
@@ -282,6 +286,10 @@ export default function ProjectMenu() {
     })
   }
 
+  const handleClickSubmenu = () => {
+    setDepliantVisible(true)
+  }
+
   const MyImage = images[photoImgIdx]
   
   return (
@@ -299,14 +307,18 @@ export default function ProjectMenu() {
           styles.headLeft
         )}>
           <div className="px-12 pt-4">
+            <Link href={"/"}>
             <div>
               <span className='md:text-5xl text-4xl font-bold'>E.</span>
               <span className='md:text-4xl text-4xl font-semibold tracking-wider'>design</span>
             </div>
             <div className="md:text-3xl text-1xl font-semibold">小雯工作室</div>
+            </Link>
           </div>
           <div className={styles.infos}>
-            <span>Infos</span>
+            <Link href={"/contact"}>
+              <span>Infos</span>
+            </Link>
           </div>
         </div>
         <div className={cs(
@@ -401,7 +413,7 @@ export default function ProjectMenu() {
               </div>
             )}
             {activeMenu === 'brochure' && (
-              <Advertisement currentMenu={subMenu as string} />
+              <Advertisement currentMenu={subMenu as string} onClickSubmenu={handleClickSubmenu} />
             )}
             {activeMenu === 'card' && (
               <>
@@ -593,6 +605,7 @@ export default function ProjectMenu() {
         </div>
       </div>}
       </div>
+      {depliantVisible &&  <DepliantOne />}
     </div>
   )
 }

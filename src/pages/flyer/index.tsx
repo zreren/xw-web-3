@@ -13,6 +13,8 @@ import menuLight from '@/public/images/home/menuLight.png'
 import cs from 'classnames';
 import styles from "./index.module.css";
 import FooterLocation from "@/components/FooterLocation";
+import { Fade } from "react-awesome-reveal";
+
 
 const Flyer: NextPage<{}> = () => {
   const { query, pathname } = useRouter();
@@ -22,15 +24,19 @@ const Flyer: NextPage<{}> = () => {
     <div className={styles.depliant}>
        <nav className={styles.nav}>
           <div>
-            <span className='font-bold'>E.</span>
-            <span className='font-semibold tracking-wider'>design</span>
+            <Link href={"/"}><span className='font-bold'>E.</span></Link>
+            <Link href={"/"}>
+              <span className='font-semibold tracking-wider'>design</span>
+              </Link>
             <Link href='/' className='md:text-3xl text-2xl ml-10 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer">
           <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />
         </div>
       </nav>
-      <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-white'>小雯工作室</div>
+      <Link href={"/"}>
+       <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-white'>小雯工作室</div>
+      </Link>
 
       <div className={styles.content}>
         <div className={styles.contentLeft}>
@@ -42,24 +48,27 @@ const Flyer: NextPage<{}> = () => {
             </li>
             <Image src={depliant1} alt="" />
             </div>
-            
             <div>
+              <Link href={"/projectMenu?active=brochure&subMenu=brochure"}>
               <li>
                 <span>Brochure</span>
                 <span>册子</span>
               </li>
+              </Link>
+              <Link href={"/projectMenu?active=brochure&subMenu=depliant"}>
               <li className="my-4">
-              <span>Depliant</span>
-              <span>折纸</span>
+                <span>Depliant</span>
+                <span>折纸</span>
               </li>
+              </Link>
+              <Link href={"/projectMenu?active=brochure&subMenu=affiche"}>
               <li>
                 <span>Affiche</span>
                 <span>海报</span>
               </li>
+              </Link>
             </div>
-            
           </div>
-          
         </div>
         <div className={styles.contentRight}>
           
