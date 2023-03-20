@@ -24,7 +24,6 @@ import photoBackImage5 from '@/public/images/photo/photoBackImage5.png';
 import photoBackImage6 from '@/public/images/photo/photoBackImage6.png';
 import Advertisement from "@/components/Advertisement";
 import Card from "@/components/Card";
-import DepliantOne from "@/components/Depliant";
 
 import { Fade } from "react-awesome-reveal";
 
@@ -605,7 +604,6 @@ export default function ProjectMenu() {
         </div>
       </div>}
       </div>
-      {depliantVisible &&  <DepliantOne />}
     </div>
   )
 }

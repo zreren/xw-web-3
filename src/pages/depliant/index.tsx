@@ -20,6 +20,7 @@ const DepliantOne: NextPage<{}> = () => {
 
   return (
     <div className={styles.depliant}>
+      <Fade direction="right" triggerOnce>
        <nav className={styles.nav}>
        <div>
             <Link href={"/"}><span className='font-bold'>E.</span></Link>
@@ -102,6 +103,7 @@ const DepliantOne: NextPage<{}> = () => {
       <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
         <FooterLocation hidden="right" leftLocation="/projectMenu?active=brochure&subMenu=depliant" />
       </div>
+    </Fade>
     </div>
   )
 }
