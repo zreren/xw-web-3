@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import Image from 'next/image'
-import navigationlogo from '@/public/images/home/Navigationlogo.png'
 import menuLight from '@/public/images/home/menuLight.png'
 import styles from './index.module.css';
 import cs from 'classnames';

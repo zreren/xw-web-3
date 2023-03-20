@@ -16,7 +16,7 @@
 }
 
 .infos {
-  @apply flex items-start md:text-[42px] text-2xl ml-10 font-bold flex items-center md:ml-20 ml-0;
+  @apply flex items-start md:text-[42px] text-2xl ml-10 font-bold flex items-center md:-ml-2 ml-0 pb-4;
 }
 
 .other {

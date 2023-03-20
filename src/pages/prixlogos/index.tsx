@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import { useRouter } from "next/router";
 import Image from 'next/image'
 import styles from './index.module.css';
-import Link from 'next/link'
 import { Fade } from "react-awesome-reveal";
 import { NextPage } from "next";
 import FooterLocation from "@/components/FooterLocation";
@@ -192,11 +191,7 @@ const PrixLogos: NextPage<{}> = () => {
         </div>
       </div>
       <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full">
-      {(!imageObjectVisible.flocageVisible && !imageObjectVisible.broderieVisible) ?
       <FooterLocation />
-      :
-      <FooterLocation handleLeftCallback={leftCallback} leftLocation="/prixlogos" />
-    }
       </div>
     </div>
   )
