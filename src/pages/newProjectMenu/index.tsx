@@ -4,26 +4,149 @@ import styles from './index.module.css';
 import Image from 'next/image';
 import cs from 'classnames';
 import Link from "next/link";
+import Card from "@/components/Card";
 import navigationlogo from '@/public/images/home/Navigationlogo.png'
 import menuLight from '@/public/images/home/menuLight.png'
 import router, { useRouter } from 'next/router';
+import Navigation from "@/components/Navigation";
+import tamponBackground from '@/public/images/tampon.png'
 import Advertisement from "@/components/Advertisement";
 import FooterLocation from "@/components/FooterLocation";
+import etique1 from '@/public/images/etique/Etiquettes1.png'
+import etique2 from '@/public/images/etique/Etiquettes2.png'
+import etique3 from '@/public/images/etique/Etiquettes3.png'
+import etique4 from '@/public/images/etique/Etiquettes4.png'
+import etique5 from '@/public/images/etique/Etiquettes5.png'
+import cardImg1 from '@/public/images/cardImg/card1.png';
+import cardImg2 from '@/public/images/cardImg/card2.png';
+import cardImg3 from '@/public/images/cardImg/card3.png';
+import cardImg4 from '@/public/images/cardImg/card4.png';
+import cardImg5 from '@/public/images/cardImg/card5.png';
+import cardImg6 from '@/public/images/cardImg/card6.png';
+import cardImg7 from '@/public/images/cardImg/card7.png';
+import photoBackImage1 from '@/public/images/photo/photoBackImage1.png';
+import photoBackImage2 from '@/public/images/photo/photoBackImage2.png';
+import photoBackImage3 from '@/public/images/photo/photoBackImage3.png';
+import photoBackImage4 from '@/public/images/photo/photoBackImage4.png';
+import photoBackImage5 from '@/public/images/photo/photoBackImage5.png';
+import photoBackImage6 from '@/public/images/photo/photoBackImage6.png';
 import { Fade, Slide } from "react-awesome-reveal";
+
+const etiqueImageArr = [etique1, etique2, etique3, etique4, etique5]
+const photoBackImageArrs = [photoBackImage1, photoBackImage2, photoBackImage3, photoBackImage4, photoBackImage5, photoBackImage6];
+const cardImgArrs = [null, cardImg1, cardImg2, cardImg3, cardImg4, cardImg5, cardImg6, cardImg7]
 
 export default function ProjectMenu() {
   const { query } = useRouter();
   const [active, setActive] = useState(false)
-  const [japonaisVisible, setJaponaisVisible] = useState(false)
+  const [navigationVisible, setNavigationVisible] = useState<boolean>(false);
+  const [photoImgIdx, setPhotoImgIdx] = useState<number>(0);
+  const [etiqueImgIdx, setEtiqueImgIdx] = useState<number>(0);
+  const [cardImgIndex, setCardImgIndex] = useState<number>(0);
+  const [cardMenuVisible, setCardMenuVisible] = useState<boolean>(true);
+  const [cardImageVisible, setCardImageVisible] = useState<Record<string, boolean>>({
+    cardImage1: false,
+    cardImage2: false,
+    cardImage3: false,
+    cardImage4: false,
+    cardImage5: false,
+    cardImage6: false,
+  });
   const [activeMenu, setActiveMenu] = useState(query.active ?? '')
   const { subMenu = '' } = query;
   const handleClickMenu =(menu: string) => {
     setActiveMenu(menu)
   }
-  console.log('query', query);
+
+  const closeNavigation = () => {
+    setNavigationVisible(false)
+  }
+
+  const toogleNavigation = () => {
+    setNavigationVisible(pre => (
+      !pre
+    ))
+  }
+
+  const handleClickPhotoImage = () => {
+    setPhotoImgIdx(pre => {
+      return pre + 1 === 6 ? 0 : pre + 1 
+    })
+  }
+
+  const handleClickEtiqueImage = () => {
+    setEtiqueImgIdx(pre => {
+      return pre + 1 === 5 ? 0 : pre + 1 
+    })
+  }
+
+  const goLeft = () => {
+    if(active) {
+      setActive(false)
+    } else {
+      router.push({
+        pathname: '/',
+      })
+    }
+  }
+
+  // card 整体切换动画
+  const cardMenuTransitions = useTransition(cardMenuVisible, {
+    from: { opacity: 0, transform: "translateY(100%)" },
+    enter: { opacity: 1, transform: "translateY(0%)" },
+    leave: { opacity: 0, transform: "translateY(100%)" },
+    // config: config.slow
+  });
+
+  const cardImgTransitions = useTransition(cardImgIndex, {
+    from: { opacity: 0, transform: "translateX(100%)" },
+    enter: { opacity: 1, transform: "translateX(0%)" },
+    leave: { opacity: 0, transform: "translateX(50%)" },
+    // config: config.slow
+  });
+
+  // 摄影
+  const photoImgTransitions = useTransition(photoImgIdx, {
+    key: photoImgIdx,
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    config: { duration: 2000 },
+  })
+
+  // 贴纸
+  const etiqueImgTransitions = useTransition(etiqueImgIdx, {
+    key: etiqueImgIdx,
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    config: { duration: 2000 },
+  })
+
+  const clickImage = (num: number) => {
+    // setCardImageVisible(pre => {
+    //   const res = Object.fromEntries(Object.entries(pre).map(item => ([item[0], false])))
+    //   return {
+    //     ...res,
+    //     [`cardImage${num}`]: true,
+    //   }
+    // })
+    setCardImgIndex(num)
+    setCardMenuVisible(false)
+  }
+
+  const clickImageRestore = () => {
+    // closeCardImageAndOpenCardMenu()
+    setCardImgIndex(0)
+    setCardMenuVisible(true)
+  }
+
+  const leftClassname = activeMenu === 'tampon' || activeMenu === 'photo' || activeMenu === 'card' || activeMenu === 'etique' ?
+                    "text-white" : activeMenu === 'brochure' && active? "text-white" : "text-black"
+  console.log('cardImgArrs[cardImgIndex]', cardImgIndex, cardImgArrs[cardImgIndex]);
   
+
   return (
     <div className={styles.projectMenu}>
+      {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
       <div className={cs(
         (activeMenu === 'brand' || !activeMenu || activeMenu === 'design' || activeMenu === 'brochure')? styles.white : styles.black,
         styles.left
@@ -49,7 +172,6 @@ export default function ProjectMenu() {
             activeMenu === 'card' ? styles.cardActive : "",
             activeMenu === 'tampon' ? styles.tamponActive : "",
             activeMenu === 'etique' ? styles.etiqueActive : "",
-
             styles.menuContent,
             )}>
               <li onClick={() => handleClickMenu('brand')} className={activeMenu === 'brand' ? styles.active : undefined}>
@@ -90,7 +212,7 @@ export default function ProjectMenu() {
         styles.right,
         (activeMenu === 'brand' || !activeMenu)? styles.white : styles.black,
         )}>
-        <div className={styles.headRight}>
+        <div className={styles.headRight} onClick={toogleNavigation}>
         {(activeMenu === 'brand' || !activeMenu) ?<Image className="bg-white" src={navigationlogo} alt="navlogo" />
         : <Image src={menuLight} alt="navlogo"/>}
         </div>
@@ -105,17 +227,86 @@ export default function ProjectMenu() {
             <Link className="hover:text-blue-600" href={'/projectMenu/bar'}>BAR 酒吧</Link>
           </div>
         </div>)}
+        {/* 摄影 */}
+        {activeMenu === 'photo' && 
+          photoImgTransitions((style, i) => (
+            <animated.img
+              src={photoBackImageArrs[photoImgIdx].src}
+              className="absolute"
+              style={{
+                ...style,
+              }}
+              onClick={handleClickPhotoImage}
+            >
+            </animated.img>
+          ))}
         {/* 广告页 */}
         {activeMenu === 'brochure' && (
           <div className="mx-12 mt-24">
-            <Advertisement currentMenu={subMenu as string} onHandleChangeScreen={() => setActive(pre => !pre)} viewImage={active} />
+            <Advertisement onHandleChangeScreen={() => setActive(pre => !pre)} viewImage={active} />
           </div>
+          )}
+
+            {/* 名片/优惠卡 */}
+            {activeMenu === 'card' && (
+              <div>
+                {cardMenuTransitions(
+                  (style, item) =>
+                    item && (
+                      <animated.div
+                      style={{
+                        ...style
+                      }}
+                      >
+                        <div>
+                          <Card handClickImage={(num) => clickImage(num)} />
+                        </div>
+                      </animated.div>
+                    )
+                )}
+                {cardImgTransitions(
+                 (style, item) =>
+                 item && cardImgArrs[cardImgIndex] && (
+                   <animated.img
+                   onClick={clickImageRestore}
+                   src={cardImgArrs[cardImgIndex]?.src}
+                   style={{
+                     ...style,
+                     position: "absolute",
+                     top: '4rem',
+                     right: '3rem',
+                     cursor: 'pointer'
+                   }}
+                   >
+                   </animated.img>
+                 )
+               )}
+              </div>
+            )}
+
+          {/* 印章 tampon */}
+          {activeMenu === 'tampon' && <Image src={tamponBackground} alt="" />}
+      
+          {/* 贴纸 etique */}
+          {activeMenu === 'etique' && (
+             etiqueImgTransitions((style, i) => (
+              <animated.img
+                src={etiqueImageArr[etiqueImgIdx].src}
+                className="absolute"
+                style={{
+                  ...style,
+                }}
+                onClick={handleClickEtiqueImage}
+              >
+              </animated.img>
+            ))
           )}
       </div>
 
-      <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full z-[50]">
+      <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full z-[40]">
         <FooterLocation
-          leftClassname={(activeMenu === 'brand' || !activeMenu || activeMenu === 'design' || activeMenu === 'brochure')? "text-black" : "text-white"}
+          handleLeftCallback={goLeft}
+          leftClassname={leftClassname}
           rightClassname={(activeMenu === '' || activeMenu === 'brand') ? "text-black" : "text-white"} />
       </div>
     </div>

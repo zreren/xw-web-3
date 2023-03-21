@@ -31,13 +31,13 @@ const Project: NextPage<{}> = () => {
           <div className='flex flex-col font-bold'>
               <div className='md:text-[80px] text-[55px] text-blue-600 tracking-wider'>
                 SUR MESURE</div>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-[20px] font-bold mb-2	' href={'/projectMenu?active=brand'}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-[20px] font-bold mb-2' href={'/newProjectMenu?active=brand'}>
                 <span className='mr-2 font-semibold'>
                   <Image className='md:w-[50px] w-[20px]' src={branding} alt="" />
                 </span>
                 <span className='tracking-wider text-black'>EBRANDING 品牌形象规划</span>
               </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-2xl font-bold mb-4		' href={'/projectMenu?active=design'}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-2xl font-bold mb-4' href={'/newProjectMenu?active=design'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[50px] w-[20px]' src={menu} alt="" />
                 </span>
@@ -45,7 +45,7 @@ const Project: NextPage<{}> = () => {
                   <span className='tracking-wider text-black'>MENU DESIGN 菜单订制</span>
                 </span>
                 </Link>
-                <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-2xl font-bold mb-4		' href={'/projectMenu?active=photo'}>
+                <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-2xl font-bold mb-4' href={'/newProjectMenu?active=photo'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[50px] w-[20px]' src={menu} alt="" />
                 </span>
@@ -53,7 +53,7 @@ const Project: NextPage<{}> = () => {
                 <span className='tracking-wider text-black'> PHOTOGRAPHIE 攝影</span>
                 </span>
                 </Link>
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-2xl font-bold mb-4' href={'/projectMenu?active=brochure'}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-2xl font-bold mb-4' href={'/newProjectMenu?active=brochure'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[50px] w-[32px]' src={photographie} alt="" />
                 </span>
@@ -62,7 +62,7 @@ const Project: NextPage<{}> = () => {
                 </span>
                 </Link>
               
-              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-2xl font-bold mb-4' href={'/projectMenu?active=tampon'}>
+              <Link className='flex flex-row items-center hover:text-blue-600 md:text-[50px] text-2xl font-bold mb-4' href={'/newProjectMenu?active=tampon'}>
               <span className='mr-2 font-semibold'>
                   <Image className='md:w-[50px] w-[20px]' src={tampon} alt="" />
                 </span>

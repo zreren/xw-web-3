@@ -34,7 +34,7 @@ export default function Coreen() {
         </div>
       </div>
         <div className="fixed bottom-0 md:px-12 px-2 md:mb-4 mb-0 w-full">
-        <FooterLocation leftLocation="/projectMenu?active=design" />
+        <FooterLocation leftLocation="/newProjectMenu?active=design" />
         </div>
     </div>
   )

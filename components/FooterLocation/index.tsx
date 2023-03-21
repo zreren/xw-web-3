@@ -21,7 +21,10 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
   const renderLeft = (leftIcon: string) => {
 
   const goLeft = () => {
-    if(handleLeftCallback) handleLeftCallback();
+    if(handleLeftCallback) {
+      handleLeftCallback()
+      return;
+    };
     let target = leftLocation;
     if(leftLocation.length > 1) {
       let query = {};
@@ -39,7 +42,6 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
       })
     }
   }
-  console.log('leftClassname', leftClassname);
   
     return (
         <div onClick={goLeft} className={cs(leftClassname, styles.left)}>

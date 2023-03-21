@@ -120,3 +120,27 @@
 .advertisement.affichePosition > li:nth-child(4) {
   @apply top-[0px];
 }
+
+.pilis {
+  @apply absolute left-64;
+}
+
+.pilis li > span:nth-child(1) {
+  @apply md:text-2xl text-xl tracking-wider;
+}
+
+.pilis li > span:nth-child(2) {
+  @apply md:text-xl ml-2 text-xl tracking-wider;
+}
+
+.pilesContent {
+  @apply absolute right-20 -top-20;
+}
+
+.pilisactive {
+  @apply text-blue-600;
+}
+
+.brochure,.affiche {
+  @apply w-full flex justify-end;
+}

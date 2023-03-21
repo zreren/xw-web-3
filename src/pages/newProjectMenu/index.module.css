@@ -14,7 +14,7 @@
 }
 
 .right {
-  @apply absolute bg-black text-white h-screen;
+  @apply absolute bg-black text-white min-h-screen;
   z-index: 30;
   width: 63%;
   left: 37%;

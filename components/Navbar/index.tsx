@@ -38,7 +38,7 @@ const Navbar: React.FC<NavBarProps> = (props) => {
             <Link href={"/"}>
               <span className='font-semibold tracking-wider'>design</span>
               </Link>
-            <Link href='/contact' className='md:text-[42px] text-2xl  ml-10 font-bold'>Infos</Link>
+            <Link href='/contact' className='md:text-[42px] text-2xl  ml-12 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={toogleNavigation}>
           <Image src={dark ? menuLight : navigationlogo} alt="navlogo" />

@@ -1,6 +1,6 @@
 .navigation {
-  @apply fixed bg-black text-white w-full bg-black z-50 flex flex-col h-screen;
-  /* background-color: red; */
+  @apply fixed bg-black text-white w-full bg-black flex flex-col h-screen;
+  z-index: 60;
 }
 
 .nav {
