@@ -14,8 +14,15 @@ import flyer2 from './img/flyer-2.png';
 import flyer3 from './img/flyer-3.png';
 import affiche from './img/affiche.png';
 
-const Advertisement = ({ currentMenu = '' }) => {
+const Advertisement = ({ currentMenu = '', onHandleChangeScreen, viewImage }: {currentMenu: string, onHandleChangeScreen: () => void, viewImage:boolean}) => {
   const [activeMenu, setActiveMenu] = useState<string>(currentMenu);
+  const [imageVisible, setImageVisible] = useState<Record<string, boolean>>({
+    depliantone: false,
+    deplianttwo: false,
+    depliantthree: false,
+    brochureone: false,
+    brochuretwo: false,
+  });
 
   // card 整体切换动画
   const transitions = useTransition(activeMenu, {
@@ -27,7 +34,17 @@ const Advertisement = ({ currentMenu = '' }) => {
   const handClickMenu = (menu: string) => {
     setActiveMenu(menu)
   }
-  console.log('activeMenu', activeMenu);
+
+  const hanClickImage = (imagestr: string) => {
+    onHandleChangeScreen()
+    setImageVisible(pre => {
+      const res = Object.fromEntries(Object.entries(pre).map(item => ([item[0], false])))
+      return {
+        ...res,
+        [`${imagestr}`]: true,
+      }
+    })
+  }
   
   return (
     <ul className={cs(
@@ -45,9 +62,9 @@ const Advertisement = ({ currentMenu = '' }) => {
             (style, item) =>
               item && (
               <animated.div style={{ ...style }} className={styles.depliant}>
-                <Image onClick={() => router.push('/depliant?page=one')} src={depliant1} alt="" />
-                <Image onClick={() => router.push('/depliant?page=two')} src={depliant2} alt=""  />
-                <Image onClick={() => router.push('/depliant?page=three')} src={depliant3} alt=""  />
+                {(imageVisible.depliantone || !viewImage) && <Image onClick={() => hanClickImage('depliantone')} src={depliant1} alt="" />}
+                {(imageVisible.deplianttwo || !viewImage) && <Image onClick={() => hanClickImage('deplianttwo')} src={depliant2} alt=""  />}
+                {(imageVisible.depliantthree || !viewImage) && <Image onClick={() => hanClickImage('depliantthree')} src={depliant3} alt=""  />}
               </animated.div>
             ))
         )}
@@ -59,8 +76,8 @@ const Advertisement = ({ currentMenu = '' }) => {
               (style, item) =>
                 item && (
                 <animated.div style={{ ...style }} className={styles.depliant}>
-                  <Image onClick={() => router.push('/brochure')}  src={brochure1} alt="" />
-                  <Image onClick={() => router.push('/brochure')}  src={brochure2} alt=""  />
+                  {(imageVisible.brochureone || !viewImage) && <Image onClick={() => hanClickImage('brochureone')}  src={brochure1} alt="" />}
+                  {(imageVisible.brochuretwo || !viewImage) && <Image onClick={() => hanClickImage('brochuretwo')}  src={brochure2} alt=""  />}
                 </animated.div>
               ))
           )}
@@ -72,9 +89,9 @@ const Advertisement = ({ currentMenu = '' }) => {
               (style, item) =>
                 item && (
                 <animated.div style={{ ...style }} className={styles.flyer}>
-                  <Image onClick={() => router.push('/flyer')} src={flyer1} alt="" />
-                  <Image onClick={() => router.push('/flyer')} src={flyer2} alt=""  />
-                  <Image onClick={() => router.push('/flyer')} src={flyer3} alt=""  />
+                  {(imageVisible.flyerone || !viewImage) && <Image onClick={() => hanClickImage('flyerone')} src={flyer1} alt="" />}
+                  {(imageVisible.flyertwo || !viewImage) && <Image onClick={() => hanClickImage('flyertwo')} src={flyer2} alt=""  />}
+                  {(imageVisible.flyerthree || !viewImage) && <Image onClick={() => hanClickImage('flyerthree')} src={flyer3} alt=""  />}
                 </animated.div>
               ))
           )}

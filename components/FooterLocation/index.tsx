@@ -12,10 +12,12 @@ interface FooterLocationProps {
   leftLocation?: string;
   handleLeftCallback?: () => void;
   hidden?: string;
+  rightClassname?: string;
+  leftClassname?: string;
 }
 
 const FooterLocation:React.FC<FooterLocationProps> = (props) => {
-  const { classname, handleLeftCallback, leftLocation = '/', hidden } = props;
+  const { classname, handleLeftCallback, leftLocation = '/', hidden, rightClassname, leftClassname } = props;
   const renderLeft = (leftIcon: string) => {
 
   const goLeft = () => {
@@ -37,9 +39,10 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
       })
     }
   }
-
+  console.log('leftClassname', leftClassname);
+  
     return (
-        <div onClick={goLeft} className={styles.left}>
+        <div onClick={goLeft} className={cs(leftClassname, styles.left)}>
           <span>RETOUR</span>
           <span>{leftIcon}</span>
         </div>
@@ -49,7 +52,7 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
   const renderRight = (rightIcon: string) => {
 
     return (
-        <Link href="/contact" className={styles.right}>
+        <Link href="/contact" className={cs(rightClassname, styles.right)}>
           <span>{rightIcon}</span>
           <span>NOUS&nbsp;&nbsp;CONTACTER</span>
         </Link>
@@ -62,7 +65,7 @@ const FooterLocation:React.FC<FooterLocationProps> = (props) => {
       classname,
       styles.footer)}>
       {renderLeft('<')}
-      <div className={styles.copyrightone}>© 2022-2023 E.des/gn</div>
+      <div className={cs(rightClassname, styles.copyrightone)}>© 2022-2023 E.des/gn</div>
       {hidden === 'right' ? null : renderRight('>')}
     </div>
     <div className={styles.copyrighttwo}>© 2022-2023 E.des/gn</div>

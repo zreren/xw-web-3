@@ -12,6 +12,8 @@ import japonais7 from '@/public/images/foods/japonais/japonais7.png'
 import japonais8 from '@/public/images/foods/japonais/japonais8.png'
 import edesignLogo from '@/public/images/edesignLogo.png';
 import FooterLocation from "@/components/FooterLocation";
+import { Fade, Slide } from "react-awesome-reveal";
+
 
 export default function Japonais() {
   const [title, setTitle] = useState<string>('Japonais')
@@ -23,7 +25,12 @@ export default function Japonais() {
   }
 
   return (
-    <div className={styles.japonais}>
+    <div className={styles.main}>
+      <Slide
+        direction="down"
+        triggerOnce
+      >
+      <div className={styles.japonais}>
       <div className={styles.logo}>
         <img src={edesignLogo.src} alt="" />
       </div>
@@ -69,8 +76,10 @@ export default function Japonais() {
           </div>
         </div>
       </div>
-        <div className="fixed bottom-0 md:mb-4 mb-0  md:px-12 px-2 w-full">
-        <FooterLocation leftLocation="/projectMenu?active=design" />
+        </div>
+      </Slide>
+      <div className="fixed bottom-0 md:mb-4 mb-0  md:px-12 px-2 w-full">
+        <FooterLocation leftLocation="/newProjectMenu?active=design" />
         </div>
     </div>
   )

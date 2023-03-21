@@ -1,0 +1,178 @@
+.projectMenu {
+  @apply relative w-full h-screen;
+}
+
+.left {
+  @apply absolute bg-white  h-screen;
+  width: 37%;
+  left: 0;
+  transition: all 0.5s
+}
+
+.left.black {
+  @apply bg-black text-white;
+}
+
+.right {
+  @apply absolute bg-black text-white h-screen;
+  z-index: 30;
+  width: 63%;
+  left: 37%;
+  transition: all 0.5s;
+}
+
+.right.white {
+  @apply bg-white text-black;
+}
+
+.headLeft.active {
+  @apply z-[50] text-white;
+}
+
+.right.active {
+  @apply left-0 w-full;
+}
+
+.headLeft,.headRight {
+  @apply flex px-12 pt-4 items-center sticky top-0;
+}
+
+.headRight {
+  @apply justify-end cursor-pointer;
+}
+
+.contentLeft {
+  @apply mt-8;
+}
+
+.infos {
+  @apply flex items-start md:text-[42px] text-2xl ml-10 font-bold flex items-center md:ml-12 ml-0 pb-8;
+}
+
+.menuContent {
+  @apply relative px-12;
+}
+
+.menuContent li > div:nth-child(1) {
+  @apply md:text-[32px] text-[20px] font-bold h-[40px] cursor-pointer;
+}
+.menuContent li > div:nth-child(2) {
+  @apply md:text-[22px] text-[16px] font-extrabold mb-2 cursor-pointer;
+}
+
+.menuContent > li:nth-child(1) {
+  @apply absolute -top-4;
+  z-index: 20;
+}
+
+.menuContent > li.active:nth-child(1) {
+  @apply text-white;
+}
+
+.menuContent > li:nth-child(2) {
+  @apply absolute top-16;
+  z-index: 20;
+}
+
+.menuContent > li.active:nth-child(2) {
+  @apply text-white;
+}
+
+.menuContent > li:nth-child(3) {
+  @apply absolute top-36;
+  z-index: 20;
+}
+
+.menuContent > li.active:nth-child(3) {
+  @apply text-white;
+}
+
+.menuContent > li:nth-child(4) {
+  @apply absolute top-56;
+  /* 56 14rem */
+  z-index: 20;
+}
+
+.menuContent > li.active:nth-child(4) {
+  @apply text-white;
+}
+
+.menuContent > li:nth-child(5) {
+  @apply absolute;
+  top: 19rem;
+  z-index: 20;
+}
+
+.menuContent > li.active:nth-child(5) {
+  @apply text-white;
+}
+
+.menuContent > li:nth-child(6) {
+  @apply absolute;
+  top: 24rem;
+  z-index: 20;
+}
+
+.menuContent > li.active:nth-child(6) {
+  @apply text-white;
+}
+
+.menuContent > li:nth-child(7) {
+  @apply absolute top-96;
+  top: 29rem;
+  z-index: 20;
+}
+
+.menuContent > li.active:nth-child(7) {
+  @apply text-white;
+}
+
+.menuContent > li:nth-child(8) {
+  @apply absolute -top-16 bg-blue-600 -left-12 h-20 invisible;
+  width: 120%;
+  z-index: 10;
+  transition: all 0.5s;
+}
+
+.menuContent.brandActive > li:nth-child(8) {
+  @apply -top-4 visible;
+}
+
+.menuContent.designActive > li:nth-child(8) {
+  @apply top-16 visible;
+}
+
+.menuContent.photoActive > li:nth-child(8) {
+  @apply top-36 visible;
+}
+
+.menuContent.brochureActive > li:nth-child(8) {
+  @apply top-56 visible;
+}
+
+.menuContent.cardActive > li:nth-child(8) {
+  @apply visible;
+  top: 19rem ;
+}
+
+.menuContent.tamponActive > li:nth-child(8) {
+  @apply visible;
+  top: 24rem;
+}
+
+.menuContent.etiqueActive > li:nth-child(8) {
+  @apply visible;
+  top: 29rem;
+}
+
+/* 日餐 */
+.japonais {
+  @apply absolute w-screen;
+  top: -150rem;
+  z-index: 60;
+  transition: all 0.7s;
+}
+
+.japonais.visible {
+  top: 0;
+}
