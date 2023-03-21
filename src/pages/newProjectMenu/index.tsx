@@ -153,9 +153,9 @@ export default function ProjectMenu() {
         )}>
         <div className={cs(active? styles.active : "", styles.headLeft)}>
           <div>
-              <span className='md:text-5xl text-4xl font-bold'>E.</span>
-              <span className='md:text-5xl text-4xl font-semibold tracking-wider'>design</span>
-            <div className="md:text-3xl text-1xl font-semibold">小雯工作室</div>
+              <Link href={"/"}><span className='md:text-5xl text-4xl font-bold'>E.</span></Link>
+              <Link href={"/"}><span className='md:text-5xl text-4xl font-semibold tracking-wider'>design</span></Link>
+              <Link href={"/"}><div className="md:text-3xl text-1xl font-semibold">小雯工作室</div></Link>
             </div>
           <div className={styles.infos}>
           <Link href={"/contact"}>

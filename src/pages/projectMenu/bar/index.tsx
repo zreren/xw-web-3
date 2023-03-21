@@ -7,6 +7,7 @@ import bar2 from '@/public/images/bar/Bar-2.png'
 import bar3 from '@/public/images/bar/Bar-3.png'
 import edesignLogo from '@/public/images/edesignLogo.png';
 import FooterLocation from "@/components/FooterLocation";
+import { Fade, Slide } from "react-awesome-reveal";
 
 export default function Coreen() {
 
@@ -16,10 +17,13 @@ export default function Coreen() {
         <img src={edesignLogo.src} alt="" />
       </div>
       <div className={styles.title}>
+      <Fade direction="up">
         <span>Bar</span>
         <div>酒吧</div>
+      </Fade>
       </div>
       <div className={styles.content}>
+      <Slide direction="right">
         <div className={styles.contentItem}>
           <Link href={"/projectMenu/bar/bar1"}>
             <img src={bar1.src} alt="" />
@@ -35,6 +39,7 @@ export default function Coreen() {
          <img src={bar3.src} alt="" />
         </Link>
         </div>
+        </Slide>
       </div>
         <div className="fixed bottom-0 md:px-12 md:mb-4 mb-0 px-2 w-full">
         <FooterLocation leftLocation="/newProjectMenu?active=design" />
