@@ -121,7 +121,7 @@ const Culinaire: NextPage<{}> = () => {
       </div>
 
       <div className="fixed bottom-0 md:px-10 mb-4 w-full">
-        <FooterLocation leftLocation={"/projectMenu?active=photo"} />
+        <FooterLocation leftLocation={"/newProjectMenu?active=photo"} />
       </div>
     </div> 
   )

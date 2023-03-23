@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { animated, useTransition } from "react-spring";
 import styles from './index.module.css';
 import Image from 'next/image';
@@ -56,6 +56,7 @@ export default function ProjectMenu() {
   const { subMenu = '' } = query;
   const handleClickMenu =(menu: string) => {
     setActiveMenu(menu)
+    setPhotoImgIdx(0)
   }
 
   const closeNavigation = () => {
@@ -133,6 +134,14 @@ export default function ProjectMenu() {
     setCardMenuVisible(false)
   }
 
+  const handleChangeScreen = useCallback(() => {
+    if (active) {
+      setActive(false)
+    } else {
+      setActive(true)
+    }
+  }, [active])
+
   const clickImageRestore = () => {
     // closeCardImageAndOpenCardMenu()
     setCardImgIndex(0)
@@ -142,9 +151,12 @@ export default function ProjectMenu() {
   const leftClassname = activeMenu === 'tampon' || activeMenu === 'photo' || activeMenu === 'card' || activeMenu === 'etique' ?
                     "text-white" : activeMenu === 'brochure' && active? "text-white" : "text-black"
   console.log('cardImgArrs[cardImgIndex]', cardImgIndex, cardImgArrs[cardImgIndex]);
+  console.log('test===>', activeMenu,
+    photoImgIdx);
   
 
   return (
+    <>
     <div className={styles.projectMenu}>
       {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
       <div className={cs(
@@ -243,7 +255,7 @@ export default function ProjectMenu() {
         {/* 广告页 */}
         {activeMenu === 'brochure' && (
           <div className="mx-12 mt-24">
-            <Advertisement onHandleChangeScreen={() => setActive(pre => !pre)} viewImage={active} />
+            <Advertisement onHandleChangeScreen={handleChangeScreen} viewImage={active} />
           </div>
           )}
 
@@ -302,7 +314,7 @@ export default function ProjectMenu() {
             ))
           )}
       </div>
-
+      
       <div className="fixed bottom-0 md:px-12 mb-4 px-2 w-full z-[40]">
         <FooterLocation
           handleLeftCallback={goLeft}
@@ -310,5 +322,23 @@ export default function ProjectMenu() {
           rightClassname={(activeMenu === '' || activeMenu === 'brand') ? "text-black" : "text-white"} />
       </div>
     </div>
+    {activeMenu === 'photo' && photoImgIdx === 0 && (
+      <div className={styles.photoImageOtherOrigin}>
+        <div className="flex justify-evenly w-full md:h-[300px] h-full md:flex-row flex-col ">
+              <div className="md:text-[32px] text-[20px] font-bold">
+                <div className="cursor-pointer hover:text-blue-600"><Link href={"/projectMenu/japonais/culinaire"}>JAPONAISE</Link></div>
+                <div className="hover:text-blue-600">CHINOISE</div>
+                <div className="hover:text-blue-600">CORÉENNE</div>
+                <div className="hover:text-blue-600">THAILANDAISE ET VIETNAMIENNE</div>
+                <div className="hover:text-blue-600">BOISSONS/DESSERT</div>
+              </div>
+              <div className="md:text-7xl text-4xl font-bold">
+                <div>Photographie</div>
+                <div className="text-right">culinaire</div>
+              </div>
+        </div>
+      </div>
+    )}
+    </>
   )
 }
