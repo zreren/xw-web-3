@@ -30,11 +30,8 @@
   @apply mx-12 pt-28 z-[100];
 }
 
-/* .imgContent img {
-  transition: all 0.5s;
-}
 
 .imgContent img:hover {
-  width: 100%;
-  height: 150%;
-} */
+  transform: scale(1.3); /* 放大1.3倍 */
+  transition: transform 0.5s ease; /* 添加平滑过渡效果 */
+}
