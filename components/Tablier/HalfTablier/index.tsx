@@ -12,11 +12,11 @@ const PoloComponent:React.FC<{}> = (props) => {
 
   const slides = (function() {
     const arr = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       arr.push(
         <SwiperSlide className="flex flex-col" key={`slide-${i}`} tag="li">
           <img
-            src={`/images/tablier/Tablier-court-${i + 1}.png`}
+            src={`/images/tablier/tablier-court-${i + 1}.png`}
             style={{ listStyle: 'none' }}
             alt={`Slide ${i+1}`}
           />
@@ -55,8 +55,8 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 1`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Luxe-Manches courtes/unisex</span>
-            <span>基本中性翻领短袖</span>
+          <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'black' }} className={styles.tag}></div></div>
+            <span>基本中性圆领短袖</span>
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex flex-col" key={`slide-2`} tag="li">
@@ -66,8 +66,8 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 2`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>POLO-Luxe-Manches courtes/unisex</span>
-            <span>基本中性翻领短袖</span>
+            <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'rgb(229 229 229)' }} className={styles.tag}></div></div>
+            <span>基本中性圆领短袖</span>
           </div>
         </SwiperSlide>
         </Swiper>
@@ -87,7 +87,51 @@ const PoloComponent:React.FC<{}> = (props) => {
           onSwiper={(swiper) => console.log(swiper)}
           navigation
         >
-          {slides}
+          {/* {slides} */}
+          <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+          <img
+            src={`/images/tablier/tablier-court-1.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 1`}
+          />
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+           <div className="flex items-center">Tablier à col roulé Basic longues/unisex <div style={{ background: 'rgb(80 74 71)' }} className={styles.tag}></div></div>
+            <span>半身长围裙 灰色</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="flex flex-col" key={`slide-2`} tag="li">
+          <img
+            src={`/images/tablier/tablier-court-2.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 2`}
+          />
+            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+           <div className="flex items-center">Tablier à col roulé Basic longues/unisex <div style={{ background: 'rgb(33 37 52)' }} className={styles.tag}></div></div>
+            <span>半身长围裙 蓝色</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="flex flex-col" key={`slide-3`} tag="li">
+          <img
+            src={`/images/tablier/tablier-court-3.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 3`}
+          />
+            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+           <div className="flex items-center">Tablier à col roulé Basic longues/unisex <div style={{ background: 'rgb(171 157 145)'}} className={styles.tag}></div></div>
+            <span>半身长围裙 米色</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="flex flex-col" key={`slide-4`} tag="li">
+          <img
+            src={`/images/tablier/tablier-court-4.jpg`}
+            style={{ listStyle: 'none' }}
+            alt={`Slide 4`}
+          />
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+           <div className="flex items-center">Tablier à col roulé Basic longues/unisex <div style={{ background: 'rgb(221 239 230)' }} className={styles.tag}></div></div>
+            <span>半身长围裙 白色</span>
+          </div>
+        </SwiperSlide>
         </Swiper>
       </div>
       

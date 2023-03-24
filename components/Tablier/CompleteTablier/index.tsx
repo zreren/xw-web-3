@@ -25,28 +25,26 @@ const CompleteTablier:React.FC<{}> = (props) => {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={3}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-Complet-1.png`}
             style={{ listStyle: 'none' }}
             alt={`Slide 1`}
           />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>Tablier complet 001/unisex</span>
-            <span>全身围裙001 蓝灰色</span>
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+            <div className="flex items-center">Tablier complet 001/unisex <div style={{ background: 'rgb(58 69 80)' }} className={styles.tag}></div></div>
+            <div>全身围裙001 蓝灰色</div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-2`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-2`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-Complet-2.png`}
             style={{ listStyle: 'none' }}
             alt={`Slide 2`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>Tablier complet 001/unisex</span>
+          <div className="flex items-center">Tablier complet 001/unisex <div style={{ background: 'black' }} className={styles.tag}></div></div>
             <span>全身围裙001 黑色</span>
           </div>
         </SwiperSlide>
@@ -65,61 +63,63 @@ const CompleteTablier:React.FC<{}> = (props) => {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={3}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
           navigation
         >
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
             <img
               src={`/images/tablier/complete/Tablier-002-1.jpg`}
               style={{ listStyle: 'none' }}
               alt={`Slide 1`}
             />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>Tablier complet 001/unisex</span>
-            <span>全身围裙002 黑色</span>
-          </div>
+            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+              <div className="flex items-center">Tablier complet 001/unisex <div style={{ background: 'black' }} className={styles.tag}></div></div>
+              <span>全身围裙002 黑色</span>
+            </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
             <img
               src={`/images/tablier/complete/Tablier-002-2.jpg`}
               style={{ listStyle: 'none' }}
               alt={`Slide 1`}
             />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <span>Tablier complet 001/unisex</span>
+            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+            <div className="flex items-center">Tablier complet 001/unisex <div style={{ background: 'rgb(157 52 64)' }} className={styles.tag}></div></div>
             <span>全身围裙002 红色</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
             <img
               src={`/images/tablier/complete/Tablier-002-3.jpg`}
               style={{ listStyle: 'none' }}
               alt={`Slide 1`}
             />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center">Tablier complet 001/unisex <div style={{ background: 'rgb(76 70 67)' }} className={styles.tag}></div></div>
             <span>Tablier complet 001/unisex</span>
             <span>全身围裙002 灰色</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
             <img
               src={`/images/tablier/complete/Tablier-002-4.jpg`}
               style={{ listStyle: 'none' }}
               alt={`Slide 1`}
             />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center">Tablier complet 001/unisex <div style={{ background: 'rgb(33 38 63)' }} className={styles.tag}></div></div>
             <span>Tablier complet 001/unisex</span>
             <span>全身围裙002 蓝色</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
             <img
               src={`/images/tablier/complete/Tablier-002-5.jpg`}
               style={{ listStyle: 'none' }}
               alt={`Slide 1`}
             />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center">Tablier complet 001/unisex <div style={{ background: 'rgb(44 53 68)' }} className={styles.tag}></div></div>
+
             <span>Tablier complet 001/unisex</span>
             <span>全身围裙002 牛仔蓝色</span>
           </div>
@@ -142,7 +142,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-004-1.jpg`}
             style={{ listStyle: 'none' }}
@@ -172,7 +172,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-005-1.jpg`}
             style={{ listStyle: 'none' }}
@@ -183,7 +183,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
             <span>全身薄牛仔布围裙006 咖啡色</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-005-2.jpg`}
             style={{ listStyle: 'none' }}
@@ -213,7 +213,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-006-1.png`}
             style={{ listStyle: 'none' }}
@@ -243,7 +243,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-007-1.jpg`}
             style={{ listStyle: 'none' }}
@@ -254,7 +254,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
             <span>全身牛仔布围裙007 卡其色</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-007-2.png`}
             style={{ listStyle: 'none' }}
@@ -265,7 +265,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
             <span>全身牛仔布围裙007 深黑色</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-007-3.jpg`}
             style={{ listStyle: 'none' }}
@@ -276,7 +276,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
             <span>全身牛仔布围裙007 抹茶色</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-007-4.jpg`}
             style={{ listStyle: 'none' }}
@@ -306,7 +306,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-010-1.jpg`}
             style={{ listStyle: 'none' }}
@@ -317,7 +317,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
             <span>全身围裙010 蓝</span>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+        <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-010-2.png`}
             style={{ listStyle: 'none' }}
@@ -347,7 +347,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-011-1.png`}
             style={{ listStyle: 'none' }}
@@ -377,7 +377,7 @@ const CompleteTablier:React.FC<{}> = (props) => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
         >
-           <SwiperSlide className="flex flex-col" key={`slide-1`} tag="li">
+           <SwiperSlide className={styles.item} key={`slide-1`} tag="li">
           <img
             src={`/images/tablier/complete/Tablier-JNI-1.jpg`}
             style={{ listStyle: 'none' }}

@@ -56,8 +56,6 @@ const Personnalise: NextPage<{}> = () => {
     }
   }
 
-  console.log('menuVisibleObject.tablier', menuVisibleObject)
-
   return (
     <div
       className={cs(

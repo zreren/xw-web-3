@@ -16,6 +16,10 @@
   border-bottom: 1px solid black;
 }
 
+.item {
+  @apply flex flex-col mt-4;
+}
+
 .swiper {
   @apply w-full;
 }
@@ -26,4 +30,9 @@
 
 .swiper li {
   @apply flex items-center;
+}
+
+.tag {
+  @apply md:w-6 md:h-6 w-2 h-2 ml-2;
+  border-radius: 50%;
 }
