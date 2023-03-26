@@ -2,6 +2,7 @@ import React from "react";
 import styles from './index.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import cs from 'classnames';
+import Circle from "../Circle";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -30,9 +31,12 @@ const SweatshirtComponent:React.FC<{}> = (props) => {
               style={{ listStyle: 'none' }}
               alt={`Slide1`}
             />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <div className="flex items-center">Sweatshirt-Basic-longues/unisex <div className={cs('bg-black', styles.tag)}></div></div>
-            <div>基本中性圆领卫衣</div>
+             <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">
+            Sweatshirt-Basic-longues/unisex
+            <span style={{ left: '7rem' }} className="absolute"><Circle radius={6} fill='rgb(27 26 31)'  /></span>
+           </div>
+            <span>基本中性圆领卫衣</span>
           </div>
         </SwiperSlide>
         <SwiperSlide key={`slide-2`} tag="li">
@@ -41,9 +45,12 @@ const SweatshirtComponent:React.FC<{}> = (props) => {
               style={{ listStyle: 'none' }}
               alt={`Slide1`}
             />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <div className="flex items-center">Sweatshirt-Basic-longues/unisex <div style={{ background: 'rgb(229 229 229)' }} className={styles.tag}></div></div>
-            <div>基本中性圆领卫衣</div>
+             <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">
+            Sweatshirt-Basic-longues/unisex
+            <span style={{ left: '7rem' }} className="absolute"><Circle radius={6} fill='rgb(229 229 229)'  /></span>
+           </div>
+            <span>基本中性圆领卫衣</span>
           </div>
         </SwiperSlide>
         <SwiperSlide key={`slide-3`} tag="li">
@@ -52,9 +59,12 @@ const SweatshirtComponent:React.FC<{}> = (props) => {
               style={{ listStyle: 'none' }}
               alt={`Slide1`}
             />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <div className="flex items-center">Sweatshirt-Basic-longues/unisex <div style={{ background: 'rgb(152 29 31)' }} className={styles.tag}></div></div>
-            <div>基本中性圆领卫衣</div>
+            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">
+            Sweatshirt-Basic-longues/unisex
+            <span style={{ left: '7rem' }} className="absolute"><Circle radius={6} fill='rgb(152 29 31)'  /></span>
+           </div>
+            <span>基本中性圆领卫衣</span>
           </div>
         </SwiperSlide>
         <SwiperSlide key={`slide-3`} tag="li">
@@ -63,9 +73,12 @@ const SweatshirtComponent:React.FC<{}> = (props) => {
               style={{ listStyle: 'none' }}
               alt={`Slide1`}
             />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <div className="flex items-center">Sweatshirt-Basic-longues/unisex <div style={{ background: 'rgb(158 149 115)' }} className={styles.tag}></div></div>
-            <div>基本中性圆领卫衣</div>
+             <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">
+            Sweatshirt-Basic-longues/unisex
+            <span style={{ left: '7rem' }} className="absolute"><Circle radius={6} fill='rgb(158 149 115)'  /></span>
+           </div>
+            <span>基本中性圆领卫衣</span>
           </div>
         </SwiperSlide>
         </Swiper>

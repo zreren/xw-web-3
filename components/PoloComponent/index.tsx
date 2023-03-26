@@ -2,6 +2,7 @@ import React from "react";
 import styles from './index.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import Circle from "../Circle";
 import cs from 'classnames';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -25,8 +26,10 @@ const PoloComponent:React.FC<{}> = (props) => {
             style={{ listStyle: 'none' }}
             alt={`Slide 2`}
           />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">POLO-Luxe-Manches courtes/unisex<div className={cs('bg-black', styles.tag)}></div></div>
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">POLO-Luxe-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='bg-black'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -37,7 +40,9 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 2`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">POLO-Luxe-Manches courtes/unisex<div style={{ background: 'rgb(229 229 229)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">POLO-Luxe-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(229 229 229)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -47,8 +52,10 @@ const PoloComponent:React.FC<{}> = (props) => {
             style={{ listStyle: 'none' }}
             alt={`Slide 2`}
           />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">POLO-Luxe-Manches courtes/unisex<div className={cs('bg-black', styles.tag)}></div></div>
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">POLO-Luxe-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='bg-black'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -59,7 +66,9 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 2`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">POLO-Luxe-Manches courtes/unisex<div style={{ background: 'rgb(143 61 51)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">POLO-Luxe-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(143 61 51)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -90,7 +99,9 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 1`}
           />
            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div className={cs('bg-black', styles.tag)}></div></div>
+          <div className="flex items-center relative">POLO-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='bg-black'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -101,7 +112,9 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 1`}
           />
            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div style={{ background: 'rgb(229 229 229)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">POLO-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(229 229 229)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -111,8 +124,10 @@ const PoloComponent:React.FC<{}> = (props) => {
             style={{ listStyle: 'none' }}
             alt={`Slide 1`}
           />
-           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div style={{ background: 'rgb(152 29 31)' }} className={styles.tag}></div></div>
+            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">POLO-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(152 29 31)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -123,7 +138,9 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 1`}
           />
            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div style={{ background: 'rgb(176 179 179)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">POLO-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(176 179 179)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -134,7 +151,9 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 1`}
           />
            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center"> POLO-Basic-Manches courtes/unisex<div style={{ background: 'rgb(215 171 151)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">POLO-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(215 171 151)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -162,9 +181,10 @@ const PoloComponent:React.FC<{}> = (props) => {
             style={{ listStyle: 'none' }}
             alt={`Slide 1`}
           />
-          
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center"> POLO-Luxe-Manches courtes/unisex<div style={{ background: 'rgb(28 32 51)' }} className={styles.tag}></div></div>
+            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative"> POLO-Luxe-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(28 32 51)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -175,7 +195,9 @@ const PoloComponent:React.FC<{}> = (props) => {
             alt={`Slide 2`}
           />
            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center"> POLO-Luxe-Manches courtes/unisex<div style={{ background: 'rgb(27 26 31)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative"> POLO-Luxe-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(27 26 31)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>

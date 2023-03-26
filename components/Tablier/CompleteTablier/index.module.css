@@ -17,7 +17,7 @@
 }
 
 .item {
-  @apply flex flex-col mt-4;
+  @apply flex flex-col mt-8;
 }
 
 .swiper {
@@ -33,6 +33,6 @@
 }
 
 .tag {
-  @apply md:w-6 md:h-6 w-2 h-2 ml-2;
+  @apply md:w-3 md:h-3 w-2 h-2 ml-2;
   border-radius: 50%;
 }

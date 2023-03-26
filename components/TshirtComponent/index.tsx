@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Circle from "../Circle";
 
 const TshirtComponent:React.FC<{}> = (props) => {
 
@@ -52,8 +53,10 @@ const TshirtComponent:React.FC<{}> = (props) => {
             alt={`Slide1`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div className={cs('bg-black', styles.tag)}></div></div>
-            <div>基本中性翻领短袖</div>
+          <div className="flex items-center relative">T-shirt-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='bg-black'  /></span>
+           </div>
+            <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
         <SwiperSlide key={`slide-2`} tag="li">
@@ -63,7 +66,9 @@ const TshirtComponent:React.FC<{}> = (props) => {
             alt={`Slide2`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-            <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'rgb(229 229 229)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">T-shirt-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(229 229 229)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -74,7 +79,9 @@ const TshirtComponent:React.FC<{}> = (props) => {
             alt={`Slide3`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'rgb(152 29 31)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">T-shirt-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(152 29 31)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -85,7 +92,9 @@ const TshirtComponent:React.FC<{}> = (props) => {
             alt={`Slide4`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'rgb(146 169 203)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">T-shirt-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(146 169 203)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -96,7 +105,9 @@ const TshirtComponent:React.FC<{}> = (props) => {
             alt={`Slide5`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'rgb(51 67 130)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">T-shirt-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(51 67 130)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -106,8 +117,10 @@ const TshirtComponent:React.FC<{}> = (props) => {
             style={{ listStyle: 'none' }}
             alt={`Slide6`}
           />
-          <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'rgb(82 136 176)' }} className={styles.tag}></div></div>
+           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">T-shirt-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(82 136 176)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -118,7 +131,9 @@ const TshirtComponent:React.FC<{}> = (props) => {
             alt={`Slide7`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'rgb(230 208 213)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">T-shirt-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(230 208 213)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -129,7 +144,9 @@ const TshirtComponent:React.FC<{}> = (props) => {
             alt={`Slide8`}
           />
           <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">T-shirt-Basic-Manches courtes/unisex <div style={{ background: 'rgb(72 123 98)' }} className={styles.tag}></div></div>
+          <div className="flex items-center relative">T-shirt-Basic-Manches courtes/unisex
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='rgb(72 123 98)'  /></span>
+           </div>
             <span>基本中性翻领短袖</span>
           </div>
         </SwiperSlide>
@@ -154,7 +171,10 @@ const TshirtComponent:React.FC<{}> = (props) => {
             alt={`Slide 1`}
           />
            <div className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">T-shirt-Basic-Manches longues/homme <div className={cs('bg-black', styles.tag)}></div></div>
+          <div className="flex items-center relative">
+            T-shirt-Basic-Manches longues/homme 
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='bg-black'  /></span>
+          </div>
             <span>基本男性圆领长袖</span>
           </div>
         </SwiperSlide>
@@ -164,8 +184,11 @@ const TshirtComponent:React.FC<{}> = (props) => {
             style={{ listStyle: 'none' }}
             alt={`Slide 2`}
           />
-           <div style={{ marginTop: '10px' }} className="md:text-[16px] text-[8px] flex flex-col items-center">
-          <div className="flex items-center">T-shirt-Basic-Manches longues/homme <div className={cs('bg-black', styles.tag)}></div></div>
+           <div style={{ marginTop: '7px' }} className="md:text-[16px] text-[8px] flex flex-col items-center">
+          <div className="flex items-center relative">
+            T-shirt-Basic-Manches longues/homme 
+            <span style={{ left: '6rem' }} className="absolute"><Circle radius={6} fill='bg-black'  /></span>
+          </div>
             <span>基本男性圆领长袖</span>
           </div>
         </SwiperSlide>
