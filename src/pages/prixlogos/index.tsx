@@ -86,10 +86,10 @@ const PrixLogos: NextPage<{}> = () => {
   }
 
   return (
-    <div className="min-h-screen text-white bg-black flex flex-col justify-between">
+    <div className={styles.prixlogos}>
       <div>
       <Navbar classname="z-50	sticky top-0 bg-black px-12" dark={true} />
-        <div className="flex md:flex-row flex-col relative">
+        <div style={{ height: '120vh' }} className="flex md:flex-row flex-col relative">
           <div className="md:w-2/5">
             <div style={{ paddingLeft: '3rem' }} className={cs(
               styles.title,

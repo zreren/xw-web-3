@@ -29,15 +29,21 @@ const FlocagePrice: NextPage<{}> = () => {
       <div className="fixed z-[50] w-full top-0 cursor-pointer">
       <nav className={styles.nav}>
           <div>
-            <span className='font-bold'>E.</span>
-            <span className='font-semibold tracking-wider'>design</span>
-            <Link href='/' className='md:text-[42px] text-2xl ml-12 font-bold'>Infos</Link>
+            <Link href="/">
+              <span className='font-bold'>E.</span>
+            </Link>
+            <Link href="/">
+              <span className='font-semibold tracking-wider'>design</span>
+            </Link>
+            <Link href='/contact' className='md:text-[42px] text-2xl ml-12 font-bold'>Infos</Link>
           </div>
           <div className="cursor-pointer" onClick={toogleNavigation}>
           <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />
         </div>
       </nav>
-      <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-white'>小雯工作室</div>
+      <Link href="/">
+        <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-white'>小雯工作室</div>
+      </Link>
       </div>
       <div className={styles.main}>
         <div className={styles.headText}>

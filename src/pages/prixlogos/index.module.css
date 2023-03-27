@@ -1,3 +1,8 @@
+.prixlogos {
+  @apply text-white bg-black flex flex-col justify-between;
+  min-height: 130vh;
+}
+
 .title {
   @apply flex flex-col relative z-10 w-full text-blue-600 cursor-pointer;
   width: 90%;
