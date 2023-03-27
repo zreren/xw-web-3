@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { animated, useTransition } from "react-spring";
 import router from 'next/router';
 import Image from "next/image";
@@ -38,7 +38,12 @@ interface IAdvertisement {
   viewImage:boolean
 }
 
-const Advertisement:React.FC<IAdvertisement> = ({ onHandleChangeScreen, viewImage }) => {
+export type AdvertisementRef = {
+  activeMenu: string
+}
+
+const Advertisement = forwardRef<AdvertisementRef, IAdvertisement>((props, ref) => {
+  const { onHandleChangeScreen, viewImage } = props;
   const { query, pathname } = useRouter();
   const { page } = query;
   const [activeMenu, setActiveMenu] = useState<string>('');
@@ -78,6 +83,10 @@ const Advertisement:React.FC<IAdvertisement> = ({ onHandleChangeScreen, viewImag
     })
     query.page = imagestr;
   }
+
+  useImperativeHandle(ref, () => ({
+    activeMenu: activeMenu,
+  }))
   
   return (
     <div className="">
@@ -211,6 +220,6 @@ const Advertisement:React.FC<IAdvertisement> = ({ onHandleChangeScreen, viewImag
         </div>}
     </div>
   )
-}
+})
 
 export default Advertisement;

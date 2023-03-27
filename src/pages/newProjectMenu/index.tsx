@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { animated, useTransition } from "react-spring";
 import styles from './index.module.css';
 import Image from 'next/image';
@@ -10,7 +10,7 @@ import menuLight from '@/public/images/home/menuLight.png'
 import router, { useRouter } from 'next/router';
 import Navigation from "@/components/Navigation";
 import tamponBackground from '@/public/images/tampon.png'
-import Advertisement from "@/components/Advertisement";
+import Advertisement, { AdvertisementRef } from "@/components/Advertisement";
 import FooterLocation from "@/components/FooterLocation";
 import etique1 from '@/public/images/etique/Etiquettes1.png'
 import etique2 from '@/public/images/etique/Etiquettes2.png'
@@ -53,7 +53,8 @@ export default function ProjectMenu() {
     cardImage6: false,
   });
   const [activeMenu, setActiveMenu] = useState(query.active ?? '')
-  const { subMenu = '' } = query;
+  const ref = useRef<AdvertisementRef>(null);
+
   const handleClickMenu =(menu: string) => {
     setActiveMenu(menu)
     setPhotoImgIdx(0)
@@ -123,13 +124,6 @@ export default function ProjectMenu() {
   })
 
   const clickImage = (num: number) => {
-    // setCardImageVisible(pre => {
-    //   const res = Object.fromEntries(Object.entries(pre).map(item => ([item[0], false])))
-    //   return {
-    //     ...res,
-    //     [`cardImage${num}`]: true,
-    //   }
-    // })
     setCardImgIndex(num)
     setCardMenuVisible(false)
   }
@@ -150,14 +144,15 @@ export default function ProjectMenu() {
 
   const leftClassname = activeMenu === 'tampon' || activeMenu === 'photo' || activeMenu === 'card' || activeMenu === 'etique' ?
                     "text-white" : activeMenu === 'brochure' && active? "text-white" : "text-black"
-  console.log('cardImgArrs[cardImgIndex]', cardImgIndex, cardImgArrs[cardImgIndex]);
-  console.log('test===>', activeMenu,
-    photoImgIdx);
   
-
+  console.log('ref', ref.current);
+  
   return (
     <>
-    <div className={styles.projectMenu}>
+    <div className={cs(
+        styles.projectMenu,
+        active && ref.current?.activeMenu === 'depliant' ? styles.moreHeight : null
+      )}>
       {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
       <div className={cs(
         (activeMenu === 'brand' || !activeMenu || activeMenu === 'design' || activeMenu === 'brochure')? styles.white : styles.black,
@@ -255,7 +250,7 @@ export default function ProjectMenu() {
         {/* 广告页 */}
         {activeMenu === 'brochure' && (
           <div className="mx-12 mt-24">
-            <Advertisement onHandleChangeScreen={handleChangeScreen} viewImage={active} />
+            <Advertisement ref={ref} onHandleChangeScreen={handleChangeScreen} viewImage={active} />
           </div>
           )}
 
