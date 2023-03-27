@@ -44,14 +44,15 @@ export default function ProjectMenu() {
   const [etiqueImgIdx, setEtiqueImgIdx] = useState<number>(0);
   const [cardImgIndex, setCardImgIndex] = useState<number>(0);
   const [cardMenuVisible, setCardMenuVisible] = useState<boolean>(true);
-  const [cardImageVisible, setCardImageVisible] = useState<Record<string, boolean>>({
-    cardImage1: false,
-    cardImage2: false,
-    cardImage3: false,
-    cardImage4: false,
-    cardImage5: false,
-    cardImage6: false,
-  });
+  // const [cardImageVisible, setCardImageVisible] = useState<Record<string, boolean>>({
+  //   cardImage1: false,
+  //   cardImage2: false,
+  //   cardImage3: false,
+  //   cardImage4: false,
+  //   cardImage5: false,
+  //   cardImage6: false,
+  // });
+  const [cardImageVisible, setCardImageVisible] = useState<boolean>(false)
   const [activeMenu, setActiveMenu] = useState(query.active ?? '')
   const ref = useRef<AdvertisementRef>(null);
 
@@ -100,7 +101,7 @@ export default function ProjectMenu() {
     // config: config.slow
   });
 
-  const cardImgTransitions = useTransition(cardImgIndex, {
+  const cardImgTransitions = useTransition(cardImageVisible, {
     from: { opacity: 0, transform: "translateX(100%)" },
     enter: { opacity: 1, transform: "translateX(0%)" },
     leave: { opacity: 0, transform: "translateX(50%)" },
@@ -125,6 +126,7 @@ export default function ProjectMenu() {
 
   const clickImage = (num: number) => {
     setCardImgIndex(num)
+    setCardImageVisible(true)
     setCardMenuVisible(false)
   }
 
@@ -138,6 +140,7 @@ export default function ProjectMenu() {
 
   const clickImageRestore = () => {
     // closeCardImageAndOpenCardMenu()
+    setCardImageVisible(false)
     setCardImgIndex(0)
     setCardMenuVisible(true)
   }
@@ -145,7 +148,6 @@ export default function ProjectMenu() {
   const leftClassname = activeMenu === 'tampon' || activeMenu === 'photo' || activeMenu === 'card' || activeMenu === 'etique' ?
                     "text-white" : activeMenu === 'brochure' && active? "text-white" : "text-black"
   
-  console.log('ref', ref.current);
   
   return (
     <>
