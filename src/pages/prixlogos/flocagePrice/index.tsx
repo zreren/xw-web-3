@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import Link from 'next/link';
 import Image from 'next/image'
+import Navigation  from "@/components/Navigation";
 import menuLight from '@/public/images/home/menuLight.png'
 import flocage1 from '@/public/images/flocagePrice/flocage-1.png'
 import flocage2 from '@/public/images/flocagePrice/flocage-2.png'
@@ -14,6 +15,17 @@ import FooterLocation from "@/components/FooterLocation";
 const BroderiePrice: NextPage<{}> = () => {
   const [current, setCurrent] = useState<number>(0)
   const [topArr, setTopArr] = useState<number[]>([])
+  const [navigationVisible, setNavigationVisible] = useState<boolean>(false);
+
+  const closeNavigation = () => {
+    setNavigationVisible(false)
+  }
+
+  const toogleNavigation = () => {
+    setNavigationVisible(pre => (
+      !pre
+    ))
+  }
   const router = useRouter();
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
@@ -26,8 +38,6 @@ const BroderiePrice: NextPage<{}> = () => {
     const { top: top3 } =  ref3.current?.getBoundingClientRect() as DOMRect;
     const { top: top4 } =  ref4.current?.getBoundingClientRect() as DOMRect;
     const arr = [top1, top2, top3, top4];
-    console.log('useEffect', arr);
-    
     setTopArr(arr);
   }, [])
 
@@ -39,19 +49,26 @@ const BroderiePrice: NextPage<{}> = () => {
 
   return (
     <div className={styles.flocagePrice}>
-      <div className="fixed z-[50] w-full top-0 cursor-pointer" onClick={handClickNav}>
+      {navigationVisible && <Navigation handleCloseNavigation={closeNavigation} />}
+      <div className="fixed z-[50] w-full top-0 cursor-pointer">
       <nav className={styles.nav}>
           <div>
-            <span className='font-bold'>E.</span>
-            <span className='font-semibold tracking-wider'>design</span>
-            <Link href='/' className='md:text-[42px] text-2xl ml-10 font-bold'>Infos</Link>
+            <Link href="/">
+              <span className='font-bold'>E.</span>
+            </Link>
+            <Link href="/">
+              <span className='font-semibold tracking-wider'>design</span>
+            </Link>
+            <Link href='/contact' className='md:text-[42px] text-2xl ml-10 font-bold'>Infos</Link>
           </div>
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={toogleNavigation}>
           <Image className="bg-black bg-blend-screen" src={menuLight} alt="navlogo" />
         </div>
       </nav>
-      <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-white'>小雯工作室</div>
-      <div className="flex justify-between px-12 text-blue-600 text-7xl font-bold tracking-wider">
+      <Link href='/'>
+        <div className='md:text-3xl text-1xl font-normal px-12 tracking-wider text-white'>小雯工作室</div>
+      </Link>
+      <div className="flex justify-between px-12 text-blue-600 text-7xl font-bold tracking-wider" onClick={handClickNav}>
         <span>flocage</span>
         <span>印花</span>
       </div>

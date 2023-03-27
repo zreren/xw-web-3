@@ -7,17 +7,18 @@ import cs from 'classnames';
 
 interface NavigationProps {
   handleCloseNavigation: () => void
+  classname?: string
 }
 
 const Navigation: React.FC<NavigationProps> = (props) => {
-  const { handleCloseNavigation } = props;
+  const { handleCloseNavigation, classname } = props;
 
   const closeNavigation = () => {
     handleCloseNavigation()
   }
 
   return (
-    <div className={styles.navigation}>
+    <div className={cs(styles.navigation, classname)}>
       <div className="h-full bg-text-blue-600">
       <nav className={cs(
         styles.nav,
