@@ -407,9 +407,9 @@ export default function ProjectMenu() {
                 </div>
               </div>
             )}
-            {activeMenu === 'brochure' && (
-              <Advertisement currentMenu={subMenu as string} />
-            )}
+            {/* {activeMenu === 'brochure' && (
+              <Advertisement />
+            )} */}
             {activeMenu === 'card' && (
               <>
               <div>
